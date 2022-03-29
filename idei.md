@@ -1,6 +1,7 @@
 De intrebat:
 -
 -  managementul preferintelor unui grup de persoane
+-  documentatia (ce o sa contina)
 
 Pagina de conectare
 -
