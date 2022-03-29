@@ -21,6 +21,7 @@ Baza de date din tabelele:
 Pagini:
 -
 - Login, creare cont        -> 1
+  - https://codepen.io/shayanea/pen/eVMMgO   
 - home page
   - content
     - trending  (-> clasament al celor mai populare produse )
