@@ -30,3 +30,7 @@ Pagini:
       - https://w3schools.unlockfuture.com/howto/howto_js_popup_chat.html
   - Produse pe categorii:
     - https://www.w3schools.com/howto/howto_css_mega_menu.asp
+
+Color pallete
+-
+- https://coolors.co/palettes/trending
