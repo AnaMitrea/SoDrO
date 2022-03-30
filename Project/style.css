@@ -1,8 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+
+:root {
+  --ebony-clay: #232d36;
+  --pearl-bush: #ede4dc;
+  --burnt-sienna: #ef895d;
+  --matrix: #b45760;
+  --mongoose: #b49b83;
+  --aqua-forest: #5a9f7d;
+  --summer-green: #98b5ab;
+  --soft-amber: #cabcae;
+  --oriental-pink: #c59ea8;
+}
+
 html, body {
   position: relative;
   min-height: 100vh;
-  background-color: #E1E8EE;
+  background-color: var(--pearl-bush);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +26,7 @@ html, body {
 
 .form-structor {
   background-color: #222;
+  box-shadow: 0px 2px 25px var(--mongoose);
   border-radius: 15px;
   height: 550px;
   width: 350px;
@@ -30,7 +44,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 500px;
-  background-image: url("https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bf884ad570b50659c5fa2dc2cfb20ecf&auto=format&fit=crop&w=1000&q=100");
+  background-image: url('images/coffee.jpg');
 }
 .form-structor .signup {
   position: absolute;
@@ -66,7 +80,7 @@ html, body {
   text-align: center;
 }
 .form-structor .signup .form-title span {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--ebony-clay);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.3s ease;
@@ -94,12 +108,17 @@ html, body {
 }
 .form-structor .signup .form-holder .input:last-child {
   border-bottom: 0;
+  padding: 8px 0px 8px 15px;
 }
+.form-structor .signup .form-holder .input:last-child::-webkit-calendar-picker-indicator {
+  margin-right: 30px;
+}
+
 .form-structor .signup .form-holder .input::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
 .form-structor .signup .submit-btn {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--summer-green);
   color: rgba(255, 255, 255, 0.7);
   border: 0;
   border-radius: 15px;
@@ -116,7 +135,7 @@ html, body {
 }
 .form-structor .signup .submit-btn:hover {
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--aqua-forest);
 }
 .form-structor .login {
   position: absolute;
@@ -151,7 +170,7 @@ html, body {
   -webkit-transition: all 0.3s ease;
 }
 .form-structor .login .center .form-title {
-  color: #000;
+  color: var(--ebony-clay);
   font-size: 1.7em;
   text-align: center;
 }
@@ -190,7 +209,7 @@ html, body {
   color: rgba(0, 0, 0, 0.4);
 }
 .form-structor .login .center .submit-btn {
-  background-color: #6B92A4;
+  background-color: var(--summer-green);
   color: rgba(255, 255, 255, 0.7);
   border: 0;
   border-radius: 15px;
@@ -207,7 +226,7 @@ html, body {
 }
 .form-structor .login .center .submit-btn:hover {
   transition: all 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--aqua-forest);
 }
 .form-structor .login.slide-up {
   top: 90%;
