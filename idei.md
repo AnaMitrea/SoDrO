@@ -22,6 +22,7 @@ Pagini:
 -
 - Login, creare cont        -> 1
   - https://codepen.io/shayanea/pen/eVMMgO   
+  - https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/
 - home page
   - https://dribbble.com/shots/15764131-Starbucks-Website-concept
     - content
