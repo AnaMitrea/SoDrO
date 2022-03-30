@@ -9,7 +9,7 @@
 --soft-amber: #cabcae;
 --oriental-pink: #c59ea8;
 
-
+    
 /* SCSS HEX */
 $ebony-clay: #232d36;
 $pearl-bush: #ede4dc;
