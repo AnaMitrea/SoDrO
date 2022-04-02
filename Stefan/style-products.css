@@ -1,0 +1,149 @@
+:root{
+--ebony-clay: #232d36;
+--pearl-bush: #ede4dc;
+--burnt-sienna: #ef895d;
+--matrix: #b45760;
+--mongoose: #b49b83;
+--aqua-forest: #5a9f7d;
+--summer-green: #98b5ab;
+--soft-amber: #cabcae;
+--oriental-pink: #c59ea8;
+}
+
+body{
+    background-color: var(--pearl-bush);
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    padding: 0.5em 1em;    
+}
+
+.top-bar{
+    left: 0;
+    top: 0;
+    height: 60px;
+    /*background-color: var(--aqua-forest);*/
+    display: flex;
+    overflow: hidden;
+    border-radius:0 0 10px 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.list-items{
+    width: 50vw;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+#page-title{
+    font-family:'Jolly Lodger';
+    font-size: 2em;
+}
+
+.list-items a{
+    width: 30vw;
+    text-decoration: none;
+    color:var(--ebony-clay);
+    padding: .75em 1em;
+    list-style-type:none;
+}
+
+.search-container{
+    margin-right: 2vw;
+    float:right;
+}
+
+.search-container input[type=search] {
+    width: 100%;
+    text-align: center;
+    padding: 0.75em;
+    border-radius: 30px;
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+#icon{
+    width: 50px;
+    height: auto;
+    padding: auto;
+
+}
+
+.middle{
+    display: flex;
+}
+
+.sort-list{
+    width:10em;
+    background-color:var(--mongoose);
+    margin: 0.75em;
+    border-radius: 20px;
+    text-align: center;
+    height: auto;
+}
+
+
+.shop-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%;
+    margin: 0.75em;
+}
+
+.product-cell{
+    height: 12em;
+    width: 200px;
+    border:1px solid #232d36;
+
+}
+
+
+.footer {
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100vw;
+    background-color: var(--ebony-clay);
+    display: flex;
+    position: fixed;
+    border-radius:10px 10px 0 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1em;  
+  }
+
+  @media only screen and (max-width: 760px){
+    .top-bar{
+        display: block; 
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color:#c1ac98;
+    }
+    .list-items ,.search-container{
+        width: auto;
+        float: none;
+        margin: auto;
+    }
+
+    .search-container{
+        width: 50vw;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+    
+    #icon{
+        display:none;
+    }
+
+    #page-title{
+        display: none;
+    }
+
+  }
