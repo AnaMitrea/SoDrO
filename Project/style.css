@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
 
 :root {
   --ebony-clay: #232d36;
@@ -29,19 +30,94 @@ html, body {
   display: flex;
   position: fixed;
   overflow: hidden;
-  box-shadow: 0px 2px 25px var(--mongoose);
   width: 100%;
-  height: 70px;
+  height: 60px;
   top: 0;
+  left: 0;
+  box-sizing: border-box;
+  justify-content: left;
+  align-items: center;
 }
 
-.top-bar .icon {
-  padding: 20px;
-  position: center;
+.top-bar .logo {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar .logo .iconify {
+  padding: 10px;
+  font-size: 2em;
+}
+
+.top-bar .logo #page-title{
+  font-family: 'Jolly Lodger', serif;
+  font-size: 2em;
+}
+
+.top-bar .list-items {
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.top-bar .list-items a {
+  text-align: center;
+  width: 30vw;
+  text-decoration: none;
+  color:var(--ebony-clay);
+  padding: .75em 1em;
+  list-style-type:none;
+}
+
+.top-bar .search-container {
+  display: flex;
+  margin-right: 2vw;
+  float: right;
+  background-color: #ffffff;
+  border-radius: 30px;
+  flex-direction: row;
+}
+
+.top-bar .search-container input[type=search] {
+  position: static;
+  order : 0;
+  width: 100%;
+  left: 0;
+  right: 10px;
+  text-align: left;
+  padding: 0.75em;
+  background: no-repeat right center / 10% url('https://api.iconify.design/akar-icons/search.svg?color=gray') ;
+  background-clip: border-box;
+  content: url('https://api.iconify.design/akar-icons/search.svg?color=gray');
+  border: 1px solid #FFFFFF;
+  border-radius: 30px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.top-bar .profile {
+  display: flex;
+  font-size: 2em;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 2vw;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.top-bar .profile .iconify {
+  padding: 10px;
 }
 
 
-/* ---- */
+
+/* ----------------------------- */
 
 
 .form-structor {
