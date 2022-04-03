@@ -104,6 +104,7 @@ html, body {
   border-radius: 30px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  outline: none;
 }
 
 /* Profile button */
@@ -140,7 +141,7 @@ html, body {
 }
 
 /*Profile image*/
-.dashboard-structor .user .profile-img img{
+.profile-img img{
   width: 8vw;
   border-radius: 50%;
   background: url("images/profile.jpg");
@@ -150,14 +151,14 @@ html, body {
 }
 
 /* User description box */
-.dashboard-structor .user .user-description {
+.user-description {
   background-color: var(--soft-amber);
   border-radius: 20px;
   height: auto;
   width: 10vw;
 }
 
-.dashboard-structor .user .user-description p{
+.user-description p{
   text-align: center;
   text-decoration: none;
   color:var(--ebony-clay);
@@ -166,7 +167,7 @@ html, body {
   width: 80%;
 }
 
-.dashboard-structor .user .user-description>a {
+.user-description>a {
   text-align: center;
   text-decoration: none;
   width: 80%;
@@ -174,7 +175,7 @@ html, body {
 }
 
 /* Top Change email button */
-.dashboard-structor .user .user-description .change-email{
+.change-email{
   background: #232D36;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px 20px 0px 0px;
@@ -183,14 +184,14 @@ html, body {
   cursor: pointer;
 }
 
-.dashboard-structor .user .user-description .change-email>a{
+.change-email>a{
   color: #ffffff;
   font-size: 0.8em;
   text-decoration: none;
 }
 
 /* Bottom Change password button */
-.dashboard-structor .user .user-description .change-password{
+.change-password{
   background: #232D36;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 20px 20px;
@@ -199,14 +200,14 @@ html, body {
   cursor: pointer;
 }
 
-.dashboard-structor .user .user-description .change-password>a{
+.change-password>a{
   color: #ffffff;
   font-size: 0.8em;
   text-decoration: none;
 }
 
 /* Preferences and Shopping List*/
-.dashboard-structor .account-information {
+.account-information {
   display: flex;
   width: 100%;
   height: auto;
@@ -216,20 +217,23 @@ html, body {
 }
 
 /* Preferences */
-.dashboard-structor .account-information .account-preferences {
+.account-preferences {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: var(--ebony-clay);
-  display: flex;
-  width: 90%;
+  width: 70%;
   height: auto;
-  padding: 38px;
-  margin: 0.5em;;
+  padding: 30px;
+  margin: 0.5em;
   border-radius: 20px;
-  text-align: center;
+  text-align: left;
+  color: white;
+  box-sizing: border-box;
 }
 
+
+
 /* Shopping List */
-.dashboard-structor .account-information .account-shopping-list {
+.account-shopping-list {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background: var(--ebony-clay);
   display: flex;
@@ -241,10 +245,8 @@ html, body {
   text-align: center;
 }
 
-.dashboard-structor .account-information .account-shopping-list p{
+.account-shopping-list p{
   color: #ffffff;
-  border: 1px solid #B49B83;
-  padding-top: 5px;
   width: 100%;
   font-size: 1em;
 }
