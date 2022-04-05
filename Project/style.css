@@ -122,52 +122,56 @@ html, body {
   padding: 10px;
 }
 
+/* Profile Dashboard */
 .dashboard-structor {
   display: flex;
   width: 90vw;
   height: auto;
+  min-height: 85vh;
+  margin-top: 7vh;
   background-color: rgba(180,155,131,0.1);
   border-radius: 30px;
 }
 
 .dashboard-structor .user {
-  border-right: 1px solid #B49B83;
   display: flex;
   width: 10vw;
   height: auto;
+  border-right: 1px solid #B49B83;
   padding: 38px;
   text-align: center;
   flex-direction: column;
 }
 
 /*Profile image*/
-.profile-img img{
+.dashboard-structor .user .profile-img img{
   width: 8vw;
   border-radius: 50%;
   background: url("images/profile.jpg");
   object-fit: contain;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 /* User description box */
-.user-description {
+.dashboard-structor .user .user-description {
   background-color: var(--soft-amber);
   border-radius: 20px;
   height: auto;
+  min-height: 40vh;
   width: 10vw;
 }
 
-.user-description p{
+.dashboard-structor .user .user-description p{
   text-align: center;
   text-decoration: none;
   color:var(--ebony-clay);
   padding: .5em 1em;
-  font-size: 1vw;
+  font-size: 1em;
   width: 80%;
 }
 
-.user-description>a {
+.dashboard-structor .user .user-description a {
   text-align: center;
   text-decoration: none;
   width: 80%;
@@ -175,8 +179,8 @@ html, body {
 }
 
 /* Top Change email button */
-.change-email{
-  background: #232D36;
+.dashboard-structor .user .user-description .change-email{
+  background: #39424A;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px 20px 0px 0px;
   margin: 10vh 1vh 1vh;
@@ -184,15 +188,19 @@ html, body {
   cursor: pointer;
 }
 
-.change-email>a{
+.dashboard-structor .user .user-description .change-email:hover{
+  background: var(--ebony-clay);
+}
+
+.dashboard-structor .user .user-description .change-email a{
   color: #ffffff;
   font-size: 0.8em;
   text-decoration: none;
 }
 
 /* Bottom Change password button */
-.change-password{
-  background: #232D36;
+.dashboard-structor .user .user-description .change-password{
+  background: #39424A;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 20px 20px;
   margin: 1vh 1vh;
@@ -200,14 +208,18 @@ html, body {
   cursor: pointer;
 }
 
-.change-password>a{
+.dashboard-structor .user .user-description .change-password:hover{
+  background: var(--ebony-clay);
+}
+
+.dashboard-structor .user .user-description .change-password a{
   color: #ffffff;
   font-size: 0.8em;
   text-decoration: none;
 }
 
 /* Preferences and Shopping List*/
-.account-information {
+.dashboard-structor .account-information {
   display: flex;
   width: 100%;
   height: auto;
@@ -216,42 +228,117 @@ html, body {
   text-align: center;
 }
 
+/* Line under title */
+.account-information hr {
+  display: block;
+  border: 1px solid #B49B83;
+}
+
 /* Preferences */
-.account-preferences {
+.dashboard-structor .account-information .account-preferences {
+  display: flex;
+  flex-direction: column;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background: var(--ebony-clay);
+  background: #39424A;
   width: 70%;
   height: auto;
   padding: 30px;
   margin: 0.5em;
   border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.account-preferences .preference-information h1 {
   text-align: left;
   color: white;
+  font-size: 1.2em;
+  display: block;
+}
+
+.account-preferences .percentages-structor {
   box-sizing: border-box;
+  height: auto;
+  width: 100%;
+}
+
+.percentages-structor .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+  font-size: 0.8em;
+}
+
+.percentages-structor .buttons .user-percentages-bttn{
+  border: 1px solid #B49B83;
+  border-radius: 20px 20px 0px 0px;
+  min-width: 8vw;
+  text-align: center;
+  height: auto;
+}
+
+.percentages-structor .buttons .user-percentages-bttn:hover {
+  background: var(--ebony-clay);
+  cursor: pointer;
+}
+
+.user-percentages-bttn p {
+  color:white;
+}
+
+.percentages-structor .buttons .group-percentages-bttn{
+  border: 1px solid #B49B83;
+  border-radius: 20px 20px 0px 0px;
+  min-width: 8vw;
+  text-align: center;
+  height: auto;
+}
+
+.percentages-structor .buttons .group-percentages-bttn:hover{
+  background: var(--ebony-clay);
+  cursor: pointer;
+}
+
+.group-percentages-bttn p{
+  color:white;
+  font-size: 1em;
+}
+
+.dashboard-structor .account-information .account-preferences .percentages-structor .percentages {
+  border: 1px solid #B49B83;
+  box-sizing: border-box;
+  border-radius: 0px 0px 40px 40px;
+  height: auto;
+  width: 100%;
 }
 
 
 
-/* Shopping List */
-.account-shopping-list {
+
+/* --- Shopping List --- */
+.dashboard-structor .account-information .account-shopping-list {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  background: var(--ebony-clay);
-  display: flex;
+  background: #39424A;
   width: 30%;
   height: auto;
   padding: 30px;
   margin: 0.5em;
   border-radius: 20px;
-  text-align: center;
+  text-align: left;
+  display: block;
 }
 
-.account-shopping-list p{
+.dashboard-structor .account-information .account-shopping-list h1{
   color: #ffffff;
   width: 100%;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-
+.dashboard-structor .account-information .account-shopping-list .iconify{
+  color: #ffffff;
+  font-size: 1em;
+}
 
 
 

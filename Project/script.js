@@ -1,3 +1,5 @@
+
+
 console.clear();
 
 const loginBtn = document.getElementById('login');
@@ -28,3 +30,22 @@ signupBtn.addEventListener('click', (e) => {
 	});
 });
 
+/* Pie chart */
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+	var data = google.visualization.arrayToDataTable([
+		['Category', 'Products'],
+		['Soda',     2],
+		['Dairy',    3]
+	]);
+
+	var options = {
+		is3D: true
+	};
+
+	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+	chart.draw(data, options);
+}
