@@ -1,5 +1,3 @@
-
-
 console.clear();
 
 const loginBtn = document.getElementById('login');
@@ -36,12 +34,14 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 	var data = google.visualization.arrayToDataTable([
-		['Category', 'Products'],
-		['Soda',     2],
-		['Dairy',    3]
+		['Soda', 'Products'],
+		['Coca-Cola',     2],
+		['Pepsi Max',     1],
+		['Fanta',		  3]
 	]);
 
 	var options = {
+		title: 'Your Soda Preferences',
 		is3D: true
 	};
 

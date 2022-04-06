@@ -255,6 +255,47 @@ html, body {
   display: block;
 }
 
+/* Form for preferences */
+.account-preferences .preference-information .category-form {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.account-preferences .preference-information .category-form .form-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.account-preferences .preference-information .category-form .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.account-preferences .preference-information .category-form .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.account-preferences .preference-information .category-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  background: var(--summer-green);
+}
+
+.account-preferences .preference-information .category-form label {
+  padding: 10px 0 10px 0;
+  display: inline-block;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* --- Percentages Structor --- */
 .account-preferences .percentages-structor {
   box-sizing: border-box;
   height: auto;
@@ -267,15 +308,18 @@ html, body {
   justify-content: left;
   align-items: flex-start;
   text-align: left;
-  font-size: 0.8em;
 }
 
 .percentages-structor .buttons .user-percentages-bttn{
+  background: #39424A;
   border: 1px solid #B49B83;
   border-radius: 20px 20px 0px 0px;
-  min-width: 8vw;
+  min-width: 10vw;
+  min-height: 4vh;
   text-align: center;
   height: auto;
+  font-size: 1em;
+  color:white;
 }
 
 .percentages-structor .buttons .user-percentages-bttn:hover {
@@ -283,16 +327,16 @@ html, body {
   cursor: pointer;
 }
 
-.user-percentages-bttn p {
-  color:white;
-}
-
 .percentages-structor .buttons .group-percentages-bttn{
+  background: #39424A;
   border: 1px solid #B49B83;
   border-radius: 20px 20px 0px 0px;
-  min-width: 8vw;
+  min-width: 10vw;
+  min-height: 4vh;
   text-align: center;
   height: auto;
+  font-size: 1em;
+  color:white;
 }
 
 .percentages-structor .buttons .group-percentages-bttn:hover{
@@ -313,8 +357,11 @@ html, body {
   width: 100%;
 }
 
-
-
+/* Pie chart */
+.percentages #piechart {
+  width: 70%;
+  height: auto;
+}
 
 /* --- Shopping List --- */
 .dashboard-structor .account-information .account-shopping-list {

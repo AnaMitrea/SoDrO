@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>User Dashboard</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 <div class="top-bar">
@@ -56,22 +58,58 @@
             <div class="preference-information">
                 <h1>Your preferences</h1>
                 <hr>
+                <div class="category-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-25">
+                                <label for="first_category">Your first favorite category</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="category-select1" name="category-select">
+                                    <option value="category1">Your choice</option>
+                                    <option value="category2">Your choice</option>
+                                    <option value="category3">Your choice</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-25">
+                                <label for="second_category">Your second favorite category</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="category-select2" name="category-select">
+                                    <option value="category1">Your choice</option>
+                                    <option value="category2">Your choice</option>
+                                    <option value="category3">Your choice</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-25">
+                                <label for="third_category">Your third favorite category</label>
+                            </div>
+                            <div class="col-75">
+                                <select id="category-select3" name="category-select">
+                                    <option value="category1">Your choice</option>
+                                    <option value="category2">Your choice</option>
+                                    <option value="category3">Your choice</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <!--TODO de facut un pop-up cand se da click pe categorii-->
-            <p style="color:white"> chestii preferinte</p>
+
 
             <div class="percentages-structor">
                 <div class="buttons">
-                    <div class="user-percentages-bttn">
-                        <p>Percentages</p>
-                    </div>
-                    <div class="group-percentages-bttn">
-                        <p>Group Percentages</p>
-                    </div>
+                    <button class="user-percentages-bttn">Percentages</button>
+                    <button class="group-percentages-bttn">Group Percentages</button>
                 </div>
                 <div class="percentages">
-                    <p style="color:white"> inside2</p>
+                    <div id="piechart"></div>
+                    <p> aici intra piechart ul</p>
                 </div>
             </div>
 
@@ -89,8 +127,7 @@
 
 	
 	
-<!-- Script -->	
-<script  src="./script.js"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Script -->
+
 </body>
 </html>
