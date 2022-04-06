@@ -624,3 +624,19 @@ html, body {
   visibility: visible;
   -webkit-transition: all 0.3s ease;
 }
+
+
+/* Footer */
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: var(--ebony-clay);
+  display: flex;
+  overflow: hidden;
+  border-radius:10px 10px 0 0;
+  justify-content: center;
+  align-items: center;
+}
