@@ -127,8 +127,8 @@ html, body {
   display: flex;
   width: 90vw;
   height: auto;
-  min-height: 85vh;
-  margin-top: 7vh;
+  min-height: 80vh;
+  margin-top: 10vh;
   background-color: rgba(180,155,131,0.1);
   border-radius: 30px;
 }
@@ -184,18 +184,15 @@ html, body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px 20px 0px 0px;
   margin: 10vh 1vh 1vh;
-  padding: 5px;
+  padding: 5% 17% 5% 17%;
   cursor: pointer;
+  color: #ffffff;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 
 .dashboard-structor .user .user-description .change-email:hover{
   background: var(--ebony-clay);
-}
-
-.dashboard-structor .user .user-description .change-email a{
-  color: #ffffff;
-  font-size: 0.8em;
-  text-decoration: none;
 }
 
 /* Bottom Change password button */
@@ -204,18 +201,15 @@ html, body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 20px 20px;
   margin: 1vh 1vh;
-  padding: 5px;
+  padding: 3% 10% 3% 10%;
   cursor: pointer;
+  color: #ffffff;
+  font-size: 0.8em;
+  text-decoration: none;
 }
 
 .dashboard-structor .user .user-description .change-password:hover{
   background: var(--ebony-clay);
-}
-
-.dashboard-structor .user .user-description .change-password a{
-  color: #ffffff;
-  font-size: 0.8em;
-  text-decoration: none;
 }
 
 /* Preferences and Shopping List*/
@@ -318,7 +312,7 @@ html, body {
   min-height: 4vh;
   text-align: center;
   height: auto;
-  font-size: 1em;
+  font-size: 0.8em;
   color:white;
 }
 
@@ -335,7 +329,7 @@ html, body {
   min-height: 4vh;
   text-align: center;
   height: auto;
-  font-size: 1em;
+  font-size: 0.8em;
   color:white;
 }
 
@@ -344,12 +338,7 @@ html, body {
   cursor: pointer;
 }
 
-.group-percentages-bttn p{
-  color:white;
-  font-size: 1em;
-}
-
-.dashboard-structor .account-information .account-preferences .percentages-structor .percentages {
+.dashboard-structor .account-information .account-preferences .percentages-structor #chart-wrap {
   border: 1px solid #B49B83;
   box-sizing: border-box;
   border-radius: 0px 0px 40px 40px;
@@ -358,9 +347,26 @@ html, body {
 }
 
 /* Pie chart */
-.percentages #piechart {
-  width: 70%;
-  height: auto;
+#chart-wrap {
+  width: 100%;
+  position: relative;
+  height: 0;
+  overflow:hidden;
+}
+
+#chart-wrap .save-bttn {
+  background: var(--summer-green);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 1vh 1vh;
+  padding: 2% 4%;
+  cursor: pointer;
+  color: black;
+}
+
+#chart-wrap .save-bttn:hover {
+  background: var(--aqua-forest);
+  cursor: pointer;
 }
 
 /* --- Shopping List --- */

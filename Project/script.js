@@ -27,25 +27,3 @@ signupBtn.addEventListener('click', (e) => {
 		}
 	});
 });
-
-/* Pie chart */
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-	var data = google.visualization.arrayToDataTable([
-		['Soda', 'Products'],
-		['Coca-Cola',     2],
-		['Pepsi Max',     1],
-		['Fanta',		  3]
-	]);
-
-	var options = {
-		title: 'Your Soda Preferences',
-		is3D: true
-	};
-
-	var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-	chart.draw(data, options);
-}

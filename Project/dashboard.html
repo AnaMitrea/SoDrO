@@ -7,6 +7,39 @@
     <script src="./script.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Soda', 'Products'],
+                ['Coca-Cola',     1],
+                ['Pepsi Max',     1],
+                ['Fanta',		  1],
+                ['Pepsi Lime',    1],
+                ['Sprite',        1]
+            ]);
+            var options = {
+                backgroundColor: 'transparent',
+                legend: {textStyle: {color: 'white', fontsize: 20}},
+                title: 'Your Soda Preferences',
+                titleTextStyle: { color: 'white', fontsize: 20},
+                colors: ['#b45760', '#ef895d', '#c59ea8', '#cabcae', '#f6c7b6'],
+                is3D: true
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+        $(window).on("throttledresize", function (event) {
+            var options = {
+                width: 'auto',
+                height: 'auto'
+            };
+
+            var data = google.visualization.arrayToDataTable([]);
+            drawChart(data, options);
+        });
+    </script>
 </head>
 <body>
 <div class="top-bar">
@@ -43,12 +76,8 @@
             <p>Your Name</p>
             <p>Your Username</p>
             <p>Your Group Name</p>
-            <div class="change-email">
-                <a href="#">Change Email</a>
-            </div>
-            <div class="change-password">
-                <a href="#">Change Password</a>
-            </div>
+            <button class="change-email">Change Email</button>
+            <button class="change-password">Change Password</button>
         </div>
     </div>
 
@@ -61,19 +90,19 @@
                     <form>
                         <div class="form-row">
                             <div class="col-25">
-                                <label for="first_category">Your first favorite category</label>
+                                <label for="first_category">Category</label>
                             </div>
                             <div class="col-75">
                                 <select id="category-select1" name="category-select">
-                                    <option value="category1">Your choice</option>
-                                    <option value="category2">Your choice</option>
-                                    <option value="category3">Your choice</option>
+                                    <option value="category1">Soda</option>
+                                    <option value="category2">Tea</option>
+                                    <option value="category3">Dairy</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-25">
-                                <label for="second_category">Your second favorite category</label>
+                                <label for="second_category">Category</label>
                             </div>
                             <div class="col-75">
                                 <select id="category-select2" name="category-select">
@@ -85,7 +114,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-25">
-                                <label for="third_category">Your third favorite category</label>
+                                <label for="third_category">Category</label>
                             </div>
                             <div class="col-75">
                                 <select id="category-select3" name="category-select">
@@ -104,9 +133,9 @@
                     <button class="user-percentages-bttn">Percentages</button>
                     <button class="group-percentages-bttn">Group Percentages</button>
                 </div>
-                <div class="percentages">
+                <div id="chart-wrap">
                     <div id="piechart"></div>
-                    <p> aici intra piechart ul</p>
+                    <button class="save-bttn">Save your preferences</button>
                 </div>
             </div>
 
