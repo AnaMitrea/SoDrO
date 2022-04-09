@@ -1,0 +1,36 @@
+/* CSS HEX */
+--ebony-clay: #232d36;
+--pearl-bush: #ede4dc;
+--burnt-sienna: #ef895d;
+--matrix: #b45760;
+--mongoose: #b49b83;
+--aqua-forest: #5a9f7d;
+--summer-green: #98b5ab;
+--soft-amber: #cabcae;
+--oriental-pink: #c59ea8;
+
+    
+/* SCSS HEX */
+$ebony-clay: #232d36;
+$pearl-bush: #ede4dc;
+$burnt-sienna: #ef895d;
+$matrix: #b45760;
+$mongoose: #b49b83;
+$aqua-forest: #5a9f7d;
+$summer-green: #98b5ab;
+$soft-amber: #cabcae;
+$oriental-pink: #c59ea8;
+
+
+/* SCSS RGB */
+--ebony-clay: rgba(35,45,54,1);
+--pearl-bush: rgba(237,228,220,1);
+--burnt-sienna: rgba(239,137,93,1);
+--matrix: rgba(180,87,96,1);
+--mongoose: rgba(180,155,131,1);
+--aqua-forest: rgba(90,159,125,1);
+--summer-green: rgba(152,181,171,1);
+--soft-amber: rgba(202,188,174,1);
+--oriental-pink: rgba(197,158,168,1);
+
+
