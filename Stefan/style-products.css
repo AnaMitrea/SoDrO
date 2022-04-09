@@ -14,21 +14,13 @@ body{
     background-color: var(--pearl-bush);
     font-family:'Poppins',sans-serif;
     margin:0;
-<<<<<<< HEAD
-    padding: 0.5em 1em;    
-=======
     padding: 0.5em 1em 0 1em;   
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
 }
 
 .top-bar{
     left: 0;
     top: 0;
     height: 60px;
-<<<<<<< HEAD
-    /*background-color: var(--aqua-forest);*/
-=======
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
     display: flex;
     overflow: hidden;
     border-radius:0 0 10px 10px;
@@ -69,11 +61,7 @@ body{
     padding: 0.75em;
     border-radius: 30px;
     border-style: none;
-<<<<<<< HEAD
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-=======
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
   }
 
 #icon{
@@ -87,11 +75,6 @@ body{
     display: flex;
 }
 
-<<<<<<< HEAD
-.sort-list{
-    width:10em;
-    background-color:var(--mongoose);
-=======
 .shop{
     display: block;
     width: 80%;
@@ -142,34 +125,16 @@ body{
 .sort-list{
     width:15em;
     background-color:hsl(26, 42%, 83%);;
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
     margin: 0.75em;
     border-radius: 20px;
     text-align: center;
     height: auto;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
 .shop-list{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-<<<<<<< HEAD
-    width: 70%;
-    margin: 0.75em;
-}
-
-.product-cell{
-    height: 12em;
-    width: 200px;
-    border:1px solid #232d36;
-
-}
-
-=======
 }
 #categories{
     display: none;
@@ -271,55 +236,11 @@ body{
     color: var(--ebony-clay);
     border-radius: 10px;
   }
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
 
 .footer {
     left: 0;
     bottom: 0;
     height: 50px;
-<<<<<<< HEAD
-    width: 100vw;
-    background-color: var(--ebony-clay);
-    display: flex;
-    position: fixed;
-    border-radius:10px 10px 0 0;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 1em;  
-  }
-
-  @media only screen and (max-width: 760px){
-    .top-bar{
-        display: block; 
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        background-color:#c1ac98;
-    }
-    .list-items ,.search-container{
-        width: auto;
-        float: none;
-        margin: auto;
-    }
-
-    .search-container{
-        width: 50vw;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-    }
-    
-    #icon{
-        display:none;
-    }
-
-    #page-title{
-        display: none;
-    }
-
-  }
-=======
     background-color: var(--ebony-clay);
     display: flex;
     overflow: hidden;
@@ -470,4 +391,3 @@ body{
         }
 
   }
->>>>>>> 42807552a39dfdd2d6bc9ef25dc86cd4f3afd679
