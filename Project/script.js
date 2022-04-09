@@ -3,6 +3,7 @@ console.clear();
 const loginBtn = document.getElementById('login');
 const signupBtn = document.getElementById('signup');
 
+/* Login button - on click it slides up. When signup is pressed, login div slides down */
 loginBtn.addEventListener('click', (e) => {
 	let parent = e.target.parentNode.parentNode;
 	Array.from(e.target.parentNode.parentNode.classList).find((element) => {
