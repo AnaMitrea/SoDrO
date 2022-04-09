@@ -1,8 +1,3 @@
-De intrebat:
--
--  managementul preferintelor unui grup de persoane
--  documentatia (ce o sa contina)
-
 Pagina de conectare
 -
 - Utilizator
@@ -20,7 +15,7 @@ Baza de date din tabelele:
 
 Pagini:
 -
-- Login, creare cont        -> 1
+- Login, creare cont
   - https://codepen.io/shayanea/pen/eVMMgO   
   - https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/
 - home page
@@ -37,6 +32,17 @@ Pagini:
           - https://w3schools.unlockfuture.com/howto/howto_js_popup_chat.html
     - Produse pe categorii:
       - https://www.w3schools.com/howto/howto_css_mega_menu.asp
+- Administrator
+  - Whitelist user
+  - Remove user
+  - Add product
+  - Remove product
+  - Remove group
+
+- Contact
+  - Noi 
+  - Submit bug
+
 
 Color pallete
 -
