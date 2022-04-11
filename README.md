@@ -3,6 +3,7 @@
 Important
 -
 - Modal pentru user dashboard: https://codepen.io/anamitrea/pen/QWaBpLQ
+  - Pentru fiecare dintre butoanele change password, change email
 
 
 
