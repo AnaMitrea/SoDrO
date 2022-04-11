@@ -3,43 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>User Dashboard</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <link rel="stylesheet" href="../stylesheets/userDashboardStyle.css">
+    <script src="../scripts/piechartScript.js"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-                ['Soda', 'Products'],
-                ['Coca-Cola',     1],
-                ['Pepsi Max',     1],
-                ['Fanta',		  1],
-                ['Pepsi Lime',    1],
-                ['Sprite',        1]
-            ]);
-            var options = {
-                backgroundColor: 'transparent',
-                legend: {textStyle: {color: 'white', fontsize: 20}},
-                title: 'Your Soda Preferences',
-                titleTextStyle: { color: 'white', fontsize: 20},
-                colors: ['#b45760', '#ef895d', '#c59ea8', '#cabcae', '#f6c7b6'],
-                is3D: true
-            };
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            chart.draw(data, options);
-        }
-        $(window).on("throttledresize", function (event) {
-            var options = {
-                width: 'auto',
-                height: 'auto'
-            };
 
-            var data = google.visualization.arrayToDataTable([]);
-            drawChart(data, options);
-        });
-    </script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 <div class="top-bar">
@@ -69,7 +37,7 @@
 <div class="dashboard-structor">
     <div class="user">
         <div class="profile-img">
-            <img src="images/profile.jpg" alt="Avatar">
+            <img src="../images/profile.jpg" alt="Avatar">
         </div>
 
         <div class="user-description">
