@@ -8,7 +8,7 @@ function drawChart() {
         ['Pepsi Max',     1],
         ['Fanta',		  1],
         ['Pepsi Lime',    1],
-        ['Sprite',        1]
+        ['Others',        1]
     ]);
     var options = {
         backgroundColor: 'transparent',

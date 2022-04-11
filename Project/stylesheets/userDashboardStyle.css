@@ -17,17 +17,12 @@
 
 
 /* TODO De schimbat pt login */
-html, body {
-  position: relative;
+body {
   min-height: 100vh;
-  background-color: var(--pearl-bush);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--pearl-bush);
+  margin:0;
+  padding: 0.5em 1em 0 1em;
 }
 
 /* --------------- Ana --------------- */
@@ -41,7 +36,7 @@ html, body {
   box-sizing: border-box;
   justify-content: left;
   align-items: center;
-  border: 1px solid black;
+  margin-bottom: 2vh;
 }
 
 /* Icon + Brand name */
@@ -128,10 +123,11 @@ html, body {
 /* Profile Dashboard */
 .dashboard-structor {
   display: flex;
+  justify-content: center;
   width: 90vw;
   height: auto;
-  min-height: 80vh;
-  margin-top: 10vh;
+  min-height: 75vh;
+  margin: 0 auto;
   background-color: rgba(180,155,131,0.1);
   border-radius: 30px;
 }
@@ -144,6 +140,7 @@ html, body {
   padding: 38px;
   text-align: center;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 /*Profile image*/
