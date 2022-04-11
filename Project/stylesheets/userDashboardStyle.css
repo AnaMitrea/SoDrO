@@ -117,6 +117,11 @@ body {
   padding: 10px;
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
 /* Profile Dashboard */
 .dashboard-structor {
   display: flex;
@@ -391,20 +396,19 @@ body {
   font-size: 1em;
 }
 
-
 /* Footer */
 .bottom-bar{
-  position: relative;
-  padding-bottom: 0;
-  margin-top: 2em;
-  margin-bottom: -200px;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
   background-color: var(--ebony-clay);
   display: flex;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-bar .logo-icon-bottom .iconify {
@@ -424,6 +428,7 @@ body {
   margin: auto;
   font-size: 1em;
 }
+
 .list-items-bottom a{
   width: 30vw;
   text-decoration: none;
