@@ -162,29 +162,29 @@ body {
   height: auto;
   min-height: 40vh;
   width: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
 }
 
 .dashboard-structor .user .user-description p{
   text-align: center;
   text-decoration: none;
   color:var(--ebony-clay);
-  padding: .5em 1em;
+  padding: 5%;
+  margin-bottom: 5%;
   font-size: 1em;
   width: 80%;
-}
-
-.dashboard-structor .user .user-description a {
-  text-align: center;
-  text-decoration: none;
-  width: 80%;
-  font-size: 1em;
 }
 
 .dashboard-structor .user .user-description .group-button{
   background: #39424A;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  padding: 5% 17% 5% 17%;
+  padding: 5% 17%;
+  margin-bottom: 5%;
   cursor: pointer;
   color: #ffffff;
   font-size: 0.8em;
@@ -195,14 +195,17 @@ body {
   background: var(--ebony-clay);
 }
 
+/* TODO -  Modal for buttons */
+
+
 
 /* Top Change email button */
+
 .dashboard-structor .user .user-description .change-email{
   background: #39424A;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px 20px 0px 0px;
-  margin: 5vh 1vh 1vh;
-  padding: 5% 17% 5% 17%;
+  padding: 5% 17%;
   cursor: pointer;
   color: #ffffff;
   font-size: 0.8em;
@@ -213,15 +216,13 @@ body {
   background: var(--ebony-clay);
 }
 
-/* ------ Change email modal ------*/
-
 /* Bottom Change password button */
 .dashboard-structor .user .user-description .change-password{
   background: #39424A;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 20px 20px;
-  margin: 1vh 1vh;
-  padding: 3% 10% 3% 10%;
+  margin: 0 1vh;
+  padding: 3% 10%;
   cursor: pointer;
   color: #ffffff;
   font-size: 0.8em;
