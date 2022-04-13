@@ -16,22 +16,82 @@
   --bizzare: #e9dcd1;
 }
 
-
-/* TODO De schimbat pt login */
-html, body {
-  position: relative;
+body {
+  overflow-y: hidden;
   min-height: 100vh;
   background-color: var(--pearl-bush);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.animations {
+  width: 70%;
+  margin: 0;
+}
+
+#page-title{
+  color: var(--ebony-clay);
+  font-family: 'Jolly Lodger', serif;
+  letter-spacing: 3px;
+  font-size: 8em;
+  line-height: 1.00;
+  margin-left: 10%;
+}
+
+#page-title.slide-bottom-title {
+  animation: slide-bottom-title 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-bottom-title {
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(-60px);
+  }
+}
+
+#motto {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--aqua-forest);
+  align-self: center;
+  margin-top: -10%;
+  margin-left: 20%;
+}
+
+#motto.slide-bottom-motto{
+  animation: slide-bottom-motto 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes slide-bottom-motto {
+  0% {
+    transform: translateY(-800px);
+  }
+  100% {
+    transform: translateY(-60px);
+  }
+}
+
+#beverage-icons .animation-table {
+  width: 400px;
+  height: 400px;
+  padding-left: 10%;
+  bottom: 0;
 }
 
 .form-structor {
+  margin: 0 auto;
+  float: right;
   background-color: #222;
   box-shadow: 0px 2px 25px var(--mongoose);
   border-radius: 15px;
@@ -329,3 +389,15 @@ html, body {
            0 2px 4px rgba(0, 0, 0, .25),
            0 0 0 3px #c8dafc;
  }
+
+
+@media only screen and (max-width: 1356px){
+  .animations {
+    width: 100%;
+    min-height: 1vh;
+  }
+
+  #beverage-icons {
+    display: none;
+  }
+}
