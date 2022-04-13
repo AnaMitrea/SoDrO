@@ -13,6 +13,7 @@ body{
     background-color: var(--pearl-bush);
     font-family:'Poppins',sans-serif;
     margin:0;
+    height: 100vh;
 }
 .top-bar{
     position: relative;
@@ -22,19 +23,23 @@ body{
     display: flex;
     overflow: hidden;
     border-radius:0 0 10px 10px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0.5em 1em 0 1em;
 }
+
 .logo-icon{
-    font-size: 2vw;
+    font-size:2vw;
     padding: 0.2em 0.5em 0 0.5em;
     position: relative;
+    display: flex;
+
 }
 .logo-icon-bottom{
     font-size: 2vw;
     padding: 0.6em 0.5em 0 0.5em;
     position: relative;
+    display: flex;
 }
 .list-items{
     width: 50vw;
@@ -47,18 +52,20 @@ body{
 }
 .user-icon{
     font-size:2vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
 }
 #page-title{
     font-family:'Jolly Lodger';
     font-size: 3vw;
+    position: relative;
+    flex-direction: row;
+    justify-content: left;
 }
-@media screen and (max-width: 900px) {
-    .top-bar, .logo-icon, .user-icon .list-items .search-container .list-items .search-container .bottom-bar .list-items-bottom .body-trending .iconify .carbonated .carbonated-list
-    .carbonated-text .product-cell .image-product{
-        width: 100%;
-        position: relative;
-    }
-}
+
 .list-items a{
     width: 30vw;
     text-decoration: none;
@@ -71,6 +78,7 @@ body{
     margin-right: 2vw;
     float:right;
     position: relative;
+    justify-content: center;
 }
 
 .search-container input[type=search] {
@@ -81,6 +89,7 @@ body{
     border-style: none;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
+    justify-content: center;
 }
 
 .bottom-bar{
@@ -90,10 +99,9 @@ body{
     font-size:1.5vw;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    position: relative;
     margin-top: 2em;
-    bottom: 0;
     position: relative;
+    margin-bottom: 0;
 }
 .list-items-bottom{
     width: 50vw;
@@ -116,7 +124,7 @@ body{
 }
 .body-trending{
     width: 23vw;
-    bottom-margin:20px;
+    margin-bottom:20px;
 }
 .body-trending a{
     font-family:'Jolly Lodger';
@@ -144,39 +152,83 @@ body{
     position: relative;
     width: 93%;
 }
+.carbonated-text {
+    padding-top:0.7em;
+    font-size: 40px;
+    justify-content: center;
+
+}
 .carbonated-list{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     margin-left: 1em;
-    margin-bottom: 1em;
+    margin-bottom:3em;
+    margin-top:2em;
     width: 98%;
     position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
 }
 
 .product-cell{
     height: 14em;
     width: 13em;
-    margin: 5px;
+    margin: 15px;
     color:var(--ebony-clay);
     background-color:var(--aqua-forest);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
     text-align: center;
-    display: block;
     transition: color .3s ease-in-out,background-color .3s ease-in-out;
     position: relative;
-
 }
 
 .product-cell:hover{
     background-color: #188f53;
     color: rgb(0, 0, 0);
+
 }
 
 .product-cell p{
     margin:0;
     margin: 1px;
+}
+.cell-buttons{
+    transition: .5s ease;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.product-cell:hover .cell-buttons{
+    opacity: 1;
+}
+.product-cell:hover .image-product{
+    opacity: 0.2;
+}
+.cell-buttons > button{
+    padding: 10px;
+    width: 100px;
+    background-color: var(--pearl-bush);
+    border-radius: 20px;
+    border: none;
+    transition:background-color .2s ease-in-out;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cell-buttons button:last-child{
+    margin-top: 10px;
+}
+
+.cell-buttons > button:hover{
+    background-color:var(--burnt-sienna);
+    color: rgb(0, 0, 0);
+    opacity: 1;
 }
 
 .image-product{
@@ -184,7 +236,13 @@ body{
     height: 7em;
     width: 4em;
     position: relative;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+
 }
+
+
 .carbonated a{
     font-family:'Jolly Lodger';
     font-style: normal;
@@ -215,4 +273,232 @@ body{
     margin-left: 20px;
     border: 1px solid #000000;
     border-radius: 10px;
+}
+/*-----------Admin Page------------*/
+.admin-dashboard{
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.dashboard-structor {
+    display: flex;
+    width: 80vw;
+    height: auto;
+    min-height: 80vh;
+    margin-top: 10vh;
+    background-color: rgba(180,155,131,0.1);
+    border-radius: 30px;
+    margin-left:10vw;
+    position: relative;
+}
+
+.dashboard-structor .user {
+    display: flex;
+    width: 10vw;
+    height: auto;
+    border-right: 1px solid #B49B83;
+    padding: 38px;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+
+}
+
+/*Profile image*/
+.dashboard-structor .user .profile-img img{
+    width: 8vw;
+    border-radius: 50%;
+    background: url("images/profile.jpg");
+    object-fit: contain;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+
+}
+
+/* User description box */
+.dashboard-structor .user .user-description {
+    background-color: var(--soft-amber);
+    border-radius: 20px;
+    height: auto;
+    min-height: 40vh;
+    width: 10vw;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.dashboard-structor .user .user-description p{
+    text-align: center;
+    text-decoration: none;
+    color:var(--ebony-clay);
+    padding: .5em 1em;
+    font-size: 1em;
+    width: 80%;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.dashboard-structor .user .user-description a {
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    font-size: 1em;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+/* Top Change email button */
+.dashboard-structor .user .user-description .change-email{
+    background: #39424A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0px 0px;
+    margin: 10vh 1vh 1vh;
+    padding: 5% 17% 5% 17%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-decoration: none;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.dashboard-structor .user .user-description .change-email:hover{
+    background: var(--ebony-clay);
+}
+
+/* Bottom Change password button */
+.dashboard-structor .user .user-description .change-password{
+    background: #39424A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+    margin: 1vh 1vh;
+    padding: 3% 10% 3% 10%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-decoration: none;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+.dashboard-structor .user .user-description .change-password:hover{
+    background: var(--ebony-clay);
+}
+.admin-bottom-bar{
+    width: 100%;
+    background-color: #232d36;
+    display: flex;
+    font-size:1.5vw;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: relative;
+    margin-top: 2em;
+    height:20px;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+.dashboard-structor .admin-box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 38px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+/* Line under title */
+.admin-box hr {
+    display: block;
+    border: 1px solid #B49B83;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+
+/* Preferences */
+.dashboard-structor .admin-box .options-box {
+    display: flex;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: #39424A;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin: 0.5em;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.options-frame {
+    background: #B45760;
+    border-radius: 10px;
+    width: 20%;
+    height: 80%;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+
+
+}
+.options-frame .icon-frame{
+    padding-top: 1.5em;
+    padding-left: 1.5em;
+    width: 70%;
+    height: 35%;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+
+}
+.options-frame .options-text{
+    color:white;
+    text-align: center;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+.options-box .top-options{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 1em;
+    margin-bottom:3em;
+    margin-top:1em;
+    width: 98%;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+.options-box .bottom-options{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 1em;
+    margin-bottom:2em;
+    margin-top:1em;
+    width: 98%;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
 }
