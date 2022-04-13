@@ -30,7 +30,8 @@ body {
 }
 
 .animations {
-  width: 60%;
+  width: 55%;
+  min-height: 95vh;
   margin: 0;
 }
 
@@ -82,11 +83,15 @@ body {
   }
 }
 
+#beverage-icons {
+  position: absolute;
+  bottom: 0;
+}
+
 #beverage-icons .animation-table {
   width: 400px;
-  height: 400px;
+  height: 390px;
   padding-left: 10%;
-  bottom: 0;
 }
 
 .form-structor {
@@ -391,13 +396,55 @@ body {
  }
 
 
-@media only screen and (max-width: 1356px){
-  .animations {
-    width: 100%;
-    min-height: 1vh;
-  }
 
+@media only screen and (max-width: 1356px), (max-height: 692px){
   #beverage-icons {
     display: none;
+  }
+
+  .animation-table {
+    display: none;
+  }
+
+  body {
+    overflow-y: visible;
+    min-height: 100vh;
+    background-color: var(--pearl-bush);
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+  }
+
+  .animations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #page-title{
+    color: var(--ebony-clay);
+    font-family: 'Jolly Lodger', serif;
+    letter-spacing: 3px;
+    font-size: 7em;
+    line-height: 1.00;
+    margin: 0;
+    padding: 0;
+  }
+
+  #motto {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--aqua-forest);
+    margin: 0;
+    padding: 0;
   }
 }
