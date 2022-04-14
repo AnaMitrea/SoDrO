@@ -23,6 +23,7 @@ Important
   - [Link catre Google Docs](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
   - TODO: 
     - Diagrame pt workflow
+      - [Link catre Diagrame](https://drive.google.com/file/d/1NGb63_7A5tcBbludx_GAKAUkzINydGFb/view?usp=sharing) 
     - Descriere pe partea de backend
 - Pagina de produs
 - Modal de tip pop-up pentru user dashboard
