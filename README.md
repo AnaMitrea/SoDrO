@@ -19,7 +19,8 @@
 3) [Change Password Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/change-psswd.html)
 4) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
 5) Flowchart Login Page
-6) Flowchart User Dashboard
+6) Flowchart Types of Persons on web project
+7) Flowchart User Dashboard
 
 Important
 -
