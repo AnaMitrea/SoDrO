@@ -3,7 +3,8 @@
 * Arnautu Stefan:
 1) [Products Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/products.html)
 2) Single Product Page
-3) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
+3) [Footer Pages](https://github.com/AnaMitrea/SoDrO/tree/frontend/footer-pages)
+4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 
 * Iosub George:
 1) [Admin Dashboard](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/admin.html)
