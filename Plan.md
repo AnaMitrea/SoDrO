@@ -16,7 +16,7 @@ Baza de date din tabelele:
 Pagini:
 -
 - Login, creare cont
-  - https://codepen.io/shayanea/pen/eVMMgO   
+  - TODO: Mockup
   - https://www.javascripttutorial.net/javascript-dom/javascript-toggle-password-visibility/
 - home page
   - https://dribbble.com/shots/15764131-Starbucks-Website-concept
@@ -41,7 +41,7 @@ Pagini:
 
 - Contact
   - Noi 
-  - Submit bug
+  - Submit bug (Maybe??)
 
 
 Color pallete
