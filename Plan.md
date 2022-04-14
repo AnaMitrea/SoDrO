@@ -1,9 +1,8 @@
 Pagina de conectare
 -
-- Utilizator
-- Administrator
+- Utilizator (+ Administrator)
 - login, creare cont
-+ baza de date cu utilizatori
+=> o baza de date cu utilizatori
 
 
 Baza de date din tabelele:
