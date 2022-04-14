@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Login/Sign in</title>
-  <link rel="stylesheet" href="./style.css">
+  	<meta charset="UTF-8">
+  	<title>Login/Sign in</title>
+  	<link rel="stylesheet" href="../stylesheets/loginStyle.css">
 </head>
 <body>
+
+<div class="animations">
+	<div id="page-title" class="slide-bottom-title">
+		<p>SoftDrinks</p>
+	</div>
+	<div id="motto" class="slide-bottom-motto">
+		<p>The drinks that bring out the best in you</p>
+	</div>
+	<div id="beverage-icons">
+		<img class="animation-table" src="../images/beverage_icons/tableAnimation.gif" alt="table image">
+	</div>
+</div>
 <!-- Login/Sign in form -->
 <div class="form-structor">
 	<div class="signup">
@@ -27,12 +39,16 @@
 				<input type="password" class="input" placeholder="Password" />
 			</div>
 			<button class="submit-btn">Log in</button>
+
+			<button type="button" class="login-with-google-btn" >
+				Sign in with Google
+			</button>
 		</div>
 	</div>
 </div>
 
-<!-- Script -->	
-<script  src="./script.js"></script>
+<!-- Script  -->
+<script src="../scripts/loginScript.js"></script>
 
 </body>
 </html>
