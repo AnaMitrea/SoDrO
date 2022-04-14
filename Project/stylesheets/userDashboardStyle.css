@@ -1,5 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
 @import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
+
+/* 
+Title font: font-family: 'Jolly Lodger', serif;
+Text Font:  font-family:'Poppins',sans-serif;
+*/
 
 :root {
   --ebony-clay: #232d36;
@@ -16,7 +20,7 @@
 }
 
 body {
-  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+  font-family:'Poppins',sans-serif;
   background-color: var(--pearl-bush);
   margin: 0;
 }
@@ -66,6 +70,7 @@ body {
 }
 
 .top-bar .list-items a {
+  font-family:'Poppins',sans-serif;
   text-align: center;
   width: 30vw;
   text-decoration: none;
@@ -124,6 +129,7 @@ body {
 
 /* Profile Dashboard */
 .dashboard-structor {
+  font-family:'Poppins',sans-serif;
   display: flex;
   justify-content: center;
   width: 90vw;
