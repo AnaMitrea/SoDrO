@@ -396,7 +396,7 @@ body {
  }
 
 
-
+/* Dispare imaginea */
 @media only screen and (max-width: 1356px), (max-height: 692px){
   #beverage-icons {
     display: none;
