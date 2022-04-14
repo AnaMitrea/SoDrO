@@ -3,19 +3,19 @@
 * Arnautu Stefan:
 1) [Products Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/products.html)
 2) Single Product Page
-3) Login/SignUp Page
+3) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 
 * Iosub George:
-1) Admin Dashboard
-2) Trending Page
-3) "See more..." pentru Trending Page
-4) Login/SignUp Page
+1) [Admin Dashboard](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/admin.html)
+2) [Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/trending.html)
+3) ["See more..." Carbonated Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/seeMore-Carbonated.html)
+4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 
 
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page
-2) Login/SignUp Page
-3) User Dashboard
+2) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
+3) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
 4) Flowchart Login Page
 5) Flowchart User Dashboard
 
