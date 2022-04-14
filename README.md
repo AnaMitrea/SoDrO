@@ -1,7 +1,7 @@
 # SoDrO Frontend Branch
 
 * Arnautu Stefan:
-1) Products Page
+1) [Products Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/products.html)
 2) Single Product Page
 3) Login/SignUp Page
 
