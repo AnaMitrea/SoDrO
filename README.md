@@ -27,9 +27,16 @@ Important
     - Diagrame pt workflow
       - [Link catre Diagrame](https://drive.google.com/file/d/1NGb63_7A5tcBbludx_GAKAUkzINydGFb/view?usp=sharing) 
     - Descriere pe partea de backend
+
+TO DO:
+- 
 - Pagina de produs
+- Revizuit fonturile folosite la fiecare pagina
+- Pus la fiecare pagina acelasi TOP BAR
+- Pus la fiecare pagina acelasi FOOTER
 - Modal de tip pop-up pentru user dashboard
-  - Pentru fiecare dintre butoanele change password, change email
+  - Pentru fiecare dintre butoanele change password, change email\
+
 
 Baza de date
 -
