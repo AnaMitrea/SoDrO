@@ -16,9 +16,10 @@
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page
 2) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
-3) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
-4) Flowchart Login Page
-5) Flowchart User Dashboard
+3) [Change Password Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/change-psswd.html)
+4) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
+5) Flowchart Login Page
+6) Flowchart User Dashboard
 
 Important
 -
