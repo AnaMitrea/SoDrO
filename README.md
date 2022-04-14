@@ -1,4 +1,4 @@
-# SoDrO
+# SoDrO Frontend Branch
 
 * Arnautu Stefan:
 1) Products Page
