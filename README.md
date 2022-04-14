@@ -1,9 +1,21 @@
 # SoDrO
 
+* Arnautu Stefan:
+1) Products Page
+2) Single Product Page
+3) Login/SignUp Page
+
+* Iosub George:
+1) Admin Dashboard
+2) Trending Page
+3) "See more..." pentru Trending Page
+4) Login/SignUp Page
+
+
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page
-2) User Dashboard
-
+2) Login/SignUp Page
+3) User Dashboard
 
 Important
 -
