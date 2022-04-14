@@ -28,7 +28,7 @@ Important
   - TODO: 
     - Screenshots la Pagini 
     - Diagrame pt workflow
-      - [Link catre Diagrame](https://drive.google.com/file/d/1NGb63_7A5tcBbludx_GAKAUkzINydGFb/view?usp=sharing) 
+      - [Link catre Diagrame](https://app.diagrams.net/#G1NGb63_7A5tcBbludx_GAKAUkzINydGFb) 
     - Descriere pe partea de backend
 
 TO DO:
