@@ -20,7 +20,7 @@
 Important
 -
 - Raportul
-  - [a Link catre Google Docs](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
+  - [Link catre Google Docs](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
   - TODO: 
     - Diagrame pt workflow
     - Descriere pe partea de backend
