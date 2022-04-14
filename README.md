@@ -14,12 +14,12 @@
 
 
 * Mitrea Ana Maria :
-1) Design Login/SignUp Page
+1) Design Login/SignUp Page / Change Password Page
 2) Mockup Recipe Page
 3) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 4) [Change Password Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/change-psswd.html)
 5) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
-6) Flowchart Login Page
+6) Flowchart Login/SignUp Page / Change Password Page
 7) Flowchart Types of Persons on web project
 8) Flowchart User Dashboard
 
