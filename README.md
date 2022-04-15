@@ -47,6 +47,7 @@ Baza de date
 -
 - Open Food Facts API
   - API: https://wiki.openfoodfacts.org/API 
+    - Documentation: https://openfoodfacts.github.io/api-documentation/ 
   - BD: https://world.openfoodfacts.org/data
 
 Mockup Pages (Figma)
