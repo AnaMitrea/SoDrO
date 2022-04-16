@@ -30,7 +30,7 @@ body{
     margin-bottom:20px;
 }
 .body-trending a{
-    font-family:'Jolly Lodger';
+    font-family: 'Jolly Lodger', serif;
     font-style: normal;
     font-size: 3vw;
     position: relative;
