@@ -1,0 +1,15 @@
+.middle #title-name{
+    text-align: center;
+    align-self: center;
+    padding: 0.5em;
+    font-size: 60px;
+    font-weight: 900;
+}
+.middle{
+    padding: 0 4em 2em 4em;
+    height: auto;
+}
+
+.middle p{
+    text-indent: 40px;
+}
