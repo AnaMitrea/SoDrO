@@ -1,0 +1,31 @@
+.middle #title-name{
+    text-align: center;
+    align-self: center;
+    padding: 0.5em;
+    font-size: 60px;
+    font-weight: 900;
+}
+.middle{
+    padding: 0 3em 2em 3em;
+    height: auto;
+}
+
+.middle p{
+    text-indent: 40px;
+    padding-left: 30px;
+}
+
+pre {
+    font-family: Verdana, "Bitstream Vera Sans", Geneva, sans-serif;
+  }
+
+.middle .punct{
+    background-color: #e0c7b4;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 30px;
+}
+
+.middle .lists{
+    padding-left: 100px;
+}
