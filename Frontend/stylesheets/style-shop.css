@@ -67,8 +67,10 @@ body{
 #icon{
     width: 50px;
     height: auto;
-    padding: auto;
-
+}
+#profile-picture{
+    width: 40px;
+    height: auto;
 }
 
 .middle{
@@ -89,7 +91,6 @@ body{
 .sort-by-title{
     width: 200px;
     background-color:hsl(26, 42%, 83%);;
-    border-radius: 0px;
     margin-top: 0.75em;  
     border: none; 
     padding: 0.5em;
