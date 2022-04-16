@@ -26,17 +26,16 @@ body{
 }
 
 .body-trending{
-    width: 23vw;
+    width: 40em;
     margin-bottom:20px;
 }
 .body-trending a{
     font-family:'Jolly Lodger';
-    font-style: normal;
-    font-size: 3vw;
-    position: relative;
+    font-size: 1.3em;
     padding-left: 0.5em;
     text-decoration: none;
     color:black;
+
 
 }
 .body-trending:hover{
@@ -46,25 +45,24 @@ body{
     margin-left: 20px;
 }
 .trending_icon{
-    font-size:3vw;
+    font-size:3em;
 }
 .carbonated{
     background-color: rgba(202, 188, 174, 0.7);
     margin-left: 3.5em;
+    margin-bottom:2em;
     border-radius: 20px;
     position: relative;
     width: 93%;
 }
 .carbonated-text {
     padding-top:0.7em;
-    font-size: 40px;
+    font-size: 1.5em;
     justify-content: center;
 
 }
 .carbonated-list{
-    display: flex;
     flex-direction: row;
-    align-items: flex-start;
     margin-left: 1em;
     margin-bottom:3em;
     margin-top:2em;
@@ -72,6 +70,8 @@ body{
     position: relative;
     flex-wrap: wrap;
     flex-grow: 0;
+    display: flex;
+    align-items: flex-start;
 }
 
 .product-cell{
@@ -95,7 +95,7 @@ body{
 
 .product-cell p{
     margin:0;
-    margin: 1px;
+
 }
 .cell-buttons{
     transition: .5s ease;
@@ -149,7 +149,7 @@ body{
 .carbonated a{
     font-family:'Jolly Lodger';
     font-style: normal;
-    font-size: 2.2vw;
+    font-size: 1.5em;
     padding-left: 0.5em;
     position: relative;
     color:black;
@@ -176,232 +176,4 @@ body{
     margin-left: 20px;
     border: 1px solid #000000;
     border-radius: 10px;
-}
-/*-----------Admin Page------------*/
-.admin-dashboard{
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-.dashboard-structor {
-    display: flex;
-    width: 80vw;
-    height: auto;
-    min-height: 80vh;
-    margin-top: 10vh;
-    background-color: rgba(180,155,131,0.1);
-    border-radius: 30px;
-    margin-left:10vw;
-    position: relative;
-}
-
-.dashboard-structor .user {
-    display: flex;
-    width: 10vw;
-    height: auto;
-    border-right: 1px solid #B49B83;
-    padding: 38px;
-    text-align: center;
-    flex-direction: column;
-    position: relative;
-
-}
-
-/*Profile image*/
-.dashboard-structor .user .profile-img img{
-    width: 8vw;
-    border-radius: 50%;
-    background: url("images/profile.jpg");
-    object-fit: contain;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-bottom: 50px;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-
-}
-
-/* User description box */
-.dashboard-structor .user .user-description {
-    background-color: var(--soft-amber);
-    border-radius: 20px;
-    height: auto;
-    min-height: 40vh;
-    width: 10vw;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-.dashboard-structor .user .user-description p{
-    text-align: center;
-    text-decoration: none;
-    color:var(--ebony-clay);
-    padding: .5em 1em;
-    font-size: 1em;
-    width: 80%;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-.dashboard-structor .user .user-description a {
-    text-align: center;
-    text-decoration: none;
-    width: 80%;
-    font-size: 1em;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-/* Top Change email button */
-.dashboard-structor .user .user-description .change-email{
-    background: #39424A;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px 20px 0px 0px;
-    margin: 10vh 1vh 1vh;
-    padding: 5% 17% 5% 17%;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 0.8em;
-    text-decoration: none;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-.dashboard-structor .user .user-description .change-email:hover{
-    background: var(--ebony-clay);
-}
-
-/* Bottom Change password button */
-.dashboard-structor .user .user-description .change-password{
-    background: #39424A;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 20px 20px;
-    margin: 1vh 1vh;
-    padding: 3% 10% 3% 10%;
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 0.8em;
-    text-decoration: none;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-.dashboard-structor .user .user-description .change-password:hover{
-    background: var(--ebony-clay);
-}
-.admin-bottom-bar{
-    width: 100%;
-    background-color: #232d36;
-    display: flex;
-    font-size:1.5vw;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    position: relative;
-    margin-top: 2em;
-    height:20px;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-.dashboard-structor .admin-box {
-    display: flex;
-    width: 100%;
-    height: auto;
-    padding: 38px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-/* Line under title */
-.admin-box hr {
-    display: block;
-    border: 1px solid #B49B83;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-
-/* Preferences */
-.dashboard-structor .admin-box .options-box {
-    display: flex;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    background: #39424A;
-    width: 100%;
-    height: auto;
-    padding: 30px;
-    margin: 0.5em;
-    border-radius: 20px;
-    box-sizing: border-box;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-}
-.options-frame {
-    background: #B45760;
-    border-radius: 10px;
-    width: 20%;
-    height: 80%;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-
-
-}
-.options-frame .icon-frame{
-    padding-top: 1.5em;
-    padding-left: 1.5em;
-    width: 70%;
-    height: 35%;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-    display: flex;
-    flex-direction: row;
-
-}
-.options-frame .options-text{
-    color:white;
-    text-align: center;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-.options-box .top-options{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-left: 1em;
-    margin-bottom:3em;
-    margin-top:1em;
-    width: 98%;
-    justify-content: space-around;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
-}
-.options-box .bottom-options{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-left: 1em;
-    margin-bottom:2em;
-    margin-top:1em;
-    width: 98%;
-    justify-content: space-around;
-    position: relative;
-    flex-wrap: wrap;
-    flex-grow: 0;
 }
