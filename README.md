@@ -22,6 +22,7 @@
 6) Flowchart Login/SignUp Page / Change Password Page
 7) Flowchart Types of Persons on web project
 8) Flowchart User Dashboard
+9) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
 
 Important
 -
