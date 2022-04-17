@@ -20,6 +20,8 @@
         <div id="page-title">
             <p>SoftDrinks</p>
         </div>
+
+        <!-- Responsive top bar  -->
         <div class="shop-list-icon">
             <span class="iconify" data-icon="bx:list-ul"></span>
             <div class="list-items-responsive">
@@ -47,6 +49,7 @@
         </div>
     </div>
     </div>
+
     <div class="page-container">
         <div class="dashboard-structor">
             <div class="user">
@@ -63,9 +66,8 @@
                 </div>
             </div>
 
-            <!--  Responsive Open nav bar -->
-            <span id="span-openUser-btn"  onclick="openNav()">&#9776; View Account</span>
-
+            <!--  Responsive Open nav bar with account info-->
+            <span id="span-openUser-btn"  onclick="openNav()">&#9776; View Profile Information</span>
             <!-- Preferences and Shopping List -->
             <div class="account-information">
                 <div class="account-preferences">
@@ -141,8 +143,20 @@
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <a href="#">About</a>
+            <!-- <a href="#">About</a> -->
+            <div class="user">
+                <div class="profile-img">
+                    <img src="../images/user/profile.jpg" alt="Avatar">
+                </div>
 
+                <div class="user-description">
+                    <p>Your Name</p>
+                    <p>Your Username</p>
+                    <button class="group-button">Your Group</button>
+                    <button class="change-email">Change Email</button>
+                    <button class="change-password">Change Password</button>
+                </div>
+            </div>
         </div>
     </div>
 

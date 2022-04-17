@@ -329,6 +329,14 @@ Text Font:  font-family:'Poppins',sans-serif;
   display: none;
 }
 
+.overlay .overlay-content .user {
+  display: none;
+}
+
+.overlay .closebtn {
+  display: none;
+}
+
 @media only screen and (max-width: 485px) {
   /* Preferences */
   .dashboard-structor .account-information .account-preferences {
@@ -388,12 +396,26 @@ Text Font:  font-family:'Poppins',sans-serif;
     flex-direction: column;
   }
 
+  .account-preferences .preference-information .category-form .col-25 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 1.2em;
+  }
+
+  .account-preferences .preference-information .category-form .col-75 {
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 2em;
+  }
+
   /* Shopping List icon*/
   .dashboard-structor .account-information .account-shopping-list h1 .iconify{
     display: none;
   }
 
-  /* Fullscreen overlay navbar */
+  /* ------- Fullscreen overlay navbar ------- */
   .page-container .dashboard-structor #span-openUser-btn {
     display: block;
     font-size: 1.5em;
@@ -424,13 +446,76 @@ Text Font:  font-family:'Poppins',sans-serif;
     margin-top: 30px;
   }
 
-  .overlay a {
+  .overlay .overlay-content .user {
+    display: block;
+  }
+
+  .overlay .user {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s;
+  }
+
+  .overlay .user .profile-img img{
+    width: 50%;
+    border-radius: 50%;
+    background: url("../images/user/profile.jpg");
+    object-fit: contain;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+  }
+
+  .overlay .user .user-description .group-button{
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    color: black;
+    font-size: 0.8em;
+    text-decoration: none;
+  }
+
+  .overlay .user .user-description .group-button:hover{
+    background: var(--ebony-clay);
+  }
+
+  /* Top Change email button */
+  .overlay .user .user-description .change-email{
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 5%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    color: black;
+    font-size: 0.8em;
+    text-decoration: none;
+  }
+
+  .overlay .user .user-description .change-email:hover{
+    background: var(--ebony-clay);
+  }
+
+  /* Bottom Change password button */
+  .overlay .user .user-description .change-password{
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: 0 1vh;
+    padding: 3% 10%;
+    cursor: pointer;
+    color: black;
+    font-size: 0.8em;
+    text-decoration: none;
+  }
+
+  .overlay .user .user-description .change-password:hover{
+    background: var(--ebony-clay);
   }
 
   .overlay a:hover, .overlay a:focus {
@@ -438,9 +523,11 @@ Text Font:  font-family:'Poppins',sans-serif;
   }
 
   .overlay .closebtn {
+    display: inline;
     position: absolute;
     top: 20px;
     right: 45px;
     font-size: 60px;
+    color: white;
   }
 }
