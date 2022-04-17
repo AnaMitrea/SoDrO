@@ -5,13 +5,15 @@
 2) Single Product Page
 3) [Footer Pages](https://github.com/AnaMitrea/SoDrO/tree/frontend/footer-pages)
 4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
+5) Content raport
+6) Html Raport
 
 * Iosub George:
 1) [Admin Dashboard](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/admin.html)
 2) [Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/trending.html)
 3) ["See more..." Carbonated Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/seeMore-Carbonated.html)
 4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
-
+5) Content Raport
 
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page / Change Password Page
