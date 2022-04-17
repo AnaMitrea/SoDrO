@@ -309,6 +309,7 @@ Text Font:  font-family:'Poppins',sans-serif;
   border-radius: 20px;
   text-align: left;
   display: block;
+  box-sizing: border-box;
 }
 
 .dashboard-structor .account-information .account-shopping-list h1{
@@ -322,6 +323,10 @@ Text Font:  font-family:'Poppins',sans-serif;
 .dashboard-structor .account-information .account-shopping-list .iconify{
   color: #ffffff;
   font-size: 1em;
+}
+
+.page-container .dashboard-structor #span-openUser-btn {
+  display: none;
 }
 
 @media only screen and (max-width: 485px) {
@@ -339,22 +344,103 @@ Text Font:  font-family:'Poppins',sans-serif;
     box-sizing: border-box;
   }
 
+  /* The whole shopping list */
   .dashboard-structor .account-information .account-shopping-list {
     display: none;
   }
 }
 
 @media only screen and (max-width: 950px) {
+  .dashboard-structor {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .dashboard-structor .account-information {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-structor .account-information .account-preferences {
+    width: 100%;
+    padding: 30px;
+    margin: 0 0.5em 0.5em 0.5em;
+    box-sizing: border-box;
+  }
+
+  .dashboard-structor .account-information .account-shopping-list {
+    width: 100%;
+    padding: 30px;
+    margin: 0.5em;
+    box-sizing: border-box;
+  }
+
+  /* The whole user info Div */
   .dashboard-structor .user {
     display: none;
   }
 
+  /* Preferences Form into columns flex box */
   .account-preferences .preference-information .category-form .form-row{
     display: flex;
     flex-direction: column;
   }
 
+  /* Shopping List icon*/
   .dashboard-structor .account-information .account-shopping-list h1 .iconify{
     display: none;
+  }
+
+  /* Fullscreen overlay navbar */
+  .page-container .dashboard-structor #span-openUser-btn {
+    display: block;
+    font-size: 1.5em;
+    font-family:'Poppins',sans-serif;
+    margin-top: 15px;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
   }
 }
