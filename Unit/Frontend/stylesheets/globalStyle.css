@@ -27,6 +27,7 @@
         border-radius:0 0 10px 10px;
         justify-content: center;
         align-items: center;
+        margin-bottom: 0.5em;
     }
     
     
@@ -70,8 +71,9 @@
         border-style: none;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
       }
-    
-    #icon{
+
+/*noinspection ALL*/
+#icon{
         width: 50px;
         height: auto;
         padding: auto;
@@ -89,7 +91,6 @@
         border-radius: 20px;
         margin:2em 4em 2em 4em;
         width: auto;
-        height: 90vh;
         height: auto;
     }
     
