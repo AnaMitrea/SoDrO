@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
-
 /*
 Title font: font-family: 'Jolly Lodger', serif;
 Text Font:  font-family:'Poppins',sans-serif;
@@ -87,7 +85,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 
 .dashboard-structor .user .user-description .group-button{
   background: #39424A;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 5% 17%;
   margin-bottom: 5%;
@@ -233,7 +231,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .percentages-structor .buttons .user-percentages-bttn{
   background: #39424A;
   border: 1px solid #B49B83;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px 20px 0 0;
   min-width: 10vw;
   min-height: 4vh;
   text-align: center;
@@ -250,7 +248,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .percentages-structor .buttons .group-percentages-bttn{
   background: #39424A;
   border: 1px solid #B49B83;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px 20px 0 0;
   min-width: 10vw;
   min-height: 4vh;
   text-align: center;
@@ -267,7 +265,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .dashboard-structor .account-information .account-preferences .percentages-structor #chart-wrap {
   border: 1px solid #B49B83;
   box-sizing: border-box;
-  border-radius: 0px 0px 40px 40px;
+  border-radius: 0 0 40px 40px;
   height: auto;
   width: 100%;
 }
@@ -285,7 +283,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 
 #chart-wrap .save-bttn {
   background: var(--summer-green);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: 1vh 1vh;
   padding: 2% 4%;
@@ -470,7 +468,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 
   .overlay .user .user-description .group-button{
     background: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     padding: 5%;
     margin-bottom: 5%;
