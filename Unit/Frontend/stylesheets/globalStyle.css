@@ -4,8 +4,6 @@
 Title font: font-family: 'Jolly Lodger', serif;
 Text Font:  font-family:'Poppins',sans-serif;
 */
-
-
 :root{
     --ebony-clay: #232d36;
     --pearl-bush: #ede4dc;
@@ -35,7 +33,7 @@ body{
     border-radius:0 0 10px 10px;
     justify-content: center;
     align-items: center;
-    margin: 0 20px 20px 20px;
+    margin-bottom: 0.5em;
 }
 
 
@@ -48,7 +46,7 @@ body{
 }
 
 #page-title{
-    font-family: 'Jolly Lodger', serif;
+    font-family:'Jolly Lodger', sans-serif;
     font-size: 2em;
 }
 
@@ -78,12 +76,14 @@ body{
     border-radius: 30px;
     border-style: none;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
-}
+  }
 
 /*noinspection ALL*/
 #icon{
     width: 30px;
     height: auto;
+    padding: auto;
+
 }
 
 #profile-picture{
@@ -113,7 +113,13 @@ body{
     position: absolute;
 }
 
-.top-bar .user-icon .iconify{
+.iconify{
+    display: inline;
+    height: 100%;
+    width: auto;
+}
+
+.top-bar #user-iconify {
     width: 30px;
     height: auto;
     text-decoration: none;
@@ -124,6 +130,7 @@ body{
     width: 30px;
     height: auto;
     margin-left: 1em;
+    color: grey;
 }
 
 .footer .list-items-bottom a{
@@ -135,11 +142,11 @@ body{
 }
 
 .footer .list-items-bottom{
-    width: 100%;
-    display: flex;
-    height: auto;
-    margin-right: 1em;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  height: auto;
+  margin-right: 1em;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 760px){
@@ -154,15 +161,16 @@ body{
         height: auto;
         background-color:hsl(26, 42%, 83%);
     }
+
     .search-container{
         width: auto;
         float: none;
         margin: auto;
     }
 
-    /*  .top-bar > *{
-          border: #188f53 1px solid;
-      }*/
+  /*  .top-bar > *{
+        border: #188f53 1px solid;
+    }*/
 
     .list-items{
         display:none;
@@ -173,18 +181,18 @@ body{
         width: 50px;
     }
 
-
     .shop-list-icon:hover .list-items-responsive{
         max-height: inherit;
         opacity: 1;
         position: absolute;
+        z-index: 1;
     }
 
     .list-items-responsive{
         list-style-type: none;
-        padding: 0px;
+        padding: 0;
         margin-top: -5px;
-        max-height: 0px;
+        max-height: 0;
         opacity: 0;
         overflow: hidden;
         transition: opacity 0.3s ease;
@@ -234,7 +242,6 @@ body{
     .footer .list-items-bottom{
         margin-left: 1em;
     }
-
 }
 
 @media only screen and (max-width: 430px){
@@ -243,5 +250,4 @@ body{
     }
 }
 
-      
-    
+
