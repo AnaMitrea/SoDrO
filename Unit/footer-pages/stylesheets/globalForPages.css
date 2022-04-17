@@ -74,14 +74,12 @@
     #icon{
         width: 50px;
         height: auto;
-        padding: auto;
     
     }
 
     #profile-picture{
         width: 40px;
         height: auto;
-        padding: auto;
     }
     
     .middle{
@@ -115,7 +113,6 @@
     #icon-footer{
         width: 30px;
         height: auto;
-        padding: auto;
         margin-left: 1em;
     }
     
