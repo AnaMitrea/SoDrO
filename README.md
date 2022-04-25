@@ -37,6 +37,8 @@ TO DO:
 - Modal de tip pop-up pentru user dashboard
   - Pentru fiecare dintre butoanele change password, change email
 - Shopping list
+- Favicon
+  - https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs 
 
 
 Baza de date
