@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/*
+Title font: font-family: 'Jolly Lodger', serif;
+Text Font:  font-family:'Poppins',sans-serif;
+*/
+
+:root {
+    --ebony-clay: #232d36;
+    --pearl-bush: #ede4dc;
+    --burnt-sienna: #ef895d;
+    --matrix: #b45760;
+    --mongoose: #b49b83;
+    --aqua-forest: #5a9f7d;
+    --summer-green: #98b5ab;
+    --soft-amber: #cabcae;
+    --oriental-pink: #c59ea8;
+    /* dashboard */
+    --bizzare: #e9dcd1;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    border: 1px red solid;
+}
+
+.recipe-container {
+    min-height: 90vh;
+    padding: 20px;
+    margin: 1%;
+    background-color: var(--bizzare);
+    background-image: url(../images/Background-blobs/Blob-pink.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+
+    align-items: stretch;
+}
+
+/* Div1 Increase serving sizes button */
+.serving-size {
+    grid-area: 1 / 1 / 2 / 2;
+    border: 2px solid var(--summer-green);
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50% 10%;
+}
+
+.serving-size:hover {
+    border: 2px solid var(--aqua-forest);
+    color: var(--aqua-forest);
+    cursor: pointer;
+}
+
+.serving-size:hover .flex-serving p{
+    color: var(--aqua-forest);
+}
+
+
+.serving-size .flex-serving {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.serving-size .flex-serving p {
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 10px;
+    text-align: center;
+    color: #98B5AB;
+}
+
+.serving-size .flex-serving .iconify {
+    font-size: 1.5em;
+}
+
+/* Div2 Recipe Title */
+.recipe-title {
+    border: 1px blue solid;
+    grid-area: 1 / 2 / 2 / 7;
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2em;
+}
+
+/* Div3 See recipe button */
+.see-recipe {
+    grid-area: 1 / 7 / 2 / 8;
+    border: 2px solid var(--summer-green);
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50% 10%;
+}
+
+.see-recipe p {
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 10px;
+    text-align: center;
+    color: var(--summer-green);
+}
+
+.see-recipe:hover {
+    border: 2px solid var(--aqua-forest);
+    color: var(--aqua-forest);
+    cursor: pointer;
+}
+
+.see-recipe:hover p{
+    color: var(--aqua-forest);
+}
+
+/* Div4 Left triangle */
+.left-triangle {
+    margin-right: 60px;
+    margin-top: 60px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.left-triangle .iconify {
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    font-size: 1px;
+    margin: 50% 10%;
+    color: #5A9F7D;
+}
+
+.left-triangle .iconify[data-icon='akar-icons:triangle-left']:hover {
+    color: #477d62;
+}
+
+/* Div10 Right triangle */
+.right-triangle {
+    margin-left: 60px;
+    margin-top: 60px;
+    grid-area: 2 / 7 / 3 / 8;
+}
+
+.right-triangle .iconify {
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    margin: 50% 35%;
+    color: #5A9F7D;
+}
+
+.right-triangle .iconify[data-icon='akar-icons:triangle-right']:hover {
+    color: #477d62;
+}
+
+/* Div5 First Ingredient */
+.ingredient1 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px blue solid;
+    grid-area: 2 / 2 / 3 / 3;
+
+}
+
+.ingredient1 img {
+    max-width: 70%;
+    max-height: 80%;
+}
+
+/* Div6 Second Ingredient */
+.ingredient2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px blue solid;
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.ingredient2 img {
+    max-width: 100%;
+    max-height: 50%;
+}
+
+/* Div7 Third Ingredient */
+.ingredient3 {
+    border: 1px blue solid;
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.ingredient3 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Div8 Forth Ingredient */
+.ingredient4 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px blue solid;
+    grid-area: 2 / 5 / 3 / 6;
+}
+
+.ingredient4 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Div9 Fifth Ingredient */
+.ingredient5 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 1px blue solid;
+    grid-area: 2 / 6 / 3 / 7;
+}
+
+.ingredient5 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.polygon {
+    margin-left: 8%;
+    margin-top: 10%;
+    display: inline-block;
+    position: relative;
+    width: 85%;
+    height: 80%;
+    background: black;
+    box-sizing: border-box;
+    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+}
+
+.polygon-inside {
+    position: absolute;
+    width: 97%;
+    height: 97%;
+    background: var(--bizzare);
+    top: 1.5%;
+    left: 1.5%;
+    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
+}
+
+.polygon-inside p{
+    font-size: 1em;
+    text-align: center;
+    line-height: 4em;
+}
+
+/* Div11 Title for first ingredient */
+.title-ingredient1 {
+    border: 1px blue solid;
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+/* Div12 Title for second ingredient */
+.title-ingredient2 {
+    border: 1px blue solid;
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+/* Div13 Title for third ingredient */
+.title-ingredient3 {
+    border: 1px blue solid;
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+/* Div14 Title for forth ingredient */
+.title-ingredient4 {
+    border: 1px blue solid;
+    grid-area: 3 / 5 / 4 / 6;
+}
+
+/* Div15 Title for fifth ingredient */
+.title-ingredient5 {
+    border: 1px blue solid;
+    grid-area: 3 / 6 / 4 / 7;
+}
+
