@@ -39,6 +39,7 @@ TO DO:
 - Shopping list
 - Favicon
   - https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs 
+- recipe pages https://www.thebar.com/en-gb/alcohol-free/5-zero-alcohol-sips-that-will-hit-the-spot
 
 
 Baza de date
