@@ -13,7 +13,7 @@
 2) [Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/trending.html)
 3) ["See more..." Carbonated Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/seeMore-Carbonated.html)
 4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
-5) Content Raport
+5) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
 
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page / Change Password Page
@@ -52,7 +52,6 @@ Baza de date
 
 Mockup Pages (Figma)
 -
-- [Team Project Files](https://www.figma.com/files/project/52608614/SoDro---Team-Project?fuid=1089204224887292505)
 - [Mockup Figma](https://www.figma.com/file/qEBOpYWrTUl1x5rrWwL7kO/Frontend-MockUps?node-id=260%3A2) 
 - Gif ul de pe pagina de Login: [Link catre Canva](https://www.canva.com/design/DAE9xmvDLaQ/KA_Z85hGtcc97XENn50lXQ/view?utm_content=DAE9xmvDLaQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
