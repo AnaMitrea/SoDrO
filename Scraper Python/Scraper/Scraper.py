@@ -15,7 +15,69 @@ script = soup.get_text()
 data = json.loads(script)
 products = data['products']
 
-with open('coffeeDrinks.csv', 'w', encoding='utf-8') as f:
+with open('sample.csv', 'w', encoding='utf-8') as f:
+    #header
+    header = ['code',
+               'image_url',
+               'product_name',
+               'quantity',
+               'serving_size',
+               'packaging',
+               'brands',
+               'brands_tags',
+               'brand_owner',
+               'categories',
+               'categories_tags',
+               'labels',
+               'labels_tags',
+               'countries',
+               'countries_tags',
+               'ingredients_text_en',
+               'allergens',
+               'allergens_tags',
+               'nutrition_data_per',
+               'energy_kj_value',
+               'enerkj_unit',
+               'energy_kcal_value',
+               'energy_kcal_unit',
+               'fat_value',
+               'fat_unit',
+               'saturated_fat_value',
+               'saturated_fat_unit',
+               'carbohydrates_value',
+               'carbohydrates_unit',
+               'sugars_value',
+               'sugars_unit',
+               'fiber_value',
+               'fiber_unit',
+               'proteins_value',
+               'proteins_unit',
+               'salt_value',
+               'salt_unit',
+               'sodium_value',
+               'sodium_unit',
+               'energy_value',
+               'energy_unit',
+               'vitamin_c_value',
+               'vitamin_c_unit',
+               'vitamin_b6_value',
+               'vitamin_b6_unit',
+               'vitamin_b12_value',
+               'vitamin_b12_unit',
+               'potassium_value',
+               'potassium_unit',
+               'calcium_value',
+               'calcium_unit',
+               'caffeine_value',
+               'caffeine_unit',
+               'taurine_value',
+               'taurine_unit',
+               'food_groups_tags',
+               'nutriscore_grade']
+
+    mywriter = csv.writer(f, delimiter=';')
+    mywriter.writerow(header)
+
     for i in products:
         strings = []
         if "_id" in i:
@@ -23,13 +85,21 @@ with open('coffeeDrinks.csv', 'w', encoding='utf-8') as f:
         else:
             strings.append("NULL")
 
-        if "product_name" in i:
-            strings.append(i['product_name'])
+        if "image_url" in i:
+            # TODO daca e null
+            strings.append(i['image_url'])
+        elif "image_small_url" in i:
+            strings.append(i['image_small_url'])
+        elif "image_thumb_url" in i:
+            strings.append(i['image_thumb_url'])
         else:
             strings.append("NULL")
 
-        if "image_url" in i:
-            strings.append(i['image_url'])
+        if "product_name" in i:
+            if not i['product_name'].strip():
+                strings.append(i['abbreviated_product_name'])
+            else:
+                strings.append(i['product_name'])
         else:
             strings.append("NULL")
 
@@ -80,6 +150,17 @@ with open('coffeeDrinks.csv', 'w', encoding='utf-8') as f:
 
         if "labels_tags" in i:
             strings.append(i['labels_tags'])
+        else:
+            strings.append("NULL")
+
+        # nu era
+        if "countries" in i:
+            strings.append(i['countries'])
+        else:
+            strings.append("NULL")
+
+        if "countries_tags" in i:
+            strings.append(i['countries_tags'])
         else:
             strings.append("NULL")
 
@@ -293,5 +374,5 @@ with open('coffeeDrinks.csv', 'w', encoding='utf-8') as f:
         else:
             strings.append("NULL")
 
-        mywriter = csv.writer(f)
+        mywriter = csv.writer(f, delimiter=';')
         mywriter.writerow(strings)
