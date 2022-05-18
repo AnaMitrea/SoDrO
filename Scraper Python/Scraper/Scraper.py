@@ -15,7 +15,7 @@ script = soup.get_text()
 data = json.loads(script)
 products = data['products']
 
-with open('sample.csv', 'w', encoding='utf-8') as f:
+with open('coffeeDrinks.csv', 'w', encoding='utf-8') as f:
     for i in products:
         strings = []
         if "_id" in i:
@@ -25,6 +25,11 @@ with open('sample.csv', 'w', encoding='utf-8') as f:
 
         if "product_name" in i:
             strings.append(i['product_name'])
+        else:
+            strings.append("NULL")
+
+        if "image_url" in i:
+            strings.append(i['image_url'])
         else:
             strings.append("NULL")
 
