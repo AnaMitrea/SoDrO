@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 url = 'https://world.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=categories&tag_contains_0=contains' \
-      '&tag_0=beverages&tagtype_1=categories&tag_contains_1=contains&tag_1=coffee_drinks&json=true '
+      '&tag_0=beverages&tagtype_1=categories&tag_contains_1=contains&tag_1=coffee_drinks&page=1&json=true'
 
 r = requests.get(url)
 
@@ -15,362 +15,279 @@ script = soup.get_text()
 data = json.loads(script)
 products = data['products']
 
-with open('sample.csv', 'w', encoding='utf-8') as f:
-    #header
+with open('testare.csv', 'w', encoding='utf-8') as f:
+    # header
     header = ['code',
-               'image_url',
-               'product_name',
-               'quantity',
-               'serving_size',
-               'packaging',
-               'brands',
-               'brands_tags',
-               'brand_owner',
-               'categories',
-               'categories_tags',
-               'labels',
-               'labels_tags',
-               'countries',
-               'countries_tags',
-               'ingredients_text_en',
-               'allergens',
-               'allergens_tags',
-               'nutrition_data_per',
-               'energy_kj_value',
-               'enerkj_unit',
-               'energy_kcal_value',
-               'energy_kcal_unit',
-               'fat_value',
-               'fat_unit',
-               'saturated_fat_value',
-               'saturated_fat_unit',
-               'carbohydrates_value',
-               'carbohydrates_unit',
-               'sugars_value',
-               'sugars_unit',
-               'fiber_value',
-               'fiber_unit',
-               'proteins_value',
-               'proteins_unit',
-               'salt_value',
-               'salt_unit',
-               'sodium_value',
-               'sodium_unit',
-               'energy_value',
-               'energy_unit',
-               'vitamin_c_value',
-               'vitamin_c_unit',
-               'vitamin_b6_value',
-               'vitamin_b6_unit',
-               'vitamin_b12_value',
-               'vitamin_b12_unit',
-               'potassium_value',
-               'potassium_unit',
-               'calcium_value',
-               'calcium_unit',
-               'caffeine_value',
-               'caffeine_unit',
-               'taurine_value',
-               'taurine_unit',
-               'food_groups_tags',
-               'nutriscore_grade']
+              'image_url',
+              'product_name',
+              'quantity',
+              'serving_size',
+              'packaging',
+              'brands',
+              'brands_tags',
+              'brand_owner',
+              'categories',
+              'categories_tags',
+              'labels',
+              'labels_tags',
+              'countries',
+              'countries_tags',
+              'ingredients_text_en',
+              'allergens',
+              'allergens_tags',
+              'nutrition_data_per',
+              'energy_kj_value',
+              'enerkj_unit',
+              'energy_kcal_value',
+              'energy_kcal_unit',
+              'fat_value',
+              'fat_unit',
+              'saturated_fat_value',
+              'saturated_fat_unit',
+              'carbohydrates_value',
+              'carbohydrates_unit',
+              'sugars_value',
+              'sugars_unit',
+              'fiber_value',
+              'fiber_unit',
+              'proteins_value',
+              'proteins_unit',
+              'salt_value',
+              'salt_unit',
+              'sodium_value',
+              'sodium_unit',
+              'energy_value',
+              'energy_unit',
+              'vitamin_c_value',
+              'vitamin_c_unit',
+              'vitamin_b6_value',
+              'vitamin_b6_unit',
+              'vitamin_b12_value',
+              'vitamin_b12_unit',
+              'potassium_value',
+              'potassium_unit',
+              'calcium_value',
+              'calcium_unit',
+              'caffeine_value',
+              'caffeine_unit',
+              'taurine_value',
+              'taurine_unit',
+              'food_groups_tags',
+              'nutriscore_grade']
 
     mywriter = csv.writer(f, delimiter=';')
     mywriter.writerow(header)
 
-    for i in products:
+    for product in products:
         strings = []
-        if "_id" in i:
-            strings.append(i['_id'])
+        if "_id" in product:
+            strings.append(product['_id'])
         else:
             strings.append("NULL")
 
-        if "image_url" in i:
+        if "image_url" in product:
             # TODO daca e null
-            strings.append(i['image_url'])
-        elif "image_small_url" in i:
-            strings.append(i['image_small_url'])
-        elif "image_thumb_url" in i:
-            strings.append(i['image_thumb_url'])
+            strings.append(product['image_url'])
+        elif "image_small_url" in product:
+            strings.append(product['image_small_url'])
+        elif "image_thumb_url" in product:
+            strings.append(product['image_thumb_url'])
         else:
             strings.append("NULL")
 
-        if "product_name" in i:
-            if not i['product_name'].strip():
-                strings.append(i['abbreviated_product_name'])
+        if "product_name" in product:
+            if not product['product_name'].strip():
+                if "product_name_en" in product:
+                    strings.append(product['product_name_en'])
+                elif "abbreviated_product_name" in product:
+                    strings.append(product['abbreviated_product_name'])
             else:
-                strings.append(i['product_name'])
+                strings.append(product['product_name'])
         else:
             strings.append("NULL")
 
-        if "quantity" in i:
-            strings.append(i['quantity'])
+        if "quantity" in product:
+            strings.append(product['quantity'])
         else:
             strings.append("NULL")
 
-        if "serving_size" in i:
-            strings.append(i['serving_size'])
+        if "serving_size" in product:
+            strings.append(product['serving_size'])
         else:
             strings.append("NULL")
 
-        if "packaging" in i:
-            strings.append(i['packaging'])
+        if "packaging" in product:
+            strings.append(product['packaging'])
         else:
             strings.append("NULL")
 
-        if "brands" in i:
-            strings.append(i['brands'])
+        if "brands" in product:
+            strings.append(product['brands'])
         else:
             strings.append("NULL")
 
-        if "brands_tags" in i:
-            strings.append(i['brands_tags'])
+        if "brands_tags" in product:
+            strings.append(product['brands_tags'])
         else:
             strings.append("NULL")
 
-        if "brand_owner" in i:
-            strings.append(i['brand_owner'])
+        if "brand_owner" in product:
+            strings.append(product['brand_owner'])
         else:
             strings.append("NULL")
 
-        if "categories" in i:
-            strings.append(i['categories'])
+        if "categories" in product:
+            strings.append(product['categories'])
         else:
             strings.append("NULL")
 
-        if "categories_tags" in i:
-            strings.append(i['categories_tags'])
+        if "categories_tags" in product:
+            strings.append(product['categories_tags'])
         else:
             strings.append("NULL")
 
-        if "labels" in i:
-            strings.append(i['labels'])
+        if "labels" in product:
+            strings.append(product['labels'])
         else:
             strings.append("NULL")
 
-        if "labels_tags" in i:
-            strings.append(i['labels_tags'])
+        if "labels_tags" in product:
+            strings.append(product['labels_tags'])
         else:
             strings.append("NULL")
 
-        # nu era
-        if "countries" in i:
-            strings.append(i['countries'])
+        if "countries" in product:
+            strings.append(product['countries'])
         else:
             strings.append("NULL")
 
-        if "countries_tags" in i:
-            strings.append(i['countries_tags'])
+        if "countries_tags" in product:
+            strings.append(product['countries_tags'])
         else:
             strings.append("NULL")
 
-        if "ingredients_text_en" in i:
-            strings.append(i['ingredients_text_en'])
+        if "ingredients_text_en" in product:
+            strings.append(product['ingredients_text_en'])
         else:
             strings.append("NULL")
 
-        if "allergens" in i:
-            strings.append(i['allergens'])
+        if "allergens" in product:
+            strings.append(product['allergens'])
         else:
             strings.append("NULL")
 
-        if "allergens_tags" in i:
-            strings.append(i['allergens_tags'])
+        if "allergens_tags" in product:
+            strings.append(product['allergens_tags'])
         else:
             strings.append("NULL")
 
-        if "nutrition_data_per" in i:
-            strings.append(i['nutrition_data_per'])
+        if "nutrition_data_per" in product:
+            strings.append(product['nutrition_data_per'])
         else:
             strings.append("NULL")
 
-        if "energy_kj_value" in i:
-            strings.append(i['energy_kj_value'])
+        # nutriments ( 36 de campuri )
+        if "nutriments" in product:
+            nutriments = {
+                "energy_kj_value": "NULL",
+                "energy_kj_unit": "NULL",
+                "energy_kcal_value": "NULL",
+
+                # de completat
+            }
+
+            product_dictionary = product['nutriments']
+            pairs = product_dictionary.items()
+
+            # fiecare key, value
+            for key, value in pairs:
+                if "energy_kj_value" == key:
+                    nutriments["energy_kj_value"] = value
+                elif "energy_kj_unit" == key:
+                    nutriments["energy_kj_unit"] = value
+                elif "energy_kcal_value" == key:
+                    nutriments["energy_kcal_value"] = value
+                elif "energy_kcal_unit" == key:
+                    strings.append(value)
+                elif "fat_value" == key:
+                    strings.append(value)
+                elif "fat_unit" == key:
+                    strings.append(value)
+                elif "saturated_fat_value" == key:
+                    strings.append(value)
+                elif "saturated_fat_unit" == key:
+                    strings.append(value)
+                elif "carbohydrates_value" == key:
+                    strings.append(value)
+                elif "carbohydrates_unit" == key:
+                    strings.append(value)
+                elif "sugars_value" == key:
+                    strings.append(value)
+                elif "sugars_unit" == key:
+                    strings.append(value)
+                elif "fiber_value" == key:
+                    strings.append(value)
+                elif "fiber_unit" == key:
+                    strings.append(value)
+                elif "proteins_value" == key:
+                    strings.append(value)
+                elif "proteins_unit" == key:
+                    strings.append(value)
+                elif "salt_value" == key:
+                    strings.append(value)
+                elif "salt_unit" == key:
+                    strings.append(value)
+                elif "sodium_value" == key:
+                    strings.append(value)
+                elif "sodium_unit" == key:
+                    strings.append(value)
+                elif "energy_value" == key:
+                    strings.append(value)
+                elif "energy_unit" == key:
+                    strings.append(value)
+                elif "vitamin_c_value" == key:
+                    strings.append(value)
+                elif "vitamin_c_unit" == key:
+                    strings.append(value)
+                elif "vitamin_b6_value" == key:
+                    strings.append(value)
+                elif "vitamin_b6_unit" == key:
+                    strings.append(value)
+                elif "vitamin_b12_value" == key:
+                    strings.append(value)
+                elif "vitamin_b12_unit" == key:
+                    strings.append(value)
+                elif "potassium_value" == key:
+                    strings.append(value)
+                elif "potassium_unit" == key:
+                    strings.append(value)
+                elif "calcium_value" == key:
+                    strings.append(value)
+                elif "calcium_unit" == key:
+                    strings.append(value)
+                elif "caffeine_value" == key:
+                    strings.append(value)
+                elif "caffeine_unit" == key:
+                    strings.append(value)
+                elif "taurine_value" == key:
+                    strings.append(value)
+                elif "taurine_unit" == key:
+                    strings.append(value)
+
+            # trebuie facut append la string folosind valorile din dictionarul nutriments facut anterior in for
+            # de continuat...
+        else:
+            for x in range(1, 36):
+                # cazul in care 'nutriments' nu se gaseste in tot json-ul
+                strings.append("NULL")
+
+        if "food_groups_tags" in product:
+            strings.append(product['food_groups_tags'])
         else:
             strings.append("NULL")
 
-        if "enerkj_unit" in i:
-            strings.append(i['enerkj_unit'])
-        else:
-            strings.append("NULL")
-
-        if "energy_kcal_value" in i:
-            strings.append(i['energy_kcal_value'])
-        else:
-            strings.append("NULL")
-
-        if "energy_kcal_unit" in i:
-            strings.append(i['energy_kcal_unit'])
-        else:
-            strings.append("NULL")
-
-        if "fat_value" in i:
-            strings.append(i['fat_value'])
-        else:
-            strings.append("NULL")
-
-        if "fat_unit" in i:
-            strings.append(i['fat_unit'])
-        else:
-            strings.append("NULL")
-
-        if "saturated_fat_value" in i:
-            strings.append(i['saturated_fat_value'])
-        else:
-            strings.append("NULL")
-
-        if "saturated_fat_unit" in i:
-            strings.append(i['saturated_fat_unit'])
-        else:
-            strings.append("NULL")
-
-        if "carbohydrates_value" in i:
-            strings.append(i['carbohydrates_value'])
-        else:
-            strings.append("NULL")
-
-        if "carbohydrates_unit" in i:
-            strings.append(i['carbohydrates_unit'])
-        else:
-            strings.append("NULL")
-
-        if "sugars_value" in i:
-            strings.append(i['sugars_value'])
-        else:
-            strings.append("NULL")
-
-        if "sugars_unit" in i:
-            strings.append(i['sugars_unit'])
-        else:
-            strings.append("NULL")
-
-        if "fiber_value" in i:
-            strings.append(i['fiber_value'])
-        else:
-            strings.append("NULL")
-
-        if "fiber_unit" in i:
-            strings.append(i['fiber_unit'])
-        else:
-            strings.append("NULL")
-
-        if "proteins_value" in i:
-            strings.append(i['proteins_value'])
-        else:
-            strings.append("NULL")
-
-        if "proteins_unit" in i:
-            strings.append(i['proteins_unit'])
-        else:
-            strings.append("NULL")
-
-        if "salt_value" in i:
-            strings.append(i['salt_value'])
-        else:
-            strings.append("NULL")
-
-        if "salt_unit" in i:
-            strings.append(i['salt_unit'])
-        else:
-            strings.append("NULL")
-
-        if "sodium_value" in i:
-            strings.append(i['sodium_value'])
-        else:
-            strings.append("NULL")
-
-        if "sodium_unit" in i:
-            strings.append(i['sodium_unit'])
-        else:
-            strings.append("NULL")
-
-        if "energy_value" in i:
-            strings.append(i['energy_value'])
-        else:
-            strings.append("NULL")
-
-        if "energy_unit" in i:
-            strings.append(i['energy_unit'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_c_value" in i:
-            strings.append(i['vitamin_c_value'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_c_unit" in i:
-            strings.append(i['vitamin_c_unit'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_b6_value" in i:
-            strings.append(i['vitamin_b6_value'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_b6_unit" in i:
-            strings.append(i['vitamin_b6_unit'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_b12_value" in i:
-            strings.append(i['vitamin_b12_value'])
-        else:
-            strings.append("NULL")
-
-        if "vitamin_b12_unit" in i:
-            strings.append(i['vitamin_b12_unit'])
-        else:
-            strings.append("NULL")
-
-        if "potassium_value" in i:
-            strings.append(i['potassium_value'])
-        else:
-            strings.append("NULL")
-
-        if "potassium_unit" in i:
-            strings.append(i['potassium_unit'])
-        else:
-            strings.append("NULL")
-
-        if "calcium_value" in i:
-            strings.append(i['calcium_value'])
-        else:
-            strings.append("NULL")
-
-        if "calcium_unit" in i:
-            strings.append(i['calcium_unit'])
-        else:
-            strings.append("NULL")
-
-        if "caffeine_value" in i:
-            strings.append(i['caffeine_value'])
-        else:
-            strings.append("NULL")
-
-        if "caffeine_unit" in i:
-            strings.append(i['caffeine_unit'])
-        else:
-            strings.append("NULL")
-
-        if "taurine_value" in i:
-            strings.append(i['taurine_value'])
-        else:
-            strings.append("NULL")
-
-        if "taurine_unit" in i:
-            strings.append(i['taurine_unit'])
-        else:
-            strings.append("NULL")
-
-        if "food_groups_tags" in i:
-            strings.append(i['food_groups_tags'])
-        else:
-            strings.append("NULL")
-
-        if "nutriscore_grade" in i:
-            strings.append(i['nutriscore_grade'])
+        if "nutriscore_grade" in product:
+            strings.append(product['nutriscore_grade'])
         else:
             strings.append("NULL")
 
