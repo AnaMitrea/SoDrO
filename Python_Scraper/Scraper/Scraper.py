@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 url = 'https://world.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=categories&tag_contains_0=contains' \
-      '&tag_0=beverages&tagtype_1=categories&tag_contains_1=contains&tag_1=carbonated_drinks&page=4&json=true'
+      '&tag_0=beverages&tagtype_1=categories&tag_contains_1=contains&tag_1=dairy_drinks&page=4&json=true'
 
 r = requests.get(url)
 
@@ -15,7 +15,7 @@ script = soup.get_text()
 data = json.loads(script)
 products = data['products']
 
-with open('carbonated_drinks_4.csv', 'w', encoding='utf-8') as f:
+with open('dairy_drinks_4.csv', 'w', newline='', encoding='utf-8') as f:
     # header
     header = ['code',
               'image_url',
@@ -229,9 +229,6 @@ with open('carbonated_drinks_4.csv', 'w', encoding='utf-8') as f:
                 "44taurine_value": "NULL",
                 "45taurine_unit": "NULL"
             }
-            #  "food_groups_tags": "NULL",
-            #  "nutriscore_grade": "NULL"
-
 
             product_dictionary = product['nutriments']
             pairs = product_dictionary.items()
@@ -311,12 +308,8 @@ with open('carbonated_drinks_4.csv', 'w', encoding='utf-8') as f:
                 elif "taurine_unit" == key:
                     nutriments["45taurine_unit"] = value
 
-            # trebuie facut append la string folosind valorile din dictionarul nutriments facut anterior in for
-            # de continuat...
-
             for key in nutriments:
                 strings.append(nutriments[key])
-
         else:
             for x in range(1, 36):
                 # cazul in care 'nutriments' nu se gaseste in tot json-ul
