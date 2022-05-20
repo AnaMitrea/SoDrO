@@ -1,5 +1,14 @@
 Categorii
 -
+- [S] Carbonated drinks
+- [A] Coffee drinks
+- [G] Dairy drinks
+- [A] Energy drinks
+- [S] Hot beverages
+- [S] Non-Alcoholic beverages
+- [G] Iced Teas
+- [A] Plant-based beverages
+- [G] Waters 
 
 Coffee Drinks
 -
