@@ -21,12 +21,10 @@
 </div>
 
 <?php
-   if(isset($_SESSION["username"])){
-?>
-  <a><?php echo $_SESSION["username"];  ?></a>
-</div>
-<?php
-   }else echo "NU";
+   if(isset($_SESSION["username"])) {
+    echo "<a> Salut " . $_SESSION["username"] . "!</a>";
+   }
+   else echo "NU";
 ?>
 <!-- Script  -->
 <script src="loginScript.js"></script>
