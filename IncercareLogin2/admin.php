@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -16,8 +20,14 @@
 	</div>
 </div>
 
+<?php
+   if(isset($_SESSION["username"])){
+?>
+  <a><?php echo $_SESSION["username"];  ?></a>
 </div>
-
+<?php
+   }else echo "NU";
+?>
 <!-- Script  -->
 <script src="loginScript.js"></script>
 

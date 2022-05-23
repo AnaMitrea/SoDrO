@@ -12,4 +12,5 @@ if(isset($_POST["submit"])){
 
     $login->loginUser();
 
+    header("location:../admin.php");
 }
