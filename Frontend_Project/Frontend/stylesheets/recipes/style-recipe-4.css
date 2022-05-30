@@ -1,0 +1,48 @@
+.recipe-container {
+    min-height: 90vh;
+    padding: 20px;
+    margin: 3% 2% 2%;
+    background-color: var(--bizzare);
+    background-image: url(../../images/Background-blobs/Blob-red.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 60px;
+
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 30px;
+
+    align-items: stretch;
+}
+
+.title-ingredient1 p{
+    font-size: 0.9em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.title-ingredient2 p{
+    font-size: 0.9em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.title-ingredient3 p{
+    font-size: 0.9em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.title-ingredient4 p{
+    font-size: 0.9em;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.title-ingredient5 p{
+    font-size: 0.9em;
+    text-align: center;
+    word-wrap: break-word;
+}
