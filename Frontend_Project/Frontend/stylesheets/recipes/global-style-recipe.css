@@ -22,8 +22,8 @@ Text Font:  font-family:'Poppins',sans-serif;
 .container {
     position: relative;
     min-height: 100vh;
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 7%;
+    margin-right: 7%;
     margin-bottom: 2%;
 }
 
@@ -237,7 +237,6 @@ Text Font:  font-family:'Poppins',sans-serif;
     margin-bottom: 50px;
     grid-area: 2 / 2 / 3 / 3;
 
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -247,6 +246,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .ingredient1 img {
     max-width: 70%;
     max-height: 80%;
+    object-fit: contain;
 }
 
 /* Div6 Second Ingredient */
@@ -264,6 +264,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .ingredient2 img {
     max-width: 100%;
     max-height: 50%;
+    object-fit: contain;
 }
 
 /* Div7 Third Ingredient */
@@ -280,6 +281,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .ingredient3 img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
 }
 
 /* Div8 Forth Ingredient */
@@ -297,6 +299,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 .ingredient4 img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
 }
 
 /* Div9 Fifth Ingredient */
