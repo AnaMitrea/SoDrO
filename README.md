@@ -35,11 +35,17 @@ Important
 
 TO DO:
 - 
+- Pie charts in user dashboard
+  - [Canvasjs](https://canvasjs.com/php-charts/chart-data-from-database/)
 - Modal de tip pop-up pentru user dashboard
-  - Pentru fiecare dintre butoanele change password, change email
+  - [ ] Modal pentru change password
+  - [ ] Modal pentru change email
+  - [ ] Modal pentru See Group 
 - Favicon
-  - https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs 
-- recipe pages https://www.thebar.com/en-gb/alcohol-free/5-zero-alcohol-sips-that-will-hit-the-spot
+  - [ ] [Stackoverflow Example](https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs)
+- Recipe pages
+  - [X] [Retetele](https://www.thebar.com/en-gb/alcohol-free/5-zero-alcohol-sips-that-will-hit-the-spot)
+  - [ ] TODO: imagini la ingrediente
 
 
 Baza de date
