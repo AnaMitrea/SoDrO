@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="../stylesheets/globalStyle.css">
+    <link rel="stylesheet" href="../stylesheets/style-dashboard-shoppinglist.css">
     <link rel="stylesheet" href="../stylesheets/style-user-dashboard.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <!-- Google Chart Script -->
@@ -133,6 +135,25 @@
                         <span class="iconify" data-icon="akar-icons:cart" style="color: white;"></span>
                     </h1>
                     <hr>
+
+                    <div class="shp-list">
+                        <div class="wrapper">
+                            <div class="item-input">
+                                <div class="iconify-menu">
+                                    <span class="iconify" data-icon="ci:menu-alt-03" style="color: gray;"></span>
+                                </div>
+
+                                <input type="text" placeholder="Add a new item">
+                            </div>
+                            <div class="controls">
+                                <div class="filters">
+                                    <span class="active" id="all">All</span>
+                                </div>
+                                <button class="clear-btn">Clear All</button>
+                            </div>
+                            <ul class="item-box"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,5 +198,7 @@
     <script src="../scripts/piechartScript.js"></script>
     <!-- Nav bar script -->
     <script src="../scripts/navBarScript.js"></script>
+    <!-- Shopping List script -->
+    <script src="../scripts/shoppinglistScript.js"></script>
 </body>
 </html>
