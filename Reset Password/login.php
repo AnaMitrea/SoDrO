@@ -48,8 +48,17 @@
             </form>
 			<button class="submit-btn"></button>
 
-			<a href="reset_pass.html">Forgot Your Password?</a>
-			<button type="button" class="login-with-google-btn" >
+
+            <?php
+            if(isset($_GET["newpwd"])){
+                if($_GET["newpwd"] == "passwordupdated"){
+                    echo '<p class="signupsuccess"> Your password has been reset!</p>';
+                }
+            }
+            ?>
+
+			<a href="reset-password.php">Forgot Your Password?</a>
+			<button type="button" class="login-with-google-btn">
 				Sign in with Google
 			</button>
 
