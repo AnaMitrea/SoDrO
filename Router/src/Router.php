@@ -5,6 +5,7 @@ namespace App;
 class Router
 {
     private $handlers;
+    private $notFoundHandler;
     const METHOD_POST = 'POST';
     const METHOD_GET = 'GET';
 
@@ -26,7 +27,12 @@ class Router
     {
         $this->addHandler($path, self::METHOD_POST, $handler);
     }
-    
+
+    public function addNotFoundHandler($handler)
+    {
+        $this->notFoundHandler = $handler;
+    }
+
     public function run()
     {
         $requestURI = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -38,6 +44,13 @@ class Router
         foreach ($this->handlers as $handler) {
             if ($handler['path'] === $requestPath && $method === $handler['method']) {
                 $callback = $handler['handler'];
+            }
+        }
+
+        if (!$callback) {
+            header("HTTP/1.0 404 Not Found");
+            if (!empty($this->notFoundHandler)) {
+                $callback = $this->notFoundHandler;
             }
         }
 
