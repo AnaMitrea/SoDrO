@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
     <link rel="stylesheet" href="../stylesheets/globalStyle.css">
+    <!-- TODO merge intr-un singur stylesheet in user-dashboard  -->
     <link rel="stylesheet" href="../stylesheets/style-dashboard-shoppinglist.css">
     <link rel="stylesheet" href="../stylesheets/style-user-dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <!-- Google Chart Script -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <div class="top-bar">
@@ -116,19 +116,20 @@
                             </form>
                         </div>
                     </div>
+                    <!-- Preferences div  -->
                     <div class="percentages-structor">
                         <div class="buttons">
                             <button class="user-percentages-bttn">Percentages</button>
                             <button class="group-percentages-bttn">Group Percentages</button>
                         </div>
                         <div id="chart-wrap">
-                            <!--<div id="piechart"></div>-->
                             <img alt="future prototype" id="prototype" src="../images/prototype.png">
                             <button class="save-bttn">Save your preferences</button>
                         </div>
                     </div>
                 </div>
-
+                <!-- Shopping List  -->
+                <!-- TODO DE REZOLVAT RESPONSIVE cand se ingusteaza  -->
                 <div class="account-shopping-list">
                     <h1>
                         Shopping List
@@ -195,7 +196,6 @@
     </footer>
 
 <!-- Scripts  -->
-    <script src="../scripts/piechartScript.js"></script>
     <!-- Nav bar script -->
     <script src="../scripts/navBarScript.js"></script>
     <!-- Shopping List script -->

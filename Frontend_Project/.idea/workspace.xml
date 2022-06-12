@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abef45c8-c034-4ff3-b208-f8719310dbb7" name="Changes" comment="Merged Shopping list into the dashboard.html">
+      <change afterPath="$PROJECT_DIR$/Frontend/images/slider/coca-cola.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/slider/fanta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/images/slider/pepsi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/scripts/imageSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/stylesheets/style-homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/images/cold-drink.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/change-psswd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/change-psswd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/product-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/product-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/seeMore-Carbonated.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/seeMore-Carbonated.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/shop-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/shop-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/pages/trending.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/pages/trending.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/scripts/piechartScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/stylesheets/style-trending.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/stylesheets/style-trending.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +35,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -49,9 +68,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shopping-list" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Frontend/images/slider" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ana\Documents\GitHub\SoDrO\Frontend_Project\Frontend\images\slider" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -65,6 +89,7 @@
       <workItem from="1651501028517" duration="286000" />
       <workItem from="1651906896757" duration="2043000" />
       <workItem from="1653905415760" duration="2406000" />
+      <workItem from="1655027471428" duration="6891000" />
     </task>
     <task id="LOCAL-00001" summary="Recipe">
       <created>1651423609128</created>
