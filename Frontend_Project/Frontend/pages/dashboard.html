@@ -4,17 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
-    <link rel="stylesheet" href="../stylesheets/globalStyle.css">
-    <!-- TODO merge intr-un singur stylesheet in user-dashboard  -->
-    <link rel="stylesheet" href="../stylesheets/style-dashboard-shoppinglist.css">
     <link rel="stylesheet" href="../stylesheets/style-user-dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 <body>
+    <!-- Group Modal -->
+    <div id="group-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+                <div class="information-content">
+                    <h2>Group Title</h2>
+                    <h3>Participants</h3>
+                    <div class="user-list">
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 4</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 6</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-card">
+                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <div class="profile-bottom">
+                                <div class="profile-bottom-name">
+                                    <p class="profile-name">Group User 1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- TODO Change Email Modal -->
+
+    <!-- TODO Change Password Modal -->
+
+
     <div class="top-bar">
         <div class="icon">
             <span id="icon" class="iconify" data-icon="ep:cold-drink"></span>
@@ -50,9 +118,8 @@
             </a>
         </div>
     </div>
-
-    <div class="page-container">
-        <div class="dashboard-structor">
+    <div class="page-container" id="id-page-container">
+        <div class="dashboard-structor" id="id-dashboard-structor">
             <div class="user">
                 <div class="profile-img">
                     <img src="../images/user/profile.jpg" alt="Avatar">
@@ -61,9 +128,9 @@
                 <div class="user-description">
                     <p>Your Name</p>
                     <p>Your Username</p>
-                    <button class="group-button">Your Group</button>
-                    <button class="change-email">Change Email</button>
-                    <button class="change-password">Change Password</button>
+                    <button id="group-btn" class="group-button">Your Group</button>
+                    <button id="email-btn" class="change-email">Change Email</button>
+                    <button id="pwd-btn" class="change-password">Change Password</button>
                 </div>
             </div>
 
@@ -119,11 +186,16 @@
                     <!-- Preferences div  -->
                     <div class="percentages-structor">
                         <div class="buttons">
-                            <button class="user-percentages-bttn">Percentages</button>
-                            <button class="group-percentages-bttn">Group Percentages</button>
+                            <button id="user-preferences-bttn" class="user-percentages-bttn" onclick="changePreferences()">Percentages</button>
+                            <button id="group-preferences-bttn" class="group-percentages-bttn" onclick="changePreferences()">Group Percentages</button>
                         </div>
                         <div id="chart-wrap">
+<<<<<<< frontend-homepage
                             <img alt="future prototype" id="prototype" src="../images/prototype.png">
+=======
+                            <img alt="future prototype" id="user-content" src="../images/prototype1.png">
+                            <img alt="future prototype" id="group-content" style="display: none" src="../images/prototype2.png">
+>>>>>>> frontend
                             <button class="save-bttn">Save your preferences</button>
                         </div>
                     </div>
@@ -200,5 +272,9 @@
     <script src="../scripts/navBarScript.js"></script>
     <!-- Shopping List script -->
     <script src="../scripts/shoppinglistScript.js"></script>
+    <!-- Buttons Percentages script -->
+    <script src="../scripts/percentagesScript.js"></script>
+    <!-- Group & Change Email & Change Pwd Modals -->
+    <script src="../scripts/dashboardModal.js"></script>
 </body>
 </html>
