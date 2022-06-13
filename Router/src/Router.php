@@ -2,6 +2,8 @@
 
 namespace App;
 
+require_once 'handler/Contact.php';
+
 class Router
 {
     private $handlers;
@@ -44,6 +46,17 @@ class Router
         foreach ($this->handlers as $handler) {
             if ($handler['path'] === $requestPath && $method === $handler['method']) {
                 $callback = $handler['handler'];
+            }
+        }
+
+        if (is_string($callback)) {
+            $parts = explode('::', $callback);
+            if (is_array($parts)) {
+                $className = array_shift($parts);
+                $handler = new $className;
+
+                $method = array_shift($parts);
+                $callback = [$handler, $method];
             }
         }
 
