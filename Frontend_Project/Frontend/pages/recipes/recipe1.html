@@ -8,7 +8,8 @@
 
     <link rel="shortcut icon" type="image/svg" href="../../images/favicon.svg" />
     <link rel="stylesheet" href="../../stylesheets/globalStyle.css">
-    <link rel="stylesheet" href="../../stylesheets/style-recipe.css">
+    <link rel="stylesheet" href="../../stylesheets/recipes/global-style-recipe.css">
+    <link rel="stylesheet" href="../../stylesheets/recipes/style-recipe-1.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
@@ -50,13 +51,55 @@
         </div>
     </div>
 
+    <!-- See recipe Modal  -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="information-content">
+                <div class="ingredients_equipment_content">
+                    <div class="ingredients_content">
+                        <h2>Ingredients</h2>
+                        <p>40ml Gin 0.0%</p>
+                        <p>15ml Elderflower cordial</p>
+                        <p>Fever-Tree Grapes</p>
+                        <p>Ice</p>
+                        <p>Fresh mint sprig</p>
+                    </div>
+                    <div class="equipment_content">
+                        <h2>Equipment</h2>
+                        <p>1 x Highball glass</p>
+                        <p>1 x Ice</p>
+                        <p>1 x Jigger</p>
+                        <p>1 x Stirrer</p>
+                        <p>1 x Bar Spoon</p>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h2>Method</h2>
+                    <h3>Pour</h3>
+                    <p>
+                        Add 40ml Gin 0.0% to a wine glass with 15ml elderflower cordial. Fill your wine glass with ice before topping your cocktail with deliciously balanced Fever-Tree Grape.
+                    </p>
+                    <h3>Mix</h3>
+                    <p>
+                        Give it a gentle stir and garnish with a fresh mint sprig.
+                        The more ice in your spritz, the longer your drink will stay chilled. The less ice, the quicker it will dilute. So, make sure you’ve got plenty in there!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actual Container -->
     <div class="container">
         <!-- Grid -->
         <div class="recipe-container">
             <div class="serving-size">
                 <div class="flex-serving">
                     <p>Servings</p>
-                    <span class="iconify" data-icon="akar-icons:triangle-down" style="color: #5a9f7d;"></span>
+                    <!-- TODO LABEL -->
+                    <input type="number" class="input" id="quantity" name="serving-size" min="1" max="9" value="1">
                 </div>
             </div>
 
@@ -64,9 +107,9 @@
                 <p>Elderflower Spritz</p>
             </div>
 
-            <div class="see-recipe">
-                <p>See Recipe</p>
-            </div>
+            <button id="see-recipe-btn" class="see-recipe">
+                See Recipe
+            </button>
 
             <!-- Right triangle -->
             <div class="right-triangle">
@@ -86,7 +129,7 @@
             </div>
 
             <div class="ingredient3">
-                <img src="../../images/recipes/recipe1/tanqueray.png" alt="Tanqueray bottle">
+                <img src="../../images/recipes/recipe1/cropped-tanqueray.png" alt="Tanqueray bottle">
             </div>
 
             <div class="ingredient4">
@@ -98,43 +141,23 @@
             </div>
 
             <div class="title-ingredient1">
-                <div class="polygon">
-                    <div class="polygon-inside">
-                        <p>Ingredient 1</p>
-                    </div>
-                </div>
+                <p>Grapes</p>
             </div>
 
             <div class="title-ingredient2">
-                <div class="polygon">
-                    <div class="polygon-inside">
-                        <p>Ingredient 2</p>
-                    </div>
-                </div>
+                <p>Ice cubes</p>
             </div>
 
             <div class="title-ingredient3">
-                <div class="polygon">
-                    <div class="polygon-inside">
-                        <p>Ingredient 3</p>
-                    </div>
-                </div>
+                <p>Tanqueray</p>
             </div>
 
             <div class="title-ingredient4">
-                <div class="polygon">
-                    <div class="polygon-inside">
-                        <p>Ingredient 4</p>
-                    </div>
-                </div>
+                <p>Elderflower<br>cordial</p>
             </div>
 
             <div class="title-ingredient5">
-                <div class="polygon">
-                    <div class="polygon-inside">
-                        <p>Ingredient 5</p>
-                    </div>
-                </div>
+                <p>Mint</p>
             </div>
 
         </div>
@@ -152,5 +175,8 @@
             <a href="../../../footer-pages/privacy.html">Privacy</a>
         </div>
     </footer>
+
+    <!-- Modal Script -->
+    <script src="../../scripts/modalScript.js"></script>
 </body>
 </html>

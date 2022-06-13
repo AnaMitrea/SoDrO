@@ -22,26 +22,9 @@ Text Font:  font-family:'Poppins',sans-serif;
 .container {
     position: relative;
     min-height: 100vh;
-    border: 1px red solid;
-}
-
-.recipe-container {
-    min-height: 90vh;
-    padding: 20px;
-    margin: 1%;
-    background-color: var(--bizzare);
-    background-image: url(../images/Background-blobs/Blob-pink.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 60px;
-
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-    grid-column-gap: 15px;
-    grid-row-gap: 30px;
-
-    align-items: stretch;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 2%;
 }
 
 /* Div1 Increase serving sizes button */
@@ -57,29 +40,47 @@ Text Font:  font-family:'Poppins',sans-serif;
 .serving-size:hover {
     border: 2px solid var(--aqua-forest);
     color: var(--aqua-forest);
-    cursor: pointer;
 }
 
 .serving-size:hover .flex-serving p{
     color: var(--aqua-forest);
 }
 
+.serving-size:hover .flex-serving .input{
+    color: var(--aqua-forest);
+}
 
 .serving-size .flex-serving {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+.serving-size .flex-serving .input {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    height: 100%;
+    line-height: 30px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 1em;
+    background-color: var(--bizzare);
+    color: var(--summer-green);
 }
 
 .serving-size .flex-serving p {
     font-family:'Poppins',sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 1em;
-    line-height: 10px;
+    font-size: 0.9em;
+    line-height: 13px;
     text-align: center;
     color: #98B5AB;
+    margin-left: 4px;
 }
 
 .serving-size .flex-serving .iconify {
@@ -88,7 +89,6 @@ Text Font:  font-family:'Poppins',sans-serif;
 
 /* Div2 Recipe Title */
 .recipe-title {
-    border: 1px blue solid;
     grid-area: 1 / 2 / 2 / 7;
     font-family:'Poppins',sans-serif;
     font-style: normal;
@@ -108,15 +108,13 @@ Text Font:  font-family:'Poppins',sans-serif;
     border-radius: 20px;
     text-align: center;
     margin: 50% 10%;
-}
+    background-color: var(--bizzare);
 
-.see-recipe p {
     font-family:'Poppins',sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
     line-height: 10px;
-    text-align: center;
     color: var(--summer-green);
 }
 
@@ -126,8 +124,72 @@ Text Font:  font-family:'Poppins',sans-serif;
     cursor: pointer;
 }
 
-.see-recipe:hover p{
+/* Popup Modal for see recipe */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modal-content .information-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.modal .modal-content .information-content .ingredients_equipment_content {
+    margin-left: 5%;
+    margin-right: 12%;
+}
+
+.modal .modal-content .instructions h2 {
     color: var(--aqua-forest);
+}
+
+.modal .modal-content .instructions h3 {
+    color: var(--summer-green);
+}
+
+.modal .modal-content .instructions h4 {
+    color: darkgrey;
 }
 
 /* Div4 Left triangle */
@@ -172,60 +234,84 @@ Text Font:  font-family:'Poppins',sans-serif;
 /* Div5 First Ingredient */
 .ingredient1 {
     margin-top: 40px;
-    margin-bottom: 40px;
-    border: 1px blue solid;
+    margin-bottom: 50px;
     grid-area: 2 / 2 / 3 / 3;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ingredient1 img {
     max-width: 70%;
     max-height: 80%;
+    object-fit: contain;
 }
 
 /* Div6 Second Ingredient */
 .ingredient2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 1px blue solid;
+    margin-top: 0;
+    margin-bottom: 30px;
     grid-area: 2 / 3 / 3 / 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ingredient2 img {
     max-width: 100%;
     max-height: 50%;
+    object-fit: contain;
 }
 
 /* Div7 Third Ingredient */
 .ingredient3 {
-    border: 1px blue solid;
+    margin-top: -50px;
     grid-area: 2 / 4 / 3 / 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ingredient3 img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
 }
 
 /* Div8 Forth Ingredient */
 .ingredient4 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 1px blue solid;
+    margin-top: 0;
+    margin-bottom: 30px;
     grid-area: 2 / 5 / 3 / 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ingredient4 img {
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
 }
 
 /* Div9 Fifth Ingredient */
 .ingredient5 {
     margin-top: 40px;
-    margin-bottom: 40px;
-    border: 1px blue solid;
+    margin-bottom: 50px;
     grid-area: 2 / 6 / 3 / 7;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ingredient5 img {
@@ -233,61 +319,52 @@ Text Font:  font-family:'Poppins',sans-serif;
     max-height: 100%;
 }
 
-.polygon {
-    margin-left: 8%;
-    margin-top: 10%;
-    display: inline-block;
-    position: relative;
-    width: 85%;
-    height: 80%;
-    background: black;
-    box-sizing: border-box;
-    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
-}
-
-.polygon-inside {
-    position: absolute;
-    width: 97%;
-    height: 97%;
-    background: var(--bizzare);
-    top: 1.5%;
-    left: 1.5%;
-    clip-path: polygon(92.32051% 40%, 93.79385% 43.1596%, 94.69616% 46.52704%, 95% 50%, 94.69616% 53.47296%, 93.79385% 56.8404%, 92.32051% 60%, 79.82051% 81.65064%, 77.82089% 84.50639%, 75.35575% 86.97152%, 72.5% 88.97114%, 69.3404% 90.44449%, 65.97296% 91.34679%, 62.5% 91.65064%, 37.5% 91.65064%, 34.02704% 91.34679%, 30.6596% 90.44449%, 27.5% 88.97114%, 24.64425% 86.97152%, 22.17911% 84.50639%, 20.17949% 81.65064%, 7.67949% 60%, 6.20615% 56.8404%, 5.30384% 53.47296%, 5% 50%, 5.30384% 46.52704%, 6.20615% 43.1596%, 7.67949% 40%, 20.17949% 18.34936%, 22.17911% 15.49361%, 24.64425% 13.02848%, 27.5% 11.02886%, 30.6596% 9.55551%, 34.02704% 8.65321%, 37.5% 8.34936%, 62.5% 8.34936%, 65.97296% 8.65321%, 69.3404% 9.55551%, 72.5% 11.02886%, 75.35575% 13.02848%, 77.82089% 15.49361%, 79.82051% 18.34936%);
-}
-
-.polygon-inside p{
-    font-size: 1em;
-    text-align: center;
-    line-height: 4em;
-}
-
 /* Div11 Title for first ingredient */
 .title-ingredient1 {
-    border: 1px blue solid;
     grid-area: 3 / 2 / 4 / 3;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Div12 Title for second ingredient */
 .title-ingredient2 {
-    border: 1px blue solid;
     grid-area: 3 / 3 / 4 / 4;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Div13 Title for third ingredient */
 .title-ingredient3 {
-    border: 1px blue solid;
     grid-area: 3 / 4 / 4 / 5;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Div14 Title for forth ingredient */
 .title-ingredient4 {
-    border: 1px blue solid;
     grid-area: 3 / 5 / 4 / 6;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Div15 Title for fifth ingredient */
 .title-ingredient5 {
-    border: 1px blue solid;
     grid-area: 3 / 6 / 4 / 7;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-

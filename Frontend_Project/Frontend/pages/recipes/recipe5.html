@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanqueray 0.0% Clover Club</title>
+    <title>Grapefruit Collins</title>
+
     <link rel="shortcut icon" type="image/svg" href="../../images/favicon.svg" />
     <link rel="stylesheet" href="../../stylesheets/globalStyle.css">
-    <link rel="stylesheet" href="../../stylesheets/style-recipe.css">
+    <link rel="stylesheet" href="../../stylesheets/recipes/global-style-recipe.css">
+    <link rel="stylesheet" href="../../stylesheets/recipes/style-recipe-5.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
@@ -49,23 +51,64 @@
     </div>
 </div>
 
+<!-- See recipe Modal  -->
+
+<div id="recipe-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="information-content">
+            <div class="ingredients_equipment_content">
+                <div class="ingredients_content">
+                    <h2>Ingredients</h2>
+                    <p>50ml Gin 0.0%</p>
+                    <p>50ml Pink Grapefruit juice</p>
+                    <p>10ml Simple syrup</p>
+                    <p>Soda water</p>
+                    <p>Rosemary sprig</p>
+                </div>
+                <div class="equipment_content">
+                    <h2>Equipment</h2>
+                    <p>1 x Highball glass</p>
+                    <p>1 x Ice</p>
+                    <p>1 x Jigger</p>
+                    <p>1 x Chopping Board</p>
+                    <p>1 x Knife</p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h2>Method</h2>
+                <h3>Pour</h3>
+                <p>
+                    Add 50ml gin 0.0% to a highball glass, with 50ml fresh pink grapefruit juice and 10ml simple syrup. Stir well. Add ice to the glass, stir again, then top the glass with soda water.
+                </p>
+                <h3>Garnish</h3>
+                <p>
+                    Garnish with a rosemary sprig.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <!-- Grid -->
     <div class="recipe-container">
         <div class="serving-size">
             <div class="flex-serving">
                 <p>Servings</p>
-                <span class="iconify" data-icon="akar-icons:triangle-down" style="color: #5a9f7d;"></span>
+                <!-- TODO LABEL -->
+                <input type="number" class="input" id="quantity" name="serving-size" min="1" max="9" value="1">
             </div>
         </div>
 
         <div class="recipe-title">
-            <p>Tanqueray 0.0% Clover Club</p>
+            <p>Grapefruit Collins</p>
         </div>
 
-        <div class="see-recipe">
-            <p>See Recipe</p>
-        </div>
+        <button id="see-recipe-btn" class="see-recipe">
+            See Recipe
+        </button>
 
         <!-- Left triangle -->
         <div class="left-triangle">
@@ -77,63 +120,43 @@
         </div>
 
         <div class="ingredient1">
-            <img src="" alt="">
+            <img src="../../images/recipes/recipe1/grapes.png" alt="Grapes">
         </div>
 
         <div class="ingredient2">
-            <img src="" alt="">
+            <img src="../../images/recipes/recipe1/icecube.png" alt="Icecubes">
         </div>
 
         <div class="ingredient3">
-            <img src="" alt="">
+            <img src="../../images/recipes/recipe1/tanqueray.png" alt="Tanqueray bottle">
         </div>
 
         <div class="ingredient4">
-            <img src="" alt="">
+            <img src="../../images/recipes/recipe1/elderflower_cordial.png" alt="Elderflower Cordial bottle">
         </div>
 
         <div class="ingredient5">
-            <img src="" alt="">
+            <img src="../../images/recipes/recipe1/mint.png" alt="Mint leaves">
         </div>
 
         <div class="title-ingredient1">
-            <div class="polygon">
-                <div class="polygon-inside">
-                    <p>Ingredient 1</p>
-                </div>
-            </div>
+            <p>Pink Grapefruit<br>Juice</p>
         </div>
 
         <div class="title-ingredient2">
-            <div class="polygon">
-                <div class="polygon-inside">
-                    <p>Ingredient 2</p>
-                </div>
-            </div>
+            <p>Soda Water</p>
         </div>
 
         <div class="title-ingredient3">
-            <div class="polygon">
-                <div class="polygon-inside">
-                    <p>Ingredient 3</p>
-                </div>
-            </div>
+            <p>Tanqueray</p>
         </div>
 
         <div class="title-ingredient4">
-            <div class="polygon">
-                <div class="polygon-inside">
-                    <p>Ingredient 4</p>
-                </div>
-            </div>
+            <p>Simple<br>syrup</p>
         </div>
 
         <div class="title-ingredient5">
-            <div class="polygon">
-                <div class="polygon-inside">
-                    <p>Ingredient 5</p>
-                </div>
-            </div>
+            <p>Rosemary<br>Sprig</p>
         </div>
 
     </div>
@@ -151,5 +174,8 @@
         <a href="../../../footer-pages/privacy.html">Privacy</a>
     </div>
 </footer>
+
+<!-- Modal Script -->
+<script src="../../scripts/modalScript.js"></script>
 </body>
 </html>
