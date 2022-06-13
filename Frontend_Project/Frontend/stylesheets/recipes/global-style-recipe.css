@@ -37,54 +37,23 @@ Text Font:  font-family:'Poppins',sans-serif;
     margin: 50% 10%;
 }
 
+.serving-size p {
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 13px;
+    text-align: center;
+    color: #98B5AB;
+}
+
 .serving-size:hover {
     border: 2px solid var(--aqua-forest);
     color: var(--aqua-forest);
 }
 
-.serving-size:hover .flex-serving p{
+.serving-size:hover p{
     color: var(--aqua-forest);
-}
-
-.serving-size:hover .flex-serving .input{
-    color: var(--aqua-forest);
-}
-
-.serving-size .flex-serving {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.serving-size .flex-serving .input {
-    border: 0;
-    outline: none;
-    box-shadow: none;
-    display: block;
-    height: 100%;
-    line-height: 30px;
-    padding: 8px 15px;
-    border-radius: 20px;
-    width: 100%;
-    font-size: 1em;
-    background-color: var(--bizzare);
-    color: var(--summer-green);
-}
-
-.serving-size .flex-serving p {
-    font-family:'Poppins',sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.9em;
-    line-height: 13px;
-    text-align: center;
-    color: #98B5AB;
-    margin-left: 4px;
-}
-
-.serving-size .flex-serving .iconify {
-    font-size: 1.5em;
 }
 
 /* Div2 Recipe Title */
