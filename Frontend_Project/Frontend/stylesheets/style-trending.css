@@ -35,8 +35,6 @@ body{
     padding-left: 0.5em;
     text-decoration: none;
     color:black;
-
-
 }
 .body-trending:hover{
     background-color: rgba(202, 188, 174, 0.7);
@@ -90,7 +88,6 @@ body{
 .product-cell:hover{
     background-color: #188f53;
     color: rgb(0, 0, 0);
-
 }
 
 .product-cell p{
@@ -112,7 +109,7 @@ body{
     opacity: 1;
 }
 .product-cell:hover .image-product{
-    opacity: 0.2;
+    opacity: 0.1;
 }
 .cell-buttons > button{
     padding: 10px;
@@ -142,7 +139,6 @@ body{
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
-
 }
 
 
