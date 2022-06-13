@@ -24,6 +24,10 @@ body{
 
 }
 
+.err404 {
+
+}
+
 .top-bar{
     left: 0;
     top: 0;
@@ -35,7 +39,6 @@ body{
     align-items: center;
     margin-bottom: 0.5em;
 }
-
 
 .list-items{
     width: 50vw;
