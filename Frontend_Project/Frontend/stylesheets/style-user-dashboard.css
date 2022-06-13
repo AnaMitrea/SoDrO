@@ -83,6 +83,7 @@ Text Font:  font-family:'Poppins',sans-serif;
   width: 80%;
 }
 
+/* Group Button */
 .dashboard-structor .user .user-description .group-button{
   background: #39424A;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -131,6 +132,140 @@ Text Font:  font-family:'Poppins',sans-serif;
 .dashboard-structor .user .user-description .change-password:hover{
   background: var(--ebony-clay);
 }
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--aqua-forest);
+  border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aqua-forest);
+}
+
+/* Modals */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Modal Content */
+.modal-content {
+  overflow-y: auto;
+  background-color: #fefefe;
+  margin: auto auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%;
+  border-radius: 20px;
+  max-height: 80vh;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .modal-content .information-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.modal .modal-content .information-content h2 {
+  font-weight: 600;
+  align-self: center;
+  color: var(--ebony-clay);
+}
+.modal .modal-content .information-content h3 {
+  color: var(--ebony-clay);
+  font-weight: 400;
+  padding-left: 15px;
+  float: left;
+}
+.modal .modal-content .information-content .ingredients_equipment_content {
+  margin-left: 5%;
+  margin-right: 12%;
+}
+
+/* Group Modal Content */
+.user-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.user-card{
+  height: 12em;
+  width: 150px;
+  margin: .75em;
+  color: var(--ebony-clay);
+  background-color: var(--aqua-forest);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  text-align: center;
+  display: block;
+  transition: color .2s ease-in-out,background-color .2s ease-in-out;
+}
+.user-card:hover{
+  background-color: #219a5f;
+  color: rgb(0, 0, 0);
+}
+.user-card p{
+  margin-top: 0;
+  height: 5px;
+}
+.image-profile{
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  padding: 0.25em;
+  height: 80px;
+  max-width: 135px;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.user-card .profile-bottom{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  border-top: #000000 1px solid;
+  height: 3em;
+}
+.user-card .profile-bottom .profile-bottom-name{
+  width: 100%;
+}
+
 
 /* Preferences and Shopping List*/
 .dashboard-structor .account-information {
@@ -322,7 +457,202 @@ Text Font:  font-family:'Poppins',sans-serif;
   color: #ffffff;
   font-size: 1em;
 }
+/* Shopping List wrapper */
+.shp-list {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.shp-list .wrapper {
+  max-width: 100%;
+  padding: 28px 0 30px;
+  margin: 0;
+  height: 100%;
+}
+.shp-list .item-input {
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+.shp-list .item-input .iconify-menu {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2em;
+  top: 50%;
+  position: absolute;
+  transform: translate(10px, -40%);
+}
+.shp-list .item-input input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: 0 20px 0 53px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.shp-list .item-input input:focus, .shp-list .item-input input.active {
+  padding-left: 52px;
+  border: 3px solid #5a9f7d;
+}
+.shp-list .item-input input::placeholder {
+  color: #bfbfbf;
+}
+.shp-list .controls, .shp-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 'All' & 'Clear All' div */
+.shp-list .controls {
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.shp-list .filters span {
+  margin-right: 8px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+}
+.shp-list .filters span:hover {
+  font-size: 17px;
+  color: #5a9f7d;
+  cursor: pointer;
+}
+/* Starea initiala a butonului de clear content */
+.shp-list .controls .clear-btn {
+  border: none;
+  opacity: 0.6;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 7px 13px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  transition: transform 0.25s ease;
+  background: linear-gradient(135deg, #98b5ab 0%, #5a9f7d 100%);
+}
+/* Dupa ce apas pe buton -> opacitatea e 1 */
+.shp-list .clear-btn.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.shp-list .clear-btn:active {
+  transform: scale(0.93);
+}
+.shp-list .item-box {
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+.shp-list .item-box.overflow {
+  overflow-y: auto;
+  max-height: 300px;
+}
+.shp-list .item-box::-webkit-scrollbar {
+  width: 5px;
+}
+.shp-list .item-box::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 25px;
+}
+.shp-list .item-box::-webkit-scrollbar-thumb {
+  background: #5a9f7d;
+  border-radius: 25px;
+}
+/* Fiecare linie de item din lista */
+.shp-list .item-box .task {
+  list-style: none;
+  font-size: 1em;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid #e9dcd1;
+}
+.shp-list .item-box .task:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.shp-list .item-box .task label {
+  display: flex;
+  align-items: flex-start;
+}
+/* Check box - accent-color =  culoarea verde cand se face check */
+.shp-list .task label input {
+  margin-top: 7px;
+  accent-color: #5a9f7d;
+}
+/* Textul din lista */
+.shp-list .task label p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+  margin-left: 12px;
+  word-break: break-all;
+  cursor: pointer;
+  color: white;
+}
+/* Linia taiata dupa ce se face check la item */
+.shp-list .task label p.checked {
+  text-decoration: line-through;
+}
+/* Settings button pentru fiecare input (edit si delete) */
+.shp-list .item-box .configs {
+  position: relative;
+  color: #5a9f7d;
+}
+/* Delete si Edit menu */
+.shp-list .configs .item-menu {
+  color: black;
+  z-index: 10;
+  right: -2px;
+  bottom: -115px;
+  padding: 5px 0;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top right;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+/* Transform-origin -> transforma axa ultimului task menu sa fie in dreapta jos */
+.shp-list .item-box .task:last-child .item-menu {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+/* make it appear on screen */
+.shp-list .item-menu.show {
+  transform: scale(1);
+}
+.shp-list .item-menu li {
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.shp-list .item-menu li:last-child {
+  margin-bottom: 0;
+}
+.shp-list .configs li:hover {
+  background: #f5f5f5;
+}
+.shp-list .configs li i {
+  padding-right: 8px;
+}
 
+/* Responsive slide from left profile div */
 .page-container .dashboard-structor #span-openUser-btn {
   display: none;
 }
@@ -333,6 +663,33 @@ Text Font:  font-family:'Poppins',sans-serif;
 
 .overlay .closebtn {
   display: none;
+}
+
+/* Responsive for shopping list */
+@media (max-width: 400px) {
+  .shp-list body {
+    padding: 0 10px;
+  }
+  .shp-list .wrapper {
+    padding: 20px 0;
+  }
+  .shp-list .filters span {
+    margin: 0 5px;
+  }
+  .shp-list .item-input {
+    padding: 0 20px;
+  }
+  .shp-list .controls {
+    padding: 18px 20px;
+  }
+  .shp-list .item-box {
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+  }
+  .shp-list .task label input {
+    margin-top: 4px;
+  }
 }
 
 @media only screen and (max-width: 485px) {
