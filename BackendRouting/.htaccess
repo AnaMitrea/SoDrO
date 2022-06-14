@@ -1,0 +1,15 @@
+<IfModule dir_module>
+    DirectoryIndex /BackendRouting/index.php /BackendRouting/frontend/pages/login.html
+</IfModule>
+
+#main directory : /BackendRouting/public/
+
+Options FollowSymLinks
+
+RewriteEngine On
+RewriteBase /BackendRouting/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [QSA,L]

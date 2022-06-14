@@ -1,0 +1,90 @@
+.middle{
+    padding: 1px 3em 2em 3em;
+    height: auto;
+}
+
+.middle p{
+    text-indent: 40px;
+    padding-left: 30px;
+}
+
+.middle .title{
+    background-color: #5a9f7d;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.middle #title-name{
+    text-align: center;
+    align-self: center;
+    padding: 0.5em;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.middle .title .lists,.middle .title h4{
+    margin-left: 37%;
+}
+
+.middle .bookmark{
+    background-color: #5a9f7d;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 4px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 2em;
+    padding: 1em;
+}
+
+.middle .bookmark p{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.middle .bookmark ul li a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.middle .punct{
+    background-color: #e0c7b4;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 30px;
+}
+
+.middle .lists{
+    padding-left: 100px;
+}
+.actori{
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+
+.flowcharts{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+.interface {
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    border-radius: 10px;
+}
+
+ #hover-shop{
+    width: 20%;
+    height: auto;
+    margin-left: 40%;
+    border-radius: 10px;
+}
+
+.backend{
+    width: 30%;
+    height: auto;
+    margin-left: 35%;
+    border-radius: 10px;
+}

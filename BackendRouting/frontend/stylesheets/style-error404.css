@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/*
+Title font: font-family: 'Jolly Lodger', serif;
+Text Font:  font-family:'Poppins',sans-serif;
+*/
+:root{
+    --ebony-clay: #232d36;
+    --pearl-bush: #ede4dc;
+    --burnt-sienna: #ef895d;
+    --matrix: #b45760;
+    --mongoose: #b49b83;
+    --aqua-forest: #5a9f7d;
+    --summer-green: #98b5ab;
+    --soft-amber: #cabcae;
+    --oriental-pink: #c59ea8;
+}
+
+body{
+    background-color: var(--pearl-bush);
+    font-family:'Poppins',sans-serif;
+    overflow: hidden;
+}
+
+.err404 {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.err404 a {
+    position: relative;
+    font-family:'Poppins',sans-serif;
+    text-decoration: none;
+    color: dimgrey;
+    font-size: 2em;
+    align-self: flex-end;
+}
+
+.err404 a:hover {
+    color: var(--ebony-clay);
+}

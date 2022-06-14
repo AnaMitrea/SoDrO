@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/*
+Title font: font-family: 'Jolly Lodger', serif;
+Text Font:  font-family:'Poppins',sans-serif;
+*/
+
+:root {
+    --ebony-clay: #232d36;
+    --pearl-bush: #ede4dc;
+    --burnt-sienna: #ef895d;
+    --matrix: #b45760;
+    --mongoose: #b49b83;
+    --aqua-forest: #5a9f7d;
+    --summer-green: #98b5ab;
+    --soft-amber: #cabcae;
+    --oriental-pink: #c59ea8;
+    /* dashboard */
+    --bizzare: #e9dcd1;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 2%;
+}
+
+/* Div1 Increase serving sizes button */
+.serving-size {
+    grid-area: 1 / 1 / 2 / 2;
+    border: 2px solid var(--summer-green);
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50% 10%;
+}
+
+.serving-size p {
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 13px;
+    text-align: center;
+    color: #98B5AB;
+}
+
+.serving-size:hover {
+    border: 2px solid var(--aqua-forest);
+    color: var(--aqua-forest);
+}
+
+.serving-size:hover p{
+    color: var(--aqua-forest);
+}
+
+/* Div2 Recipe Title */
+.recipe-title {
+    grid-area: 1 / 2 / 2 / 7;
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 2em;
+}
+
+/* Div3 See recipe button */
+.see-recipe {
+    grid-area: 1 / 7 / 2 / 8;
+    border: 2px solid var(--summer-green);
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50% 10%;
+    background-color: var(--bizzare);
+
+    font-family:'Poppins',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 10px;
+    color: var(--summer-green);
+}
+
+.see-recipe:hover {
+    border: 2px solid var(--aqua-forest);
+    color: var(--aqua-forest);
+    cursor: pointer;
+}
+
+/* Popup Modal for see recipe */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modal-content .information-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.modal .modal-content .information-content .ingredients_equipment_content {
+    margin-left: 5%;
+    margin-right: 12%;
+}
+
+.modal .modal-content .instructions h2 {
+    color: var(--aqua-forest);
+}
+
+.modal .modal-content .instructions h3 {
+    color: var(--summer-green);
+}
+
+.modal .modal-content .instructions h4 {
+    color: darkgrey;
+}
+
+/* Div4 Left triangle */
+.left-triangle {
+    margin-right: 60px;
+    margin-top: 60px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.left-triangle .iconify {
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    font-size: 1px;
+    margin: 50% 10%;
+    color: #5A9F7D;
+}
+
+.left-triangle .iconify[data-icon='akar-icons:triangle-left']:hover {
+    color: #477d62;
+}
+
+/* Div10 Right triangle */
+.right-triangle {
+    margin-left: 60px;
+    margin-top: 60px;
+    grid-area: 2 / 7 / 3 / 8;
+}
+
+.right-triangle .iconify {
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    margin: 50% 35%;
+    color: #5A9F7D;
+}
+
+.right-triangle .iconify[data-icon='akar-icons:triangle-right']:hover {
+    color: #477d62;
+}
+
+/* Div5 First Ingredient */
+.ingredient1 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    grid-area: 2 / 2 / 3 / 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient1 img {
+    max-width: 70%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Div6 Second Ingredient */
+.ingredient2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    grid-area: 2 / 3 / 3 / 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient2 img {
+    max-width: 100%;
+    max-height: 50%;
+    object-fit: contain;
+}
+
+/* Div7 Third Ingredient */
+.ingredient3 {
+    margin-top: -50px;
+    grid-area: 2 / 4 / 3 / 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient3 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Div8 Forth Ingredient */
+.ingredient4 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    grid-area: 2 / 5 / 3 / 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient4 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Div9 Fifth Ingredient */
+.ingredient5 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    grid-area: 2 / 6 / 3 / 7;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredient5 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Div11 Title for first ingredient */
+.title-ingredient1 {
+    grid-area: 3 / 2 / 4 / 3;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Div12 Title for second ingredient */
+.title-ingredient2 {
+    grid-area: 3 / 3 / 4 / 4;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Div13 Title for third ingredient */
+.title-ingredient3 {
+    grid-area: 3 / 4 / 4 / 5;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Div14 Title for forth ingredient */
+.title-ingredient4 {
+    grid-area: 3 / 5 / 4 / 6;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Div15 Title for fifth ingredient */
+.title-ingredient5 {
+    grid-area: 3 / 6 / 4 / 7;
+    background: url('https://api.iconify.design/ph/hexagon-thin.svg?color=%23232d36') no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
