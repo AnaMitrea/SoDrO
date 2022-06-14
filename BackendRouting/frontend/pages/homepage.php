@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
-    <link rel="stylesheet" href="../stylesheets/globalStyle.css">
-    <link rel="stylesheet" href="../stylesheets/style-homepage.css">
+    <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
+    <link rel="stylesheet" href="frontend/stylesheets/style-homepage.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
@@ -21,19 +21,20 @@
     </div>
 
     <!-- Responsive top bar  -->
+    <!-- TODO modificare la href -->
     <div class="shop-list-icon">
         <span class="iconify" data-icon="bx:list-ul"></span>
         <div class="list-items-responsive">
-            <a href="../pages/trending.html">Trending</a>
-            <a href="../pages/shop-page.html">Products</a>
-            <a href="../pages/recipes/recipe1.html">Recipes</a>
+            <a href="frontend/pages/trending.html">Trending</a>
+            <a href="frontend/pages/shop-page.html">Products</a>
+            <a href="frontend/pages/recipes/recipe1.html">Recipes</a>
             <a href="#">Favorites</a>
         </div>
     </div>
     <div class="list-items">
-        <a href="../pages/trending.html">Trending</a>
-        <a href="../pages/shop-page.html">Products</a>
-        <a href="../pages/recipes/recipe1.html">Recipes</a>
+        <a href="frontend/pages/trending.html">Trending</a>
+        <a href="frontend/pages/shop-page.html">Products</a>
+        <a href="frontend/pages/recipes/recipe1.html">Recipes</a>
         <a href="#">Favorites</a>
     </div>
     <div class="search-container">
@@ -42,7 +43,7 @@
         </form>
     </div>
     <div class="user-icon">
-        <a href="../pages/dashboard.html">
+        <a href="/BackendRouting/profile">
             <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
         </a>
     </div>
@@ -66,9 +67,9 @@
         </div>
         <!-- Image Slider -->
         <div class="photo-slider">
-            <img class="mySlides" src="../images/slider/coca-cola.jpg" alt="Coca Cola">
-            <img class="mySlides" src="../images/slider/fanta.jpg" alt="Fanta">
-            <img class="mySlides" src="../images/slider/pepsi.jpg" alt="Pepsi">
+            <img class="mySlides" src="frontend/images/slider/coca-cola.jpg" alt="Coca Cola">
+            <img class="mySlides" src="frontend/images/slider/fanta.jpg" alt="Fanta">
+            <img class="mySlides" src="frontend/images/slider/pepsi.jpg" alt="Pepsi">
         </div>
     </div>
     <!-- Category divs -->
@@ -77,7 +78,7 @@
         <div class="shop-list">
             <!-- TODO Modificat sa se ia informatia din baza de date -->
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -90,7 +91,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -116,7 +117,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -129,7 +130,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -148,7 +149,7 @@
         <div class="shop-list">
             <!-- TODO Modificat sa se ia informatia din baza de date -->
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -161,7 +162,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -174,7 +175,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -187,7 +188,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -200,7 +201,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -219,7 +220,7 @@
         <div class="shop-list">
             <!-- TODO Modificat sa se ia informatia din baza de date -->
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -232,7 +233,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -245,7 +246,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -258,7 +259,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -271,7 +272,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -290,7 +291,7 @@
         <div class="shop-list">
             <!-- TODO Modificat sa se ia informatia din baza de date -->
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -303,7 +304,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -316,7 +317,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -329,7 +330,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -342,7 +343,7 @@
                 </div>
             </div>
             <div class="product-cell">
-                <img class="image-product" src="../images/product/Sprite.png" alt="product">
+                <img class="image-product" src="frontend/images/product/Sprite.png" alt="product">
                 <div class="product-cell-bottom">
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
@@ -363,22 +364,22 @@
         <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
     </div>
     <div class="list-items-bottom">
-        <a href="../../footer-pages/terms.html">Terms</a>
-        <a href="../../footer-pages/blogs.html">Blogs</a>
-        <a href="../../footer-pages/about.html">About</a>
-        <a href="../../footer-pages/contact.html">Contact</a>
-        <a href="../../footer-pages/privacy.html">Privacy</a>
+        <a href="frontend/footer-pages/terms.html">Terms</a>
+        <a href="frontend/footer-pages/blogs.html">Blogs</a>
+        <a href="frontend/footer-pages/about.html">About</a>
+        <a href="frontend/footer-pages/contact.html">Contact</a>
+        <a href="frontend/footer-pages/privacy.html">Privacy</a>
     </div>
 </footer>
 
 <!-- Scripts  -->
 <!-- Scroll Up -->
-<script src="../scripts/scrollUp.js"></script>
+<script src="frontend/scripts/scrollUp.js"></script>
 <!-- Icon Script  -->
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <!-- Nav bar Script -->
-<script src="../scripts/navBarScript.js"></script>
+<script src="frontend/scripts/navBarScript.js"></script>
 <!-- Slider Script -->
-<script src="../scripts/imageSlider.js"></script>
+<script src="frontend/scripts/imageSlider.js"></script>
 </body>
 </html>

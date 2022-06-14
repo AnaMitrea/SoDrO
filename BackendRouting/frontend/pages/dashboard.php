@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
-    <link rel="stylesheet" href="../stylesheets/globalStyle.css">
-    <link rel="stylesheet" href="../stylesheets/style-user-dashboard.css">
+    <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
+    <link rel="stylesheet" href="frontend/stylesheets/style-user-dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -22,7 +22,7 @@
                     <h3>Participants</h3>
                     <div class="user-list">
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 1</p>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 2</p>
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 3</p>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 4</p>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 5</p>
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 6</p>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="user-card">
-                            <img class="image-profile" src="../images/user/profile.jpg" alt="Profile Picture">
+                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
                             <div class="profile-bottom">
                                 <div class="profile-bottom-name">
                                     <p class="profile-name">Group User 1</p>
@@ -116,7 +116,7 @@
             </form>
         </div>
         <div class="user-icon">
-            <a href="../pages/dashboard.html">
+            <a href="/BackendRouting/profile">
                 <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
             </a>
         </div>
@@ -125,7 +125,7 @@
         <div class="dashboard-structor" id="id-dashboard-structor">
             <div class="user">
                 <div class="profile-img">
-                    <img src="../images/user/profile.jpg" alt="Avatar">
+                    <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
 
                 <div class="user-description">
@@ -193,8 +193,8 @@
                             <button id="group-preferences-bttn" class="group-percentages-bttn" onclick="changePreferences()">Group Percentages</button>
                         </div>
                         <div id="chart-wrap">
-                            <img alt="future prototype" id="user-content" src="../images/prototype1.png">
-                            <img alt="future prototype" id="group-content" style="display: none" src="../images/prototype2.png">
+                            <img alt="future prototype" id="user-content" src="frontend/images/prototype1.png">
+                            <img alt="future prototype" id="group-content" style="display: none" src="frontend/images/prototype2.png">
                             <button class="save-bttn">Save your preferences</button>
                         </div>
                     </div>
@@ -267,12 +267,12 @@
 
 <!-- Scripts  -->
     <!-- Nav bar script -->
-    <script src="../scripts/navBarScript.js"></script>
+    <script src="frontend/scripts/navBarScript.js"></script>
     <!-- Shopping List script -->
-    <script src="../scripts/shoppinglistScript.js"></script>
+    <script src="frontend/scripts/shoppinglistScript.js"></script>
     <!-- Buttons Percentages script -->
-    <script src="../scripts/percentagesScript.js"></script>
+    <script src="frontend/scripts/percentagesScript.js"></script>
     <!-- Group & Change Email & Change Pwd Modals -->
-    <script src="../scripts/dashboardModal.js"></script>
+    <script src="frontend/scripts/dashboardModal.js"></script>
 </body>
 </html>

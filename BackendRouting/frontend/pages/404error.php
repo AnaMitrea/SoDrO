@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Error 404</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/style-error404.css">
 </head>
 <body>
