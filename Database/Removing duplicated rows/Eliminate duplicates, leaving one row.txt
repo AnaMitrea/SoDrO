@@ -1,0 +1,34 @@
+/*
+ 107 produse duplicate
+*/
+select code, count(*) from products group by code having count(code) > 1;
+
+
+/* Order asc by code -> apare row num
+   --> export din intellij ca csv.
+   ---> import in alta tabela
+*/
+select
+    *,
+    row_number() over (
+        partition by 1
+        order by
+            code :: decimal
+        ) row_num
+from products;
+
+delete from products_no_duplicates
+where id_product not in
+(
+    select max(id_product) as MaxRecordId
+    from products_no_duplicates
+    group by code
+);
+
+select count(code), code from products_no_duplicates group by code having count(code) > 1;
+select count(*) from products_no_duplicates;
+
+/* verificare */
+select count(code) from products_no_duplicates where code like '0613008746858';
+select count(code) from products_no_duplicates where code like '8712100824586';
+
