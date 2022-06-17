@@ -1,3 +1,7 @@
+<?php
+    $root = '/BackendRouting';
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -98,25 +102,26 @@
         <div class="shop-list-icon">
             <span class="iconify" data-icon="bx:list-ul"></span>
             <div class="list-items-responsive">
-                <a href="../pages/trending.html">Trending</a>
-                <a href="../pages/shop-page.html">Products</a>
-                <a href="../pages/recipes/recipe1.html">Recipes</a>
-                <a href="#">Favorites</a>
+                <a href="<?php echo $root ?>/trending">Trending</a>
+                <a href="<?php echo $root ?>/products">Products</a>
+                <a href="<?php echo $root ?>/recipes">Recipes</a>
+                <a href="<?php echo $root ?>/favorites">Favorites</a>
             </div>
         </div>
         <div class="list-items">
-            <a href="../pages/trending.html">Trending</a>
-            <a href="../pages/shop-page.html">Products</a>
-            <a href="../pages/recipes/recipe1.html">Recipes</a>
-            <a href="#">Favorites</a>
+            <a href="<?php echo $root ?>/trending">Trending</a>
+            <a href="<?php echo $root ?>/products">Products</a>
+            <a href="<?php echo $root ?>/recipes">Recipes</a>
+            <a href="<?php echo $root ?>/favorites">Favorites</a>
         </div>
+
         <div class="search-container">
             <form>
                 <input type="search" placeholder="Search...">
             </form>
         </div>
         <div class="user-icon">
-            <a href="/BackendRouting/profile">
+            <a href="<?php echo $root ?>/profile">
                 <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
             </a>
         </div>
@@ -237,7 +242,7 @@
             <!-- <a href="#">About</a> -->
             <div class="user">
                 <div class="profile-img">
-                    <img src="../images/user/profile.jpg" alt="Avatar">
+                    <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
 
                 <div class="user-description">
@@ -257,11 +262,11 @@
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="../../footer-pages/terms.html">Terms</a>
-            <a href="../../footer-pages/blogs.html">Blogs</a>
-            <a href="../../footer-pages/about.html">About</a>
-            <a href="../../footer-pages/contact.html">Contact</a>
-            <a href="../../footer-pages/privacy.html">Privacy</a>
+            <a href="<?php echo $root ?>/terms">Terms</a>
+            <a href="<?php echo $root ?>/blogs">Blogs</a>
+            <a href="<?php echo $root ?>/about">About</a>
+            <a href="<?php echo $root ?>/contact">Contact</a>
+            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
 

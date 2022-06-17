@@ -218,6 +218,10 @@ body {
   visibility: visible;
   transition: all 0.3s ease;
 }
+.form-structor .signup .submit-btn a {
+  all: unset;
+  text-decoration: none;
+}
 
 .form-structor .signup .submit-btn:hover {
   transition: all 0.3s ease;

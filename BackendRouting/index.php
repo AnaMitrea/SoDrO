@@ -14,7 +14,8 @@ $router->get(root . '/', function () {
 });
 
 $router->get(root . '/login', function () {
-    require_once 'frontend/pages/login.html';
+    require_once 'frontend/pages/login.php';
+    #header('Location: frontend/pages/login.php');
 });
 
 $router->get(root . '/recover', function () {
@@ -30,52 +31,61 @@ $router->get(root . '/profile', function () {
 });
 
 $router->get(root . '/trending', function () {
-    require_once 'frontend/pages/trending.html';
+    require_once 'frontend/pages/trending.php';
 });
 
 $router->get(root. '/products', function () {
     require_once 'frontend/pages/shop-page.html';
 });
+
 /* Recipes */
-/* TODO de modificat sa fie ca la  /BackendRouting/public/about */
-$router->get(root . '/recipes/1', function () {
-    require_once 'frontend/pages/recipes/recipe1.html';
-});
-$router->get(root . '/recipes/2', function () {
-    require_once 'frontend/pages/recipes/recipe2.html';
-});
-$router->get(root . '/recipes/3', function () {
-    require_once 'frontend/pages/recipes/recipe3.html';
-});
-$router->get(root . '/recipes/4', function () {
-    require_once 'frontend/pages/recipes/recipe4.html';
-});
-$router->get(root . '/recipes/5', function () {
-    require_once 'frontend/pages/recipes/recipe5.html';
+$router->get(root . '/recipes', function (array $params = []) {
+    if (!empty($params['id'])) {
+        if($params['id'] >= 1 && $params['id'] <=5)
+            require_once 'frontend/pages/recipes/recipe' . $params['id'] . '.php';
+        else
+            #redirect if id > 5 || id < 1
+            require_once 'frontend/pages/recipes/recipe1.php';
+    }
+    else
+        require_once 'frontend/pages/recipes/recipe1.php';
 });
 
-$router->get(root. '/favorites', function () {
+
+$router->get(root . '/favorites', function () {
     require_once '';
 });
 
-$router->get('/BackendRouting/trending', function () {
-    require_once 'frontend/pages/trending.html';
+# Footer Endpoints
+$router->get(root . '/terms', function () {
+    require_once 'frontend/pages/footer/terms.php';
 });
 
-$router->get('/BackendRouting/public/about', function (array $params = []) {
-    echo 'About page';
-    if (!empty($params['firstname']) && !empty($params['secondname'])) {
-        echo '<h1>Hello ' . $params['firstname'] . ' ' . $params['secondname'] .'</h1>';
-    }
-    else
-        echo '<h1>Hello Stranger</h1>';
+$router->get(root . '/blogs', function () {
+    require_once 'frontend/pages/footer/blogs.php';
 });
 
+$router->get(root . '/about', function () {
+    require_once 'frontend/pages/footer/about.php';
+});
+
+$router->get(root . '/contact', function () {
+    require_once 'frontend/pages/footer/contact.php';
+});
+
+$router->get(root . '/privacy', function () {
+    require_once 'frontend/pages/footer/privacy.php';
+});
+
+
+
+# testing stuff
 $router->get('/BackendRouting/public/contact', Contact::class . '::execute');
 $router->post('/BackendRouting/public/contact', function ($params) {
     var_dump($params);
 });
 
+# in case of page not found - error 404
 $router->addNotFoundHandler(function () {
     $title = 'Not Found!';
     require_once 'frontend/pages/404error.php';

@@ -1,3 +1,7 @@
+<?php
+$root = '/BackendRouting';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elderflower Spritz</title>
     <link rel="shortcut icon" type="image/svg" href="frontend/images/favicon.svg" />
-
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link rel="stylesheet" href="frontend/stylesheets/recipes/global-style-recipe.css">
     <link rel="stylesheet" href="frontend/stylesheets/recipes/style-recipe-1.css">
@@ -26,17 +29,17 @@
         <div class="shop-list-icon">
             <span class="iconify" data-icon="bx:list-ul"></span>
             <div class="list-items-responsive">
-                <a href="../../pages/trending.html">Trending</a>
-                <a href="../../pages/shop-page.html">Products</a>
-                <a href="#">Recipes</a>
-                <a href="#">Favorites</a>
+                <a href="<?php echo $root ?>/trending">Trending</a>
+                <a href="<?php echo $root ?>/products">Products</a>
+                <a href="<?php echo $root ?>/recipes">Recipes</a>
+                <a href="<?php echo $root ?>/favorites">Favorites</a>
             </div>
         </div>
         <div class="list-items">
-            <a href="../../pages/trending.html">Trending</a>
-            <a href="../../pages/shop-page.html">Products</a>
-            <a href="#">Recipes</a>
-            <a href="#">Favorites</a>
+            <a href="<?php echo $root ?>/trending">Trending</a>
+            <a href="<?php echo $root ?>/products">Products</a>
+            <a href="<?php echo $root ?>/recipes">Recipes</a>
+            <a href="<?php echo $root ?>/favorites">Favorites</a>
         </div>
         <div class="search-container">
             <form>
@@ -45,7 +48,7 @@
         </div>
         <!-- Profile Icon button -->
         <div class="user-icon">
-            <a href="/BackendRouting/profile">
+            <a href="<?php echo $root ?>/profile">
                 <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
             </a>
         </div>
@@ -110,7 +113,7 @@
             <!-- Right triangle -->
             <div class="right-triangle">
                 <div class="triangle-image">
-                    <a href=frontend/pages/recipes/recipe2.html>
+                    <a href="<?php echo $root ?>/recipes?id=2">
                         <span class="iconify" data-icon="akar-icons:triangle-right"></span>
                     </a>
                 </div>
@@ -164,15 +167,15 @@
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="../../../footer-pages/terms.html">Terms</a>
-            <a href="../../../footer-pages/blogs.html">Blogs</a>
-            <a href="../../../footer-pages/about.html">About</a>
-            <a href="../../../footer-pages/contact.html">Contact</a>
-            <a href="../../../footer-pages/privacy.html">Privacy</a>
+            <a href="<?php echo $root ?>/terms">Terms</a>
+            <a href="<?php echo $root ?>/blogs">Blogs</a>
+            <a href="<?php echo $root ?>/about">About</a>
+            <a href="<?php echo $root ?>/contact">Contact</a>
+            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
 
     <!-- Modal Script -->
-    <script src="../../scripts/modalScript.js"></script>
+    <script src="frontend/scripts/modalScript.js"></script>
 </body>
 </html>

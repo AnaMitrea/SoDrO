@@ -1,12 +1,16 @@
+<?php
+$root = '/BackendRouting';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
-    <link rel="stylesheet" href="../stylesheets/style-trending.css">
-    <link rel="stylesheet" href="../stylesheets/globalStyle.css">
+    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
+    <link rel="stylesheet" href="frontend/stylesheets/style-trending.css">
+    <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly%20Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>Trending</title>
@@ -19,23 +23,23 @@
         
             <div id="page-title">
               <p>SoftDrinks</p>
-            </div>   
-    
+            </div>
+
+            <!-- Responsive top bar  -->
             <div class="shop-list-icon">
                 <span class="iconify" data-icon="bx:list-ul"></span>
                 <div class="list-items-responsive">
-                    <a href="../pages/trending.html">Trending</a>
-                    <a href="../pages/shop-page.html">Products</a>
-                    <a href="../pages/seeMore-Carbonated.html">Recipes</a>
-                    <a href="../pages/trending.html">Favorites</a>  
+                    <a href="<?php echo $root ?>/trending">Trending</a>
+                    <a href="<?php echo $root ?>/products">Products</a>
+                    <a href="<?php echo $root ?>/recipes">Recipes</a>
+                    <a href="<?php echo $root ?>/favorites">Favorites</a>
                 </div>
             </div>
-
             <div class="list-items">
-                    <a href="../pages/trending.html">Trending</a>
-                    <a href="../pages/shop-page.html">Products</a>
-                    <a href="../pages/seeMore-Carbonated.html">Recipes</a>
-                    <a href="../pages/trending.html">Favorites</a>  
+                <a href="<?php echo $root ?>/trending">Trending</a>
+                <a href="<?php echo $root ?>/products">Products</a>
+                <a href="<?php echo $root ?>/recipes">Recipes</a>
+                <a href="<?php echo $root ?>/favorites">Favorites</a>
             </div>
     
     
@@ -46,7 +50,7 @@
             </div>
 
             <div class="user-icon">
-                <a href="../pages/dashboard.html">
+                <a href="<?php echo $root ?>/profile">
                     <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
                 </a>
             </div>
@@ -54,10 +58,10 @@
 
 <div class="body-trending">
     <div class="trending_icon">
-        <a href="#">Trending Products</a>
+        <a href="<?php echo $root ?>/trending">Trending Products</a>
         <span class="iconify" data-icon="el:fire"></span>
     </div>
-    </div>
+</div>
 
 <br>
 <div class="middle">
@@ -73,7 +77,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -82,7 +86,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -91,7 +95,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -100,7 +104,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -109,7 +113,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -118,7 +122,7 @@
                 <button>Add To List</button>
                 <button>Details</button>
             </div>
-            <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+            <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
             <p class="details">Sprite 0,33l-2.99&euro;</p>
         </div>
@@ -136,7 +140,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -145,7 +149,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -154,7 +158,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -163,7 +167,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -172,7 +176,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -181,7 +185,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -199,7 +203,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -208,7 +212,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -217,7 +221,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -226,7 +230,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -235,7 +239,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -244,7 +248,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -262,7 +266,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -271,7 +275,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -280,7 +284,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -289,7 +293,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -298,7 +302,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -307,7 +311,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -325,7 +329,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -334,7 +338,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -343,7 +347,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -352,7 +356,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -361,7 +365,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -370,7 +374,7 @@
                     <button>Add To List</button>
                     <button>Details</button>
                 </div>
-                <div><img src="../images/product/Sprite.png" alt="img" class="image-product"></div>
+                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
 
                 <p class="details">Sprite 0,33l-2.99&euro;</p>
             </div>
@@ -382,11 +386,11 @@
         <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
     </div>
     <div class="list-items-bottom">
-        <a href="../../footer-pages/terms.html">Terms</a>
-        <a href="../../footer-pages/blogs.html">Blogs</a>
-        <a href="../../footer-pages/about.html">About</a>
-        <a href="../../footer-pages/contact.html">Contact</a>
-        <a href="../../footer-pages/privacy.html">Privacy</a>
+        <a href="<?php echo $root ?>/terms">Terms</a>
+        <a href="<?php echo $root ?>/blogs">Blogs</a>
+        <a href="<?php echo $root ?>/about">About</a>
+        <a href="<?php echo $root ?>/contact">Contact</a>
+        <a href="<?php echo $root ?>/privacy">Privacy</a>
     </div>
 </footer>
 </body>

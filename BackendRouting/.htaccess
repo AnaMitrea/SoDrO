@@ -2,7 +2,7 @@
     DirectoryIndex /BackendRouting/index.php /BackendRouting/frontend/pages/login.html
 </IfModule>
 
-#main directory : /BackendRouting/public/
+#main directory : /BackendRouting/
 
 Options FollowSymLinks
 

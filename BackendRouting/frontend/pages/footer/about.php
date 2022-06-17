@@ -1,11 +1,15 @@
+<?php
+$root = '/BackendRouting/';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheets/globalForPages.css">
-    <link rel="stylesheet" href="./stylesheets/aboutStyle.css">
+    <link rel="stylesheet" href="frontend/stylesheets/footer/globalForPages.css">
+    <link rel="stylesheet" href="frontend/stylesheets/footer/aboutStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>About Us</title>
@@ -18,25 +22,24 @@
     
         <div id="page-title">
           <p>SoftDrinks</p>
-        </div>   
+        </div>
 
+        <!-- Responsive top bar  -->
         <div class="shop-list-icon">
             <span class="iconify" data-icon="bx:list-ul"></span>
             <div class="list-items-responsive">
-                <a href="../Frontend/pages/trending.html">Trending</a>
-                <a href="../Frontend/pages/shop-page.html">Products</a>
-                <a href="../Frontend/pages/seeMore-Carbonated.html">Recipes</a>
-                <a href="../Frontend/pages/trending.html">Favorites</a>  
+                <a href="<?php echo $root ?>/trending">Trending</a>
+                <a href="<?php echo $root ?>/products">Products</a>
+                <a href="<?php echo $root ?>/recipes">Recipes</a>
+                <a href="<?php echo $root ?>/favorites">Favorites</a>
             </div>
         </div>
-
         <div class="list-items">
-                <a href="../Frontend/pages/trending.html">Trending</a>
-                <a href="../Frontend/pages/shop-page.html">Products</a>
-                <a href="../Frontend/pages/seeMore-Carbonated.html">Recipes</a>
-                <a href="../Frontend/pages/trending.html">Favorites</a>  
+            <a href="<?php echo $root ?>/trending">Trending</a>
+            <a href="<?php echo $root ?>/products">Products</a>
+            <a href="<?php echo $root ?>/recipes">Recipes</a>
+            <a href="<?php echo $root ?>/favorites">Favorites</a>
         </div>
-
 
         <div class="search-container">
             <form>
@@ -95,7 +98,7 @@
        <p>Acest site este destinat oricarei persoane ce detine un cont sau care doreste sa creeze un cont cu scopul de a cauta informatii
     despre diferite bauturi non alcoolice.</p>
 
-         <img class="actori" src="images/about/actori.png" alt="p">
+         <img class="actori" src="frontend/images/footer/about/actori.png" alt="p">
 
      <h2 id="1.3">1.3 Product Scope</h2>
        <p>Scopul acestui site este de a prezenta produse nonalcolice persoanelor pe care il acceseaza si de a afla preferintele
@@ -112,20 +115,20 @@
      <h2 id="2.1">2.1 Product Perspective</h2>
 
      <h3>Flowchart Login/SignUp</h3>
-        <img class="flowcharts" src="images/about/login.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/login.png" alt="p">
      <h3>Flowchart User Dashboard</h3>
-        <img class="flowcharts" src="images/about/dashboard.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/dashboard.png" alt="p">
      <h3>Flowchart Admin Dashboard</h3>
-        <img class="flowcharts" src="images/about/admindashboard1.png" alt="p">
-        <img class="flowcharts" src="images/about/admindashboard2.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/admindashboard1.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about//admindashboard2.png" alt="p">
      <h3>Flowchart Trending</h3>
-        <img class="flowcharts" src="images/about/trending.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/trending.png" alt="p">
      <h3>Flowchart Recipes</h3>
-        <img class="flowcharts" src="images/about/recipes.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/recipes.png" alt="p">
      <h3>Flowchart shop</h3>
-        <img class="flowcharts" src="images/about/shop.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/shop.png" alt="p">
      <h3>Flowchart product</h3>
-        <img class="flowcharts" src="images/about/product.png" alt="p">
+        <img class="flowcharts" src="frontend/images/footer/about/product.png" alt="p">
 
      <h2 id="2.2">2.2 Product Functions</h2>
        <ul class="lists">
@@ -168,22 +171,22 @@
 
 
         <h3>Login/SignIn Interface</h3>
-        <img class="interface" src="images/about/interface/login.png" alt="p">
-        <img class="interface" src="images/about/interface/login2.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/login.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/login2.png" alt="p">
         <ul class="lists">
         <li>Formulare de Login/Sign-in cu buton de submit</li>
         <li>Buton de conectare cu Google</li>
         </ul>
         <h3>Change Password Interface</h3>
-        <img class="interface" src="images/about/interface/changepwd.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/changepwd.png" alt="p">
         
         <h3>Main Page Interface</h3>
-        <img class="interface" src="images/about/interface/main.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/main.png" alt="p">
         <ul class="lists">
         <li>Butoanele asociate meniului principal sunt fixate in top-ul paginilor in asa fel incat sunt accesibile utilizatorilor in orice moment.</li>
         </ul>
         <h3>User Dashboard Interface</h3>
-        <img class="interface" src="images/about/interface/dashboard.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/dashboard.png" alt="p">
         
         <ul class="lists">
             <li>Lista de produse - Shopping List</li>
@@ -193,7 +196,7 @@
         </ul>
         
         <h3>Admin Dashboard Interface</h3>
-        <img class="interface" src="images/about/interface/adminprofile.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/adminprofile.png" alt="p">
         <ul class="lists">
         <li>Butoane specifice de moderare a:</li>
           <ul style="list-style-type:circle;">
@@ -203,8 +206,8 @@
         <li>Butoane de change password/email ce permit schimbarea datelor administratorului.</li>
         </ul>
         <h3>Shop Interface</h3>
-        <img class="interface" src="images/about/interface/shop.png" alt="p">
-        <img class="interface" src="images/about/interface/shop2.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/shop.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/shop2.png" alt="p">
         
         <ul class="lists">
             <li>Pe aceasta pagina sunt doua functionalitati noi, Sort by si Order by. Acestea ajuta la sortarea datelor afisate
@@ -223,10 +226,10 @@
             <li>- unul pentru a adauga produsul in lista de cumparaturi</li>
             </ul>
         </ul>
-        <img id="hover-shop" src="images/about/interface/shop3.png" alt="p">
+        <img id="hover-shop" src="frontend/images/footer/about/interface/shop3.png" alt="p">
 
         <h3>Product interface</h3>
-        <img class="interface" src="images/about/interface/product.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/product.png" alt="p">
         <ul class="lists">
         <li>Aceasta pagina este destinata unui produs</li>
         <li>Cele doua iconite din stanga si dreapta ne ajuta sa schimbam imaginile; prin apasarea lor acele imagini vor aparea 
@@ -235,7 +238,7 @@
         </ul>
         
         <h3>Trending Interface</h3>
-        <img class="interface" src="images/about/interface/trending.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/trending.png" alt="p">
         
         
         <ul class="lists">
@@ -246,7 +249,7 @@
         
         
         <h3>Recipe Interface</h3>
-        <img class="interface" src="images/about/interface/recipe.png" alt="p">
+        <img class="interface" src="frontend/images/footer/about/interface/recipe.png" alt="p">
         <ul class="lists">
             <li>Pagina destinata vizulizarii diferitelor retete de mocktail-uri, cafele, ceaiuri, etc</li>
             <li>Pagina dispune de un buton numit Servings care in functie de ce numar va contine, va actualiza portiile ingredientelor</li>
@@ -271,13 +274,13 @@
       <p>Backend-ul de obicei răspunde Browserului cu informații legate de HTML, fișiere de tip css, js, json.</p>
       <p>Frontend-ul de obicei face request-uri HTTP, informatii diferite din inputul formularelor sau al altor structuri.</p>
 
-        <img class="backend" src="images/about/backend.png" alt="p">
+        <img class="backend" src="frontend/images/footer/about/backend.png" alt="p">
 
       <p>Codul va fi structurat in mai multe fișiere, cu nume specifice, pentru a fi ușor de interpretat și de alți programatori.</p>
       <p>Datele importante despre autentificarea utilizatorilor vor fi stocate într-un mod securizat în baza de date. Celelalte 
     date despre produse vor fi stocate in baza de date aferenta cu campurile identificatoare.</p>
 
-        <img class="backend" src="images/about/backend2.png" alt="p">
+        <img class="backend" src="frontend/images/footer/about/backend2.png" alt="p">
       
     </div>
 
@@ -289,11 +292,11 @@
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="./terms.html">Terms</a>
-            <a href="./blogs.html">Blogs</a>
-            <a href="./about.html">About</a>
-            <a href="./contact.html">Contact</a>
-            <a href="./privacy.html">Privacy</a>
+            <a href="<?php echo $root ?>/terms">Terms</a>
+            <a href="<?php echo $root ?>/blogs">Blogs</a>
+            <a href="<?php echo $root ?>/about">About</a>
+            <a href="<?php echo $root ?>/contact">Contact</a>
+            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
 </body>

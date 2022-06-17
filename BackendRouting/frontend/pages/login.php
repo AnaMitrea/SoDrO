@@ -1,9 +1,14 @@
+<?php
+$root = '/BackendRouting';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
 	<meta charset="UTF-8">
 	<title>Login/Sign in</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
+	<link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
 	<link rel="stylesheet" href="frontend/stylesheets/style-login-signup.css">
 </head>
 <body>
@@ -30,7 +35,7 @@
 			<input type="password" class="input" required="" placeholder="Confirm Password" />
 			<input type="date" class="input" placeholder="Date Of Birth" />
 		</div>
-		<button class="submit-btn">Sign up</button>
+        <button class="submit-btn"><a href="<?php echo $root ?>/login">Sign up</a></button>
 	</div>
 	<div class="login slide-up">
 		<div class="center">
@@ -39,7 +44,8 @@
 				<input type="email" class="input" placeholder="Email" />
 				<input type="password" class="input" placeholder="Password" />
 			</div>
-			<button class="submit-btn"><a href="/BackendRouting/home">Log in</a></button>
+            <!-- TODO: Adaugare algoritm login  -->
+			<button class="submit-btn"><a href="<?php echo $root ?>/home">Log in</a></button>
 
 			<a href="/BackendRouting/recover">Forgot Your Password?</a>
 			<button type="button" class="login-with-google-btn" >

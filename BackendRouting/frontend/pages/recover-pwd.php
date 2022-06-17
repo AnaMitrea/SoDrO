@@ -1,9 +1,13 @@
+<?php
+$root = '/BackendRouting';
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   	<meta charset="UTF-8">
   	<title>Find Your Account</title>
-	<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.svg" />
+	<link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
   	<link rel="stylesheet" href="frontend/stylesheets/style-find-account.css">
 </head>
 <body>
@@ -28,7 +32,9 @@
 			<input type="password" class="input" required="" placeholder="New Password" />
 			<input type="password" class="input" required="" placeholder="Confirm Password" />
 		</div>
-		<button class="submit-btn"><a href="/BackendRouting/login">Submit</a></button>
+
+        <!-- TODO de facut merge la algoritm -->
+		<button class="submit-btn"><a href="<?php echo $root ?>/login">Submit</a></button>
 	</div>
 </div>
 </body>

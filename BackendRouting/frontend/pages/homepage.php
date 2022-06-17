@@ -1,3 +1,7 @@
+<?php
+$root = '/BackendRouting';
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -20,22 +24,22 @@
         <p>SoftDrinks</p>
     </div>
 
+
     <!-- Responsive top bar  -->
-    <!-- TODO modificare la href -->
     <div class="shop-list-icon">
         <span class="iconify" data-icon="bx:list-ul"></span>
         <div class="list-items-responsive">
-            <a href="frontend/pages/trending.html">Trending</a>
-            <a href="frontend/pages/shop-page.html">Products</a>
-            <a href="frontend/pages/recipes/recipe1.html">Recipes</a>
-            <a href="#">Favorites</a>
+            <a href="<?php echo $root ?>/trending">Trending</a>
+            <a href="<?php echo $root ?>/products">Products</a>
+            <a href="<?php echo $root ?>/recipes">Recipes</a>
+            <a href="<?php echo $root ?>/favorites">Favorites</a>
         </div>
     </div>
     <div class="list-items">
-        <a href="frontend/pages/trending.html">Trending</a>
-        <a href="frontend/pages/shop-page.html">Products</a>
-        <a href="frontend/pages/recipes/recipe1.html">Recipes</a>
-        <a href="#">Favorites</a>
+        <a href="<?php echo $root ?>/trending">Trending</a>
+        <a href="<?php echo $root ?>/products">Products</a>
+        <a href="<?php echo $root ?>/recipes">Recipes</a>
+        <a href="<?php echo $root ?>/favorites">Favorites</a>
     </div>
     <div class="search-container">
         <form>
@@ -83,11 +87,11 @@
                     <div class="product-cell-bottom-name">
                         <p class="product-name">Product</p>
                     </div>
-                    <!--
+
                     <div id="add-to-list-icon">
                         <button>&#9734;</button>
                     </div>
-                    -->
+
                 </div>
             </div>
             <div class="product-cell">

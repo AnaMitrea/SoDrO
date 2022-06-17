@@ -42,7 +42,7 @@ class Router
         for($index = 2; $index < count($request_segments); $index++) {
             $requestPath .= ( '/'. $request_segments[$index]);
         }
-        var_dump($requestPath);
+        #var_dump($requestPath);
         return $requestPath;
     }
 
