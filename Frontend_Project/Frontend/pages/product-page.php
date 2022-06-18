@@ -26,8 +26,8 @@ $ingredients_contor=count($ingredients_types);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="globalStyle.css">
-    <link rel="stylesheet" href="style-product-page.css">
+    <link rel="stylesheet" href="../stylesheets/globalStyle.css">
+    <link rel="stylesheet" href="../stylesheets/style-product-page.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>Single Product</title>
