@@ -11,6 +11,8 @@ class LoginController extends Login{
      * @param $password
      */
     public function __construct($email, $password){
+        parent::__construct();
+
         $this->email = $email;
         $this->password = $password;
     }
@@ -22,10 +24,7 @@ class LoginController extends Login{
         if(!$this->emptyInput()){
             exit();
         }
-        else{
-            return $this->getUser($this->email,$this->password);
-        }
-
+        return $this->verifyUser($this->email,$this->password);
     }
 
     /**

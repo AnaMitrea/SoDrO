@@ -1,4 +1,10 @@
 <?php
+namespace Handlers;
+
+use PDO;
+use PDOException;
+use SessionHandlerInterface;
+
 class PGSessions implements SessionHandlerInterface
 {
     private $db;
@@ -20,12 +26,12 @@ class PGSessions implements SessionHandlerInterface
         }
     }
 
-    public function open($savePath=NULL, $sessionName=NULL)
+    public function open($savePath=NULL, $sessionName=NULL): bool
     {
         return true;
     }
 
-    public function close()
+    public function close(): bool
     {
         return true;
     }

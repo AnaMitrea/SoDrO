@@ -33,31 +33,31 @@ class SignupController extends Signup {
         if(!$this->emptyInput()) {
             echo "Empty input!";
             //header("location: ../pages/login.php?error=emptyinput");
-            header("location: /BackendRouting/login?error=emptyinput");
+            header("location: /BackendRouting/signup?error=emptyinput");
             exit();
         }
         if(!$this->invalidUid()) {
             echo "Invalid username!";
             //header("location: ../pages/login.php?error=username");
-            header("location: /BackendRouting/login?error=invalidusername");
+            header("location: /BackendRouting/signup?error=invalidusername");
             exit();
         }
         if(!$this->invalidEmail()) {
             echo "Empty email!";
             //header("location: ../pages/login.php?error=email");
-            header("location: /BackendRouting/login?error=invalidemail");
+            header("location: /BackendRouting/signup?error=invalidemail");
             exit();
         }
         if(!$this->pwdMatch()) {
             echo "Passwords don't match!";
             //header("location: ../pages/login.php?error=passwordmatch");
-            header("location: /BackendRouting/login?error=passwordunmatch");
+            header("location: /BackendRouting/signup?error=passwordunmatch");
             exit();
         }
         if(!$this->uidTakenCheck()) {
             echo "Username or email taken!";
             //header("location: ../pages/login.php?error=useroremailtaken");
-            header("location: /BackendRouting/login?error=uidtaken");
+            header("location: /BackendRouting/signup?error=uidtaken");
             exit();
         }
 

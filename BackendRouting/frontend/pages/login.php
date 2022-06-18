@@ -47,8 +47,8 @@ $root = '/BackendRouting';
 
                 <form action="<?php echo $root?>/login" method="POST">
                     <div class="form-holder">
-                        <input type="email" name="email" class="input"  placeholder="Email" />
-                        <input type="password" name="password" class="input" placeholder="Password" />
+                        <input type="email" class="input" name="email"  placeholder="Email" />
+                        <input type="password" class="input" name="password"  placeholder="Password" />
                     </div>
                     <button class="submit-btn" type="submit" name="submit">LOGIN</button>
                 </form>

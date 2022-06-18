@@ -2,25 +2,32 @@
 namespace Includes;
 
 use Classes\LoginController;
+use Handlers\PGSessions;
+use PDO;
+
+const root = '/BackendRouting';
 
 if(isset($_POST["submit"])){
-    $email = $_POST["email"];
-    $password = $_POST["password"];
 
-    include "../classes/PGSessions.php";
-    include "../handler/DatabaseHandler.php";
-    include "../classes/login.classes.php";
-    include "../classes/login-controller.classes.php";
+    include "backend/handler/PGSessions.php";
+    include "backend/handler/DatabaseHandler.php";
+    include "backend/classes/login.classes.php";
+    include "backend/classes/login-controller.classes.php";
 
+    //TODO refactor PDO
     $host = 'ec2-63-34-180-86.eu-west-1.compute.amazonaws.com';
     $db = 'd3gte55iprrt17';
     $user = 'heavdsafillskn';
     $password = '4d93c9ccf6eedb3fc772c3322cec27fd4b22148b007078c4cdf85a8a89807755';
     $dsn = "pgsql:host=$host;port=5432;dbname=$db;";
 
-    $pdo_connection =new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+    $pdo_connection = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
-    $login = new LoginController($email,$password);
+    // Getting data from login form
+    $email = $_POST["email"];
+    $userPwd = $_POST["password"];
+
+    $login = new LoginController($email, $userPwd);
     if(($login->loginUser())){
        // setcookie('email', $email, time()+60*60*7);
        // setcookie('password', $password,time()+60*60*7);
@@ -34,12 +41,10 @@ if(isset($_POST["submit"])){
         }
         session_regenerate_id(true);
 
-        $_SESSION['email'] =$email;
-        $_SESSION['password'] =$password;
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $userPwd;
 
         $sessions_handler->write(1,session_id());
-        $res=$sessions_handler->read(1);
-
 
         echo( '<h1>after decode</h1>');
         print_r( $_SESSION);
