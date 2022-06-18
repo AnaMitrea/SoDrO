@@ -5,7 +5,7 @@
 
 
 <h2>Contact Form - <?= $firstname . ' ' . $secondname; ?> </h2>
-<form action="/Router/public/contact" method="post">
+<form action="/BackendRouting/contact" method="post">
     <label for="firstname">First Name</label>
     <input type="text" id="firstname" name="firstname" placeholder="Your first name..">
 

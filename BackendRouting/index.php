@@ -15,10 +15,88 @@ $router->get(root . '/', function () {
 $router->get(root . '/signup', function () {
     require_once 'frontend/pages/login.php';
 });
+$router->post(root . '/signup', function ($params) {
+    require_once 'backend/includes/signup.inc.php';
 
-$router->get(root . '/login', function () {
-    require_once 'frontend/pages/login.php';
+    if(empty($params["error"]))
+        require_once 'frontend/pages/login.php';
+    else {
+        // TODO maybe alert message?
+        switch ($params["error"]) {
+            case "none":
+                require_once 'frontend/pages/login.php';
+                break;
+            case "emptyinput":
+                echo "Empty Input";
+                require_once 'frontend/pages/404error.php';
+                break;
+            case "invalidusername":
+                echo "Invalid Username";
+                require_once 'frontend/pages/404error.php';
+                break;
+            case "invalidemail":
+                echo "Invalid Email";
+                require_once 'frontend/pages/404error.php';
+                break;
+            case "passwordunmatch":
+                echo "Passwords don't match";
+                require_once 'frontend/pages/404error.php';
+                break;
+            case "uidtaken":
+                echo "Username or email already taken";
+                require_once 'frontend/pages/404error.php';
+                break;
+            case "stmtfailed":
+                echo "Database Statement failed";
+                require_once 'frontend/pages/404error.php';
+                break;
+            default:
+                echo "Something unexpectedly happened";
+                require_once 'frontend/pages/404error.php';
+        }
+
+    }
 });
+
+$router->get(root . '/login', function (array $params = []) {
+    if(empty($params["error"]))
+        require_once 'frontend/pages/login.php';
+    else {
+        switch ($params["error"]) {
+            case "none":
+                require_once 'frontend/pages/login.php';
+                break;
+            case "emptyinput":
+                echo "Empty Input";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            case "invalidusername":
+                echo "Invalid Username";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            case "invalidemail":
+                echo "Invalid Email";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            case "passwordunmatch":
+                echo "Passwords don't match";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            case "uidtaken":
+                echo "Username or email already taken";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            case "stmtfailed":
+                echo "Database Statement failed";
+                require_once 'frontend/pages/eroare.php';
+                break;
+            default:
+                echo "Something unexpectedly happened";
+                require_once 'frontend/pages/eroare.php';
+        }
+    }
+});
+
 
 $router->get(root . '/recover', function () {
     require_once 'frontend/pages/recover-pwd.php';
@@ -93,8 +171,8 @@ $router->get(root . '/privacy', function () {
 
 
 # testing stuff
-$router->get('/BackendRouting/public/contact', Contact::class . '::execute');
-$router->post('/BackendRouting/public/contact', function ($params) {
+$router->get('/BackendRouting/contact', Contact::class . '::execute');
+$router->post('/BackendRouting/contact', function ($params) {
     var_dump($params);
 });
 
