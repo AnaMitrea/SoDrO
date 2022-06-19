@@ -1,0 +1,11 @@
+Categorii
+-
+- Carbonated drinks
+- Coffee drinks
+- Dairy drinks
+- Energy drinks
+- Hot beverages
+- Non-Alcoholic beverages
+- Iced Teas
+- Plant-based beverages
+- Waters 
