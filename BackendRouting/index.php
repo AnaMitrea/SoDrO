@@ -117,9 +117,12 @@ $router->get(root . '/trending', function () {
 });
 
 # Multiple Products Page
-$router->get(root. '/products', function () {
-    require 'frontend/pages/shop-page.php';
-    /* TODO routing pentru endpoint de tipul /products?page=2 */
+$router->get(root. '/products', function (array $params = []) {
+    if (empty($params)) {
+        require 'frontend/pages/shop-page.php';
+    } else {
+
+    }
 });
 $router->post(root . '/products', function () {
     require 'frontend/pages/shop-page-after-sort.php';

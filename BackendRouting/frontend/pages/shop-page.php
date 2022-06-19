@@ -3,6 +3,8 @@
 use Handlers\DatabaseHandler;
 $root = '/BackendRouting';
 
+/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
+
 session_start();
 include "backend/handlers/DatabaseHandler.php";
 $db = new DatabaseHandler();
@@ -66,7 +68,7 @@ $search_for = null;
     <link rel="stylesheet" href="frontend/stylesheets/style-shop.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <title>Product</title>
+    <title>Products</title>
     <script type="text/javascript">
         function inc(){
             <?php
@@ -140,135 +142,140 @@ $search_for = null;
         </div>
     </div>
 
-    <div class="middle">
-        <div class="sort-list">
-            <p id="sort-list-title">Sort list</p>
-            <form method="post" action="shop-page-after-sort.php">
-                <p class="tag">Categories:</p>
-                <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
-                <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
-                <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
-                <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
-                <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
-                <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
-                <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
-                <p class="tag">Vitamin:</p>
-                <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
-                <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
-                <label><input type="checkbox" name="check-10" value="vitamin_b12_value">vitamin-b12</label><br>
-                <label><input type="checkbox" name="check-11" value="potassium_value">potassium</label><br>
-                <label><input type="checkbox" name="check-12" value="calcium_value">calcium</label><br>
-                <label><input type="checkbox" name="check-13" value="caffeine_value">caffeine</label><br>
-                <label><input type="checkbox" name="check-14" value="taurine_value">taurine</label><br>
-                <p class="tag">Vitamin(without):</p>
-                <label><input type="checkbox" name="check-15" value="energy_kj_value">energy kj</label><br>
-                <label><input type="checkbox" name="check-16" value="energy_kcal_value">energy kcal</label><br>
-                <label><input type="checkbox" name="check-17" value="fat_value">fat value</label><br>
-                <label><input type="checkbox" name="check-18" value="saturated_fat_value">saturated fat</label><br>
-                <label><input type="checkbox" name="check-19" value="carbohydrates_value">carbohydrates</label><br>
-                <label><input type="checkbox" name="check-20" value="sugars_value">sugar</label><br>
-                <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
-                <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
-                <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
-                <input type="submit" name="submit-from-left">
-            </form>
-        </div>
-        <div class="shop">
-
-            <div class="sorting-lists">
-                <div class="sort-by sort-by-first" id="categories">
-                    <button class="sort-by-title">Sort list</button>
-                    <form class="form-responsive" method="post" action="<?php echo $root?>/products">
-                        <p class="tag">Categories:</p>
-                        <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
-                        <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
-                        <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
-                        <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
-                        <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
-                        <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
-                        <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
-                        <p class="tag">Vitamin:</p>
-                        <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
-                        <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
-                        <label><input type="checkbox" name="check-10" value="vitamin_b12_value">vitamin-b12</label><br>
-                        <label><input type="checkbox" name="check-11" value="potassium_value">potassium</label><br>
-                        <label><input type="checkbox" name="check-12" value="calcium_value">calcium</label><br>
-                        <label><input type="checkbox" name="check-13" value="caffeine_value">caffeine</label><br>
-                        <label><input type="checkbox" name="check-14" value="taurine_value">taurine</label><br>
-                        <p class="tag">Vitamin(without):</p>
-                        <label><input type="checkbox" name="check-15" value="energy_kj_value">energy kj</label><br>
-                        <label><input type="checkbox" name="check-16" value="energy_kcal_value">energy kcal</label><br>
-                        <label><input type="checkbox" name="check-17" value="fat_value">fat value</label><br>
-                        <label><input type="checkbox" name="check-18" value="saturated_fat_value">saturated fat</label><br>
-                        <label><input type="checkbox" name="check-19" value="carbohydrates_value">carbohydrates</label><br>
-                        <label><input type="checkbox" name="check-20" value="sugars_value">sugar</label><br>
-                        <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
-                        <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
-                        <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                        <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
-                        <input type="submit" name="submit-from-left">
-                    </form>
-                </div>
-
-                <div class="sort-by">
-                    <button class="sort-by-title">Sort by</button>
-                    <ul class="list-categories">
-                        <li><a href='<?php echo $root?>/products?page=1'>Most viewed</a></li>
-                        <li><a href='<?php echo $root?>/products?page=1&sort=name_asc'>Name asc</a></li>
-                        <li><a href='<?php echo $root?>/products?page=1&sort=name_desc'>Name desc</a></li>
-                    </ul>
-                </div>
+    <!-- Main Content of page -->
+    <div id="main_content" class="middle">
+            <div class="sort-list">
+                <p id="sort-list-title">Sort list</p>
+                <form method="post" action="shop-page-after-sort.php">
+                    <p class="tag">Categories:</p>
+                    <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
+                    <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
+                    <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
+                    <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
+                    <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
+                    <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
+                    <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
+                    <p class="tag">Vitamin:</p>
+                    <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
+                    <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
+                    <label><input type="checkbox" name="check-10" value="vitamin_b12_value">vitamin-b12</label><br>
+                    <label><input type="checkbox" name="check-11" value="potassium_value">potassium</label><br>
+                    <label><input type="checkbox" name="check-12" value="calcium_value">calcium</label><br>
+                    <label><input type="checkbox" name="check-13" value="caffeine_value">caffeine</label><br>
+                    <label><input type="checkbox" name="check-14" value="taurine_value">taurine</label><br>
+                    <p class="tag">Vitamin(without):</p>
+                    <label><input type="checkbox" name="check-15" value="energy_kj_value">energy kj</label><br>
+                    <label><input type="checkbox" name="check-16" value="energy_kcal_value">energy kcal</label><br>
+                    <label><input type="checkbox" name="check-17" value="fat_value">fat value</label><br>
+                    <label><input type="checkbox" name="check-18" value="saturated_fat_value">saturated fat</label><br>
+                    <label><input type="checkbox" name="check-19" value="carbohydrates_value">carbohydrates</label><br>
+                    <label><input type="checkbox" name="check-20" value="sugars_value">sugar</label><br>
+                    <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
+                    <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
+                    <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
+                    <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
+                    <input type="submit" name="submit-from-left">
+                </form>
             </div>
+            <div class="shop">
+                <!-- Filter List -->
+                <div class="sorting-lists">
+                    <div class="sort-by sort-by-first" id="categories">
+                        <button class="sort-by-title">Sort list</button>
+                        <form class="form-responsive" method="post" action="<?php echo $root?>/products">
+                            <p class="tag">Categories:</p>
+                            <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
+                            <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
+                            <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
+                            <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
+                            <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
+                            <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
+                            <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
+                            <p class="tag">Vitamin:</p>
+                            <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
+                            <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
+                            <label><input type="checkbox" name="check-10" value="vitamin_b12_value">vitamin-b12</label><br>
+                            <label><input type="checkbox" name="check-11" value="potassium_value">potassium</label><br>
+                            <label><input type="checkbox" name="check-12" value="calcium_value">calcium</label><br>
+                            <label><input type="checkbox" name="check-13" value="caffeine_value">caffeine</label><br>
+                            <label><input type="checkbox" name="check-14" value="taurine_value">taurine</label><br>
+                            <p class="tag">Vitamin(without):</p>
+                            <label><input type="checkbox" name="check-15" value="energy_kj_value">energy kj</label><br>
+                            <label><input type="checkbox" name="check-16" value="energy_kcal_value">energy kcal</label><br>
+                            <label><input type="checkbox" name="check-17" value="fat_value">fat value</label><br>
+                            <label><input type="checkbox" name="check-18" value="saturated_fat_value">saturated fat</label><br>
+                            <label><input type="checkbox" name="check-19" value="carbohydrates_value">carbohydrates</label><br>
+                            <label><input type="checkbox" name="check-20" value="sugars_value">sugar</label><br>
+                            <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
+                            <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
+                            <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
+                            <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
+                            <input type="submit" name="submit-from-left">
+                        </form>
+                    </div>
 
-            <div class="shop-list">
-                <?php while($row = $stmt->fetch()){?>
-                    <div class="product-cell">
-                        <div onclick="window.location.href='product-page.php?code=<?php echo $row['code']?>'"> <img class="image-product" src="<?php echo $row['image_url'] ?>" alt="img2"></div>
-                        <div class="product-cell-bottom">
-                            <div class="product-cell-bottom-name">
-                                <p class="product-name">
-                                    <?php
-                                    $pieces = explode(" ",$row['product_name']);
-                                    $first_part = implode(" ", array_splice($pieces, 0, 2));
-                                    echo  $first_part;
-                                    ?></p>
+                    <div class="sort-by">
+                        <button class="sort-by-title">Sort by</button>
+                        <ul class="list-categories">
+                            <li><a href='<?php echo $root?>/products?page=1'>Most viewed</a></li>
+                            <li><a href='<?php echo $root?>/products?page=1&sort=name_asc'>Name asc</a></li>
+                            <li><a href='<?php echo $root?>/products?page=1&sort=name_desc'>Name desc</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-                                <p><?php
-                                    if(strlen($first_part)<15)
-                                    echo strtok($row['brands'] , ",")
-                                    ?>
-                                </p>
+                <!-- Products Container -->
+
+                <div id="products_container" class="shop-list">
+                    <?php while($row = $stmt->fetch()){?>
+                        <div class="product-cell">
+                            <div onclick="window.location.href='<?php echo $root?>/product?code=<?php echo $row['code']?>'">
+                                <img class="image-product" src="<?php echo $row['image_url'] ?>" alt="img2">
                             </div>
-                            <div id="add-to-list-icon">
-                                <button>&#9734;</button>
+                            <div class="product-cell-bottom">
+                                <div class="product-cell-bottom-name">
+                                    <p class="product-name">
+                                        <?php
+                                        $pieces = explode(" ",$row['product_name']);
+                                        $first_part = implode(" ", array_splice($pieces, 0, 2));
+                                        echo  $first_part;
+                                        ?></p>
+
+                                    <p><?php
+                                        if(strlen($first_part)<15)
+                                            echo strtok($row['brands'] , ",")
+                                        ?>
+                                    </p>
+                                </div>
+                                <div id="add-to-list-icon">
+                                    <button>&#9734;</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                }
-                ?>
-
-            </div>
-
-            <div class="choose-page">
-                <?php if($page>1 && $page < $number_of_pages){?>
-                    <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                    <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                    <?php
-                }else if($page==1){
+                        <?php
+                    }
                     ?>
-                    <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                    <?php
-                }else if( $page == $number_of_pages){
+                </div>
+
+                <!-- Choose Page Buttons -->
+                <div class="choose-page">
+                    <?php if($page>1 && $page < $number_of_pages){?>
+                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
+                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
+                        <?php
+                    }else if($page==1){
+                        ?>
+                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
+                        <?php
+                    }else if( $page == $number_of_pages){
+                        ?>
+                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
+                        <?php
+                    }
                     ?>
-                    <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                    <?php
-                }
-                ?>
+                </div>
             </div>
         </div>
-    </div>
 
     <!-- Footer pages -->
     <footer class="footer">
