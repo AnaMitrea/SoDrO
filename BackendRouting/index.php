@@ -91,7 +91,7 @@ $router->get(root . '/recover', function () {
     require 'frontend/pages/recover-pwd.php';
 });
 
-# Home page
+# Homepage
 $router->get(root . '/home', function () {
     require 'frontend/pages/homepage.php';
 });
@@ -111,14 +111,30 @@ $router->get(root . '/profile', function (array $params = []) {
     }
 });
 
-
+# Trending
 $router->get(root . '/trending', function () {
     require 'frontend/pages/trending.php';
 });
 
+# Multiple Products Page
 $router->get(root. '/products', function () {
     require 'frontend/pages/shop-page.php';
+    /* TODO routing pentru endpoint de tipul /products?page=2 */
 });
+$router->post(root . '/products', function () {
+    require 'frontend/pages/shop-page-after-sort.php';
+});
+
+
+$router->get(root. '/product', function (array $params = []) {
+    if(!empty($params['code'])) {
+        require 'frontend/pages/product-page.php';
+    }
+    else
+        require 'frontend/pages/product-page.php';
+});
+
+
 
 /* Recipes */
 $router->get(root . '/recipes', function (array $params = []){
@@ -169,10 +185,10 @@ $router->get('/BackendRouting/contact', Contact::class . '::execute');
 $router->post('/BackendRouting/contact', function ($params) {
     var_dump($params);
 });
-
+/*
 # in case of page not found - error 404
 $router->addNotFoundHandler(function () {
     header("location: " . root . "/error404");
 });
-
+*/
 $router->run();

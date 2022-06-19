@@ -1,25 +1,15 @@
 <?php
-    $root = '/BackendRouting';
 
-    session_start();
-    include "database-handler.classes.php";
-    $db = new DatabaseHandler();
-    $pdo = $db->getConn();
+use model\Product;
+$root = '/BackendRouting';
+include "backend/handlers/DatabaseHandler.php";
+include "backend/models/Product.php";
 
-    if(isset($_GET['code'])){
-        $prod_id = $_GET['code'];
-    }else {
-        $prod_id = 1;
-    }
-    $stmt = $pdo->prepare("SELECT * FROM products where code='$prod_id'", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-    $stmt->execute();
-    $row = $stmt->fetch();
+session_start();
 
-    $ingredients_types = array("Energy kj","Energy kcal","Fat",
-        "Saturated fat","Carbohydrates","Sugar","Fiber","Proteins",
-        "Salt","Sodium","Energy","Vitamin-C","Vitamin-B6",
-        "Vitamin-B12","Potassium","Calcium","Coffeine","Taurine");
-    $ingredients_contor = count($ingredients_types);
+$prod_id = $_GET['code'] ?? 1;
+$product = new Product($prod_id);
+$ingredients_contor = count($product->getIngredientsTypes());
 ?>
 
 <!DOCTYPE html>
@@ -81,14 +71,14 @@
         <div class="swiper">
             <h1>
                 <?php
-                $pieces = explode(" ",$row['product_name']);
+                $pieces = explode(" ",$product->getRow()['product_name']);
                 $first_part = implode(" ", array_splice($pieces, 0, 2));
                 echo $first_part
                 ?>
             </h1>
             <div class="images">
                 <div class="main-photo">
-                    <img class="prod-img" src="<?php echo $row['image_url']?>" alt="photo">
+                    <img class="prod-img" src="<?php echo $product->getRow()['image_url']?>" alt="photo">
                 </div>
             </div>
         </div>
@@ -98,8 +88,8 @@
             <div class="ingredients-list">
                 <h2>NUTRITIONAL VALUES</h2>
                     <h4><?php
-                    if($row['nutrition_data_per']!="serving"){
-                            echo "Per  {$row['nutrition_data_per']}";
+                    if($product->getRow()['nutrition_data_per'] != "serving"){
+                            echo "Per  {$product->getRow()['nutrition_data_per']}";
                         }else{
                             echo "Per serving";
                         }
@@ -113,13 +103,13 @@
                     <?php
                       $vector_poz=0;
                         for($i=19;$i<$ingredients_contor+36;$i=$i+2){
-                            if($row[$i]!=null){
+                            if($product->getRow()[$i]!=null){
                                 ?>
                             <tr>
-                                <td><?php echo $ingredients_types[$vector_poz]?></td>
+                                <td><?php echo $product->getIngredientsTypes()[$vector_poz]?></td>
                                 <td><?php
-                                    echo $row[$i];
-                                    echo $row[$i+1];
+                                    echo $product->getRow()[$i];
+                                    echo $product->getRow()[$i+1];
                                     ?>
                                 </td>
                             </tr>
@@ -135,32 +125,32 @@
             <div class="additional-data">
                 <h2>DETAILS</h2>
                 <?php
-                    if($row['brands']!=null){
+                    if($product->getRow()['brands']!=null){
                         echo"<p>Brand</p>";
-                        echo "<p>{$row['brands']}</p>";
+                        echo "<p>{$product->getRow()['brands']}</p>";
                     }
-                    if($row['quantity']!=null){
+                    if($product->getRow()['quantity']!=null){
                         echo"<p>Product quantity</p>";
-                        echo "<p>{$row['quantity']}</p>";
+                        echo "<p>{$product->getRow()['quantity']}</p>";
                     }
-                    if($row['serving_size']!=null){
+                    if($product->getRow()['serving_size']!=null){
                         echo"<p>A portion</p>";
-                        echo "<p>{$row['serving_size']}</p>";
+                        echo "<p>{$product->getRow()['serving_size']}</p>";
                     }
-                    if($row['packaging']!=null){
+                    if($product->getRow()['packaging']!=null){
                         echo"<p>Package</p>";
-                        $pieces = explode(",",$row['packaging']);
+                        $pieces = explode(",",$product->getRow()['packaging']);
                         $first_part = implode(" ", array_splice($pieces, 0, 3));
                         echo  "<p>$first_part</p>";
                     }
-                    if($row['countries']!=null){
+                    if($product->getRow()['countries']!=null){
                         echo"<p>Countries where you can find it</p>";
-                        $pieces = explode(",",$row['countries']);
+                        $pieces = explode(",",$product->getRow()['countries']);
                         $first_part = implode(" : ", array_splice($pieces, 0, 4));
                         echo  "<p>$first_part</p>";
                     }
-                    if($row['nutriscore_grade']!=null){
-                        echo "<img class='grade-image' src='grades/nutriscore-{$row['nutriscore_grade']}.png' alt='img'>";
+                    if($product->getRow()['nutriscore_grade']!=null){
+                        echo "<img class='grade-image' src='grades/nutriscore-{$product->getRow()['nutriscore_grade']}.png' alt='img'>";
                     }
                 ?>
             </div>
@@ -171,24 +161,24 @@
     <div class="bottom-middle">
 
         <?php
-         if($row['categories']!=null){
+         if($product->getRow()['categories']!=null){
         ?>
         <div class="bottom-details other-categories">
             <h2>OTHER CATEGORIES TO WITCH IT BELONGS</h2>
             <?php
-            echo "<p>{$row['categories']}</p>";
+            echo "<p>{$product->getRow()['categories']}</p>";
             ?>
         </div>
         <?php
          }
         ?>
         <?php
-         if($row['labels']!=null){
+         if($product->getRow()['labels']!=null){
         ?>
         <div class="bottom-details labels">
             <h2>LABELS</h2>
             <?php
-            echo "<p>{$row['labels']}</p>";
+            echo "<p>{$product->getRow()['labels']}</p>";
             ?>
         </div>
         <?php
@@ -196,12 +186,12 @@
         ?>
 
         <?php
-         if($row['ingredients_text_en']!=null){
+         if($product->getRow()['ingredients_text_en']!=null){
         ?>
         <div class="bottom-details text-ingredients">
             <h2>DETAILED INGREDIENTS</h2>
             <?php
-            echo "<p>{$row['ingredients_text_en']}</p>";
+            echo "<p>{$product->getRow()['ingredients_text_en']}</p>";
             ?>
         </div>
         <?php
@@ -216,7 +206,7 @@
         <div class="list-of">
             <?php
             $category = null;
-            $pieces = explode(", ",substr($row['categories_tags'],1));
+            $pieces = explode(", ",substr($product->getRow()['categories_tags'],1));
             if(count($pieces)>1)
                 $category = substr($pieces[1],4,-1);
 

@@ -26,12 +26,14 @@ body{
     width: 100%;
 }
 
+/* Container Right Side Sort by dropdown List */
 .sort-by{
     width: 200px;
     margin-left: auto;
     margin-right: 1.20em;
 }
 
+/* Responsive Left side Filter List */
 .sorting-lists .form-responsive{
     visibility: hidden;
     height: 0;
@@ -53,11 +55,15 @@ body{
     position: absolute;
   }
 
+.sort-by:hover .sort-by-title{
+    border-radius: 15px 15px 0 0;
+}
+
 .list-categories{
     list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-    max-height: 0px;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: opacity 0.3s ease;
@@ -75,17 +81,15 @@ body{
     color: #b45760;
 }
 
-.list-categories li:nth-last-child(3){
+.list-categories li:last-of-type{
     border-radius:0 0 15px 15px;
-}
-
-.sort-by:hover .sort-by-title{
-    border-radius: 15px 15px 0 0;
 }
 
 .list-categories li:hover{
     text-shadow: #589882 1px 0 10px;
 }
+
+
 
 .sort-list{
     width:15em;
