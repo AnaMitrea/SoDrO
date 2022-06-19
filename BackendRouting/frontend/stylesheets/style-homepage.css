@@ -104,9 +104,10 @@ li a:hover {
     margin-bottom: 40px;
 }
 
-.category h2 {
+.category .h2_text {
     margin-left: 15px;
     font-weight: 500;
+    border-bottom: 2px solid var(--aqua-forest)
 }
 
 /*--- Products ---*/

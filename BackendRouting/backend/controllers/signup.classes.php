@@ -1,8 +1,9 @@
 <?php
-namespace Classes;
+namespace Controller;
 
 use Handlers\DatabaseHandler;
 
+const root = '/BackendRouting';
 class Signup extends DatabaseHandler {
 
     private $pdo;
@@ -24,8 +25,7 @@ class Signup extends DatabaseHandler {
 
         if(!$stmt->execute(array($uid, $email))) { // statement couldn't be executed
             $stmt = null;
-            //header("location: ../pages/login.php?error=stmtfailed");
-            header("location: /login?error=stmtfailed");
+            header("location: /signup?error=stmtfailed");
             exit();
         }
 
@@ -50,8 +50,7 @@ class Signup extends DatabaseHandler {
 
         if(!$stmt->execute(array($email, $hashedPwd, $uid, $dob, 'f'))) { // statement couldn't be executed
             $stmt = null;
-            //header("location: ../pages/login.php?error=stmtfailed");
-            header("location: /login?error=stmtfailed");
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
         $stmt = null;

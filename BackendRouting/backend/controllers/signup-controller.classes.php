@@ -1,9 +1,10 @@
 <?php
-namespace Classes;
+namespace Controller;
 
 /**
  * Signup Controller class that handles the form information validation
  */
+const root = '/BackendRouting';
 class SignupController extends Signup {
 
     private $uid;
@@ -31,33 +32,23 @@ class SignupController extends Signup {
 
     public function signupUser() {
         if(!$this->emptyInput()) {
-            echo "Empty input!";
-            //header("location: ../pages/login.php?error=emptyinput");
-            header("location: /BackendRouting/signup?error=emptyinput");
+            header("location: " . root . "/signup?error=emptyinput");
             exit();
         }
         if(!$this->invalidUid()) {
-            echo "Invalid username!";
-            //header("location: ../pages/login.php?error=username");
-            header("location: /BackendRouting/signup?error=invalidusername");
+            header("location: " . root . "/signup?error=invalidusername");
             exit();
         }
         if(!$this->invalidEmail()) {
-            echo "Empty email!";
-            //header("location: ../pages/login.php?error=email");
-            header("location: /BackendRouting/signup?error=invalidemail");
+            header("location: " . root . "/signup?error=invalidemail");
             exit();
         }
         if(!$this->pwdMatch()) {
-            echo "Passwords don't match!";
-            //header("location: ../pages/login.php?error=passwordmatch");
-            header("location: /BackendRouting/signup?error=passwordunmatch");
+            header("location: " . root . "/signup?error=passwordunmatch");
             exit();
         }
         if(!$this->uidTakenCheck()) {
-            echo "Username or email taken!";
-            //header("location: ../pages/login.php?error=useroremailtaken");
-            header("location: /BackendRouting/signup?error=uidtaken");
+            header("location: " . root . "/signup?error=uidtaken");
             exit();
         }
 

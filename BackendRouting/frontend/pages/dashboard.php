@@ -86,7 +86,6 @@
         </div>
     </div>
     <!-- TODO Change Email Modal -->
-
     <!-- TODO Change Password Modal -->
 
     <!-- Top Bar Row -->
@@ -128,6 +127,7 @@
             </a>
         </div>
     </div>
+
     <!-- Main Container -->
     <div class="page-container" id="id-page-container">
         <div class="dashboard-structor" id="id-dashboard-structor">
@@ -259,7 +259,7 @@
         </div>
     </div>
 
-
+    <!-- Footer Pages -->
     <footer class="footer">
         <div class="icon">
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
@@ -274,8 +274,15 @@
     </footer>
 
 <!-- Scripts  -->
-    <!-- Nav bar script -->
-    <script src="frontend/scripts/navBarScript.js"></script>
+    <!-- Profile Left slider for Responsive -->
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
     <!-- Shopping List script -->
     <script src="frontend/scripts/shoppinglistScript.js"></script>
     <!-- Buttons Percentages script -->

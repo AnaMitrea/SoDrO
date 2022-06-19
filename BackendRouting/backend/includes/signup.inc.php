@@ -1,7 +1,7 @@
 <?php
 namespace Includes;
 
-use Classes\SignupController;
+use Controller\SignupController;
 
 const root = '/BackendRouting';
 
@@ -19,8 +19,8 @@ if(isset($_POST["signup"])) {
 
     // instantiate Signup controller class
     include "backend/handler/DatabaseHandler.php";
-    include "backend/classes/signup.classes.php";
-    include "backend/classes/signup-controller.classes.php";
+    include "backend/controllers/signup.classes.php";
+    include "backend/controllers/signup-controller.classes.php";
 
     $signup = new SignupController($uid, $email, $pwd, $pwdRepeat, $dob);
 

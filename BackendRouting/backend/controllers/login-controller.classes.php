@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes;
+namespace Controller;
 
 class LoginController extends Login{
     private $email;

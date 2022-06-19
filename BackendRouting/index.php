@@ -12,11 +12,11 @@ $router->get(root . '/', function () {
     echo 'Index page';
 });
 
+# Sign up
 $router->get(root . '/signup', function (array $params = []) {
     if(empty($params["error"]))
         require 'frontend/pages/login.php';
     else {
-        // TODO maybe alert message?
         switch ($params["error"]) {
             case "none":
                 require 'frontend/pages/login.php';
@@ -55,7 +55,7 @@ $router->post(root . '/signup', function () {
     require 'backend/includes/signup.inc.php';
 });
 
-/* LOGIN */
+# Login
 $router->get(root . '/login', function (array $params = []) {
     if(empty($params["error"]))
         require 'frontend/pages/login.php';
@@ -66,19 +66,19 @@ $router->get(root . '/login', function (array $params = []) {
                 break;
             case "emptyinput":
                 echo "Empty Input";
-                require 'frontend/pages/eroare.php';
+                require 'frontend/pages/404error.php';
                 break;
             case "invalidemail":
                 echo "Invalid Email";
-                require 'frontend/pages/eroare.php';
+                require 'frontend/pages/404error.php';
                 break;
             case "stmtfailed":
                 echo "Database Statement failed";
-                require 'frontend/pages/eroare.php';
+                require 'frontend/pages/404error.php';
                 break;
             default:
                 echo "Something unexpectedly happened";
-                require 'frontend/pages/eroare.php';
+                require 'frontend/pages/404error.php';
         }
     }
 });
@@ -86,15 +86,17 @@ $router->post(root . '/login', function () {
     require 'backend/includes/login.inc.php';
 });
 
+# Password recovery
 $router->get(root . '/recover', function () {
     require 'frontend/pages/recover-pwd.php';
 });
 
+# Home page
 $router->get(root . '/home', function () {
     require 'frontend/pages/homepage.php';
 });
 
-/* Profile */
+# User/Admin Profile
 /* TODO: Check user for admin=true in session/cookie */
 $router->get(root . '/profile', function (array $params = []) {
     if(empty($params['admin']) || $params['admin'] == 'false') {
@@ -102,7 +104,7 @@ $router->get(root . '/profile', function (array $params = []) {
     }else {
         # Endpoint: /profile?admin=true
         if($params['admin'] == 'true') {
-            require 'frontend/pages/admin.php';
+            require 'frontend/pages/admin_1.php';
         } else {
             require 'frontend/pages/404error.php';
         }

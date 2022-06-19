@@ -10,7 +10,7 @@ if(!isset($_SESSION)) {
 <head>
 	<meta charset="UTF-8">
 	<title>Login/Sign in</title>
-	<link rel="stylesheet" href="style-login-signup.css">
+	<link rel="stylesheet" href="frontend/stylesheets/style-login-signup.css">
 </head>
 <body>
 
@@ -25,16 +25,16 @@ if(!isset($_SESSION)) {
 
 <?php
    if(isset($_SESSION["username"])) {
-    echo "<a> Salut " . $_SESSION["username"] . "!</br></a>";
-    echo "<a> Salut " . $_SESSION["email"] . "!</br></a>";
-    echo "<a> Salut " . $_SESSION["password"] . "!</br></a>";
+    echo "<a> Username: " . $_SESSION["username"] . "</br></a>";
+    echo "<a> Email: " . $_SESSION["email"] . "</br></a>";
+    echo "<a> Password: " . $_SESSION["password"] . "</br></a>";
 
-    echo session_decode();
+    # echo session_decode();
    }
    else echo "NU";
 ?>
 <!-- Script  -->
-<script src="loginScript.js"></script>
+<script src="frontend/scripts/loginScript.js"></script>
 
 </body>
 </html>

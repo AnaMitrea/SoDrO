@@ -1,9 +1,10 @@
 <?php
 
-namespace Classes;
+namespace Controller;
 
 use Handlers\DatabaseHandler;
 use PDO;
+
 
 class Login extends DatabaseHandler {
     private $pdo;
@@ -16,13 +17,13 @@ class Login extends DatabaseHandler {
     }
 
     /**
-     * @param $email
+     * @param $hashedEmail
      * @return string
      */
-    protected function getPwd($email) : string
+    protected function getPwd($hashedEmail) : string
     {
         $data = $this->pdo->prepare("select password from users where email = ? ");
-        if (!$data->execute(array($email))) {
+        if (!$data->execute(array($hashedEmail))) {
             $data = null;
             return "false";
         }
@@ -50,10 +51,11 @@ class Login extends DatabaseHandler {
         }
 
         $checkPassword = password_verify($password,$pwd);
-        if(!$checkPassword){
+        if(!$checkPassword) {
             $this->pdo = null;
             return false;
-        }else {
+        }
+        else {
            $data = $this->pdo->prepare("select * from users where email= ? ");
            if(!$data->execute(array($email))){
                $data = null;
