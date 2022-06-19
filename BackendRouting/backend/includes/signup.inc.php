@@ -18,7 +18,7 @@ if(isset($_POST["signup"])) {
     $dob = $_POST["dob"];
 
     // instantiate Signup controller class
-    include "backend/handler/DatabaseHandler.php";
+    include "backend/handlers/DatabaseHandler.php";
     include "backend/controllers/signup.classes.php";
     include "backend/controllers/signup-controller.classes.php";
 

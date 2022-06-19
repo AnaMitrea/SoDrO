@@ -1,6 +1,9 @@
 <?php
+
+use Handlers\DatabaseHandler;
+
 session_start();
-include "database-handler.classes.php";
+include "backend/handlers/DatabaseHandler.php";
 $db = new DatabaseHandler();
 $pdo = $db->getConn();
 

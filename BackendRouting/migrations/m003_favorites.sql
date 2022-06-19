@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS "public"."favorites";
 -- This script only contains the table creation statements and does not fully represent the table in database. It's still missing: indices, triggers. Do not use it as backup.
 
 -- Squences
-CREATE SEQUENCE IF NOT EXISTS favorites_id_seq
+CREATE SEQUENCE IF NOT EXISTS favorites_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."favorites" (

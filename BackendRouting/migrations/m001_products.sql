@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS "public"."products";
 -- This script only contains the table creation statements and does not fully represent the table in database. It's still missing: indices, triggers. Do not use it as backup.
 
 -- Squences
-CREATE SEQUENCE IF NOT EXISTS product_seq
+CREATE SEQUENCE IF NOT EXISTS product_seq;
 
 -- Table Definition
 CREATE TABLE "public"."products" (

@@ -9,8 +9,8 @@ const root = '/BackendRouting';
 
 if(isset($_POST["submit"])){
 
-    include "backend/handler/PGSessions.php";
-    include "backend/handler/DatabaseHandler.php";
+    include "backend/handlers/PGSessions.php";
+    include "backend/handlers/DatabaseHandler.php";
     include "backend/controllers/login.classes.php";
     include "backend/controllers/login-controller.classes.php";
 

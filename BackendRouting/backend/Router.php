@@ -2,7 +2,7 @@
 
 namespace App;
 
-require_once 'handler/Contact.php';
+require 'handlers/Contact.php';
 
 class Router
 {
@@ -42,7 +42,6 @@ class Router
         for($index = 2; $index < count($request_segments); $index++) {
             $requestPath .= ( '/'. $request_segments[$index]);
         }
-        #var_dump($requestPath);
         return $requestPath;
     }
 
