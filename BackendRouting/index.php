@@ -159,6 +159,10 @@ $router->get(root . '/privacy', function () {
     require 'frontend/pages/footer/privacy.php';
 });
 
+$router->get(root . '/error404', function () {
+    require 'frontend/pages/404error.php';
+});
+
 
 # testing stuff
 $router->get('/BackendRouting/contact', Contact::class . '::execute');
@@ -168,8 +172,7 @@ $router->post('/BackendRouting/contact', function ($params) {
 
 # in case of page not found - error 404
 $router->addNotFoundHandler(function () {
-    $title = 'Not Found!';
-    require 'frontend/pages/404error.php';
+    header("location: " . root . "/error404");
 });
 
 $router->run();

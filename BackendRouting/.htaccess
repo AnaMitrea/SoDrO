@@ -1,8 +1,13 @@
 <IfModule dir_module>
-    DirectoryIndex /BackendRouting/index.php /BackendRouting/frontend/pages/login.html
+    DirectoryIndex /BackendRouting/index.php
 </IfModule>
 
-#main directory : /BackendRouting/
+<Files "database.config.php">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+ErrorDocument 403 /BackendRouting/frontend/pages/forbidden.php
 
 Options FollowSymLinks
 
