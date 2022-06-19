@@ -1,12 +1,11 @@
 <?php
-
+/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
+session_start();
 use Handlers\DatabaseHandler;
+
+include 'backend/includes/productGetter.php';
 $root = '/BackendRouting';
 
-/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
-
-session_start();
-include "backend/handlers/DatabaseHandler.php";
 $db = new DatabaseHandler();
 $pdo = $db->getConn();
 
@@ -143,7 +142,7 @@ $search_for = null;
     </div>
 
     <!-- Main Content of page -->
-    <div id="main_content" class="middle">
+    <div class="middle">
             <div class="sort-list">
                 <p id="sort-list-title">Sort list</p>
                 <form method="post" action="shop-page-after-sort.php">
@@ -225,40 +224,12 @@ $search_for = null;
                 </div>
 
                 <!-- Products Container -->
+                <div id="shop_list_container" class="shop-list">
 
-                <div id="products_container" class="shop-list">
-                    <?php while($row = $stmt->fetch()){?>
-                        <div class="product-cell">
-                            <div onclick="window.location.href='<?php echo $root?>/product?code=<?php echo $row['code']?>'">
-                                <img class="image-product" src="<?php echo $row['image_url'] ?>" alt="img2">
-                            </div>
-                            <div class="product-cell-bottom">
-                                <div class="product-cell-bottom-name">
-                                    <p class="product-name">
-                                        <?php
-                                        $pieces = explode(" ",$row['product_name']);
-                                        $first_part = implode(" ", array_splice($pieces, 0, 2));
-                                        echo  $first_part;
-                                        ?></p>
-
-                                    <p><?php
-                                        if(strlen($first_part)<15)
-                                            echo strtok($row['brands'] , ",")
-                                        ?>
-                                    </p>
-                                </div>
-                                <div id="add-to-list-icon">
-                                    <button>&#9734;</button>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                    ?>
                 </div>
 
                 <!-- Choose Page Buttons -->
-                <div class="choose-page">
+                <div id="choose_page_container" class="choose-page">
                     <?php if($page>1 && $page < $number_of_pages){?>
                         <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
                         <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
@@ -295,5 +266,6 @@ $search_for = null;
             window.history.replaceState( null, null, window.location.href );
         }*/
     </script>
+    <script src="frontend/scripts/Products.js"></script>
 </body>
 </html>

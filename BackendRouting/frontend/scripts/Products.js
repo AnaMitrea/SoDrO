@@ -1,15 +1,21 @@
-// const main = document.getElementById('main_content');
-const shop_list = document.getElementById('products_container');
 
-function getProducts(data) {
-    shop_list.innerHtml = '';
+const shop_list_div = document.getElementById('shop_list_container');
+const choose_page_container = document.getElementById('choose_page_container');
+const json_div = document.getElementById('json_data_from_php');
+const json_data = json_div.textContent;
+let data = JSON.parse(json_data);
 
-    data.forEach(product => {
+showProducts(data);
+
+function showProducts(data) {
+    shop_list_div.innerHtml = '';
+
+    data[0].forEach(product => {
         const {product_name, image_url, code, brands} = product;
         console.log(product);
 
         const productEl = document.createElement('div');
-        productEl.classList.add("shop-list");
+        productEl.classList.add("product-cell");
 
         productEl.innerHTML = `
             <div onclick="window.location.href='/BackendRouting/product?code=${code}'">
@@ -24,8 +30,7 @@ function getProducts(data) {
                     <button>&#9734;</button>
                 </div>
             </div>
-        `;
-        shop_list.appendChild(productEl);
-
+        `
+        shop_list_div.appendChild(productEl);
     })
 }

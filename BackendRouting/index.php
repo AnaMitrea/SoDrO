@@ -121,7 +121,7 @@ $router->get(root. '/products', function (array $params = []) {
     if (empty($params)) {
         require 'frontend/pages/shop-page.php';
     } else {
-
+        require 'frontend/pages/shop-page.php';
     }
 });
 $router->post(root . '/products', function () {

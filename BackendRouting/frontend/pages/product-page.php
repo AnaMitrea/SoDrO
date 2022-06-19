@@ -3,7 +3,7 @@
 use model\Product;
 $root = '/BackendRouting';
 include "backend/handlers/DatabaseHandler.php";
-include "backend/models/Product.php";
+include "backend/models/Shop.php";
 
 session_start();
 
