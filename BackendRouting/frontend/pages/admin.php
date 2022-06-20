@@ -1,5 +1,8 @@
 <?php
     $root = '/BackendRouting';
+if(!isset($_SESSION)) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -56,46 +59,137 @@
             </a>
         </div>
     </div>
-    <div class="admin-dashboard">
-            <div class="dashboard-structor">
-                <div class="user">
-                    <div class="profile-img">
-                        <img src="frontend/images/user/profile.jpg" alt="Avatar">
-                    </div>
-
-                    <div class="user-description">
-                        <p>Your Name</p>
-                        <p>Your Username</p>
-                        <button class="change-email">Change Email</button>
-                        <button class="change-password">Change Password</button>
-                    </div>
+    <div class="page-container" id="id-page-container">
+        <div class="dashboard-structor" id="id-dashboard-structor">
+            <div class="user">
+                <div class="profile-img">
+                    <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
-                <div class="admin-box">
+
+                <div class="user-description">
+                    <p>Your Name</p>
+                    <p>Your Username</p>
+                    <button id="email-btn" class="change-email">Change Email</button>
+                    <button id="pwd-btn" class="change-password">Change Password</button>
+                    <button id="logout" class="change-password">Logout</button>
+                </div>
+            </div>
+
+            <!--  Responsive Open nav bar with account info-->
+            <span id="span-openUser-btn"  onclick="openNav()">&#9776; View Profile Information</span>
+            <!-- Admin Functionalities with Forms -->
+            <div class="account-information">
+                <div class="account-preferences">
                     <div class="options-box">
                         <div class="top-options">
                             <div class="options-frame">
-                                    <img src="frontend/images/user/userwhitelist.png" class="icon-frame">
+                                <img src="frontend/images/user/adduser.png" id="adduser" class="icon-frame">
                                 <div class="options-text">
-                                     <p>Whitelist User</p>
+                                    <button id="addbutton" class="functions-button">Add User</button>
                                 </div>
                             </div>
-                            <div class="options-frame">
-                                    <img src="frontend/images/user/adduser.png" class="icon-frame">
+                            <div class="options-frame" id="removeuserbutton">
+                                <img src="frontend/images/user/removeuser.png" id="removeuser" class="icon-frame">
                                 <div class="options-text">
-                                    <p>Add User</p>
-                                </div>
-                            </div>
-                            <div class="options-frame">
-                                    <img src="frontend/images/user/removeuser.png" class="icon-frame">
-                                <div class="options-text">
-                                    <p>Remove User</p>
+                                    <button id="removebutton" class="functions-button">Remove User</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="adduser-form" id="add-user-form">
+                        <div class="container">
+                            <form action="<?php echo $root?>/profile?admin=true&method=add" id="adduser" method="post">
+                                <div class="row">
+                                    <h2>Add an user to the database.</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="username">Username</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="username" name="username" placeholder="Enter the username..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="email" name="email" placeholder="Enter the email..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="Password">Password</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="password" id="password" name="password" placeholder="Enter the user's password..">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="dateofbirth">Date of Birth</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="date" id="dateofbirth" name="dateofbirth" class="input" placeholder="Date Of Birth" />
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <input type="submit" name="submit-add" value="Add user">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="adduser-form" id="remove-user-form">
+                        <div class="container">
+                            <form action="<?php echo $root?>/profile?admin=true&method=remove">
+                                <div class="title">
+                                    <h2>Remove an user from the database.</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-25">
+                                        <label for="username">Username</label>
+                                    </div>
+                                    <div class="col-75">
+                                        <input type="text" id="user" name="username" placeholder="Enter the username..">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <input type="submit" value="Remove user">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
+
+    <!-- Fullscreen Overlay Nav Div  -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <!-- <a href="#">About</a> -->
+            <div class="user">
+                <div class="profile-img">
+                    <img src="frontend/images/user/profile.jpg" alt="Avatar">
+                </div>
+
+                <div class="user-description">
+                    <p>Your Name</p>
+                    <p>Your Username</p>
+                    <button class="group-button">Your Group</button>
+                    <button class="change-email">Change Email</button>
+                    <button class="change-password">Change Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="icon">
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
@@ -109,5 +203,6 @@
             <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
+    <script src="frontend/scripts/adminModals.js"></script>
 </body>
 </html>

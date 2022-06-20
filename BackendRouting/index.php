@@ -104,11 +104,53 @@ $router->get(root . '/profile', function (array $params = []) {
     }else {
         # Endpoint: /profile?admin=true
         if($params['admin'] == 'true') {
-            require 'frontend/pages/admin_1.php';
-        } else {
-            require 'frontend/pages/404error.php';
+            if(!empty($params["error"])){
+                switch ($params["error"]) {
+                    case "none":
+                        require 'frontend/pages/admin.php';
+                        break;
+                    case "emptyinput":
+                        echo "Empty Input";
+                       // require 'frontend/pages/404error.php';
+                        break;
+                    case "username":
+                        echo "Invalid Username";
+                       // require 'frontend/pages/404error.php';
+                        break;
+                    case "emptyemail":
+                        echo "Empty Email";
+                       // require 'frontend/pages/404error.php';
+                        break;
+                    case "useremailtaken":
+                        echo "Username or email taken!";
+                        // require 'frontend/pages/404error.php';
+                        break;
+                    default:
+                        echo "Something unexpectedly happened";
+                      //  require 'frontend/pages/404error.php';
+                }
+            }
+            else{
+                require 'frontend/pages/admin.php';
+            }
         }
     }
+});
+
+$router->post(root . '/profile', function (array $params = []) {
+    if($params['method']== 'add'){
+        require 'backend/includes/adduser.inc.php';
+        echo "aasasa";
+    }
+    else{
+        if($params['method']=='remove'){
+            require 'backend/includes/removeUser.inc.php';
+        }
+        else {
+            header("location: " . root . "/error404");
+        }
+    }
+
 });
 
 # Trending
@@ -194,8 +236,9 @@ $router->post('/BackendRouting/contact', function ($params) {
 });
 
 # in case of page not found - error 404
+/*
 $router->addNotFoundHandler(function () {
     header("location: " . root . "/error404");
 });
-
+*/
 $router->run();
