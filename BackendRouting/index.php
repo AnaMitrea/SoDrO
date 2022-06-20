@@ -117,10 +117,14 @@ $router->get(root . '/trending', function () {
 });
 
 # Multiple Products Page
+# /products?page=1
 $router->get(root. '/products', function (array $params = []) {
-    if (empty($params)) {
+    if (empty($params) || $params['page'] == 1) {
         require 'frontend/pages/shop-page.php';
     } else {
+        if (!empty($params['page'])) {
+
+        }
         require 'frontend/pages/shop-page.php';
     }
 });
@@ -188,10 +192,10 @@ $router->get('/BackendRouting/contact', Contact::class . '::execute');
 $router->post('/BackendRouting/contact', function ($params) {
     var_dump($params);
 });
-/*
+
 # in case of page not found - error 404
 $router->addNotFoundHandler(function () {
     header("location: " . root . "/error404");
 });
-*/
+
 $router->run();

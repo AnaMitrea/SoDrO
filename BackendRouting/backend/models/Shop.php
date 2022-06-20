@@ -7,7 +7,7 @@ use Handlers\DatabaseHandler;
 class Shop extends DatabaseHandler
 {
     private $pdo;
-    private $json;
+
     private $ingredients_types = array(
         "Energy kj","Energy kcal","Fat",
         "Saturated fat","Carbohydrates","Sugar","Fiber","Proteins",
@@ -19,13 +19,12 @@ class Shop extends DatabaseHandler
      */
     public function __construct() {
         $this->pdo = $this->getConn();
-        $this->json = $this->getProduct();
     }
 
     /**
      * @return false|string
      */
-    private function getProduct()
+    public function getProduct()
     {
         #$stmt = $this->pdo->prepare("SELECT * FROM products where code='$this->code'", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
         $stmt = $this->pdo->prepare("SELECT * FROM products limit 24 offset 1", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
@@ -36,23 +35,6 @@ class Shop extends DatabaseHandler
         $info[] = $rows;
 
         return json_encode($info, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
-    }
-
-    /**
-     * @return string
-     */
-    public function getJson()
-    {
-        return $this->json;
-    }
-
-
-    /**
-     * @return string[]
-     */
-    public function getIngredientsTypes(): array
-    {
-        return $this->ingredients_types;
     }
 
 }

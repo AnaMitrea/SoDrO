@@ -47,14 +47,15 @@ if($search_for == null and $sort_by==null){
 }else if($search_for!=null and $sort_by!=null){
     $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%') order by 3 $type_sort limit $num_per_page offset $start_from", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
 }
-
 $stmt->execute();
+
 $stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
 $stmt_count->execute();
 $entire_row = $stmt_count->fetch();
 $number_of_pages = $entire_row[0];
 $number_of_pages = ceil($number_of_pages / $num_per_page);
 $search_for = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -223,7 +224,7 @@ $search_for = null;
                     </div>
                 </div>
 
-                <!-- Products Container -->
+                <!-- Products Container - contents added from javascript -->
                 <div id="shop_list_container" class="shop-list">
 
                 </div>
