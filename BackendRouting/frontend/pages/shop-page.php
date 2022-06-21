@@ -1,25 +1,17 @@
 <?php
 /* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
 session_start();
-use Handlers\DatabaseHandler;
+use App\Database\DatabaseHandler;
 
-include 'backend/includes/productGetter.php';
+include 'application/class/views/shop.phtml';
 $root = '/BackendRouting';
 
 $db = new DatabaseHandler();
 $pdo = $db->getConn();
 
-if(isset($_GET['page'])){
-    $page = $_GET['page'];
-}else {
-    $page = 1;
-}
+$page = $_GET['page'] ?? 1;
 
-if(isset($_GET['sort'])){
-    $sort_by = $_GET['sort'];
-}else {
-    $sort_by = null;
-}
+$sort_by = $_GET['sort'] ?? null;
 
 if(strcmp($sort_by,"name_asc")){
     $type_sort = "ASC";
@@ -39,17 +31,17 @@ else {
 
 
 if($search_for == null and $sort_by==null){
-    $stmt = $pdo->prepare("SELECT * FROM products limit $num_per_page offset $start_from", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-}else if($search_for!=null and $sort_by==null){
-    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%')", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-}else if($search_for==null and $sort_by!=null){
-    $stmt = $pdo->prepare("SELECT * FROM products order by 3 $type_sort limit $num_per_page offset $start_from", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-}else if($search_for!=null and $sort_by!=null){
-    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%') order by 3 $type_sort limit $num_per_page offset $start_from", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+    $stmt = $pdo->prepare("SELECT * FROM products limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+}else if($search_for != null and $sort_by == null){
+    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%')", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+}else if($search_for == null and $sort_by != null){
+    $stmt = $pdo->prepare("SELECT * FROM products order by 3 $type_sort limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+}else if($search_for != null and $sort_by != null){
+    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%') order by 3 $type_sort limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 }
 $stmt->execute();
 
-$stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+$stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt_count->execute();
 $entire_row = $stmt_count->fetch();
 $number_of_pages = $entire_row[0];
@@ -82,8 +74,6 @@ $search_for = null;
             <?php
             }
             ?>
-
-            return;
         }
         function dec(){
             <?php
@@ -97,7 +87,6 @@ $search_for = null;
             <?php
             }
             ?>
-            return;
         }
     </script>
 </head>

@@ -1,14 +1,15 @@
 <?php
 
-use model\Product;
+use App\Model\Shop;
 $root = '/BackendRouting';
-include "backend/handlers/DatabaseHandler.php";
-include "backend/models/Shop.php";
+include "application/database/DatabaseHandler.php";
+include "application/class/models/Shop.php";
 
 session_start();
 
 $prod_id = $_GET['code'] ?? 1;
-$product = new Product($prod_id);
+// TODO de schimbat $product in $shop pentru eliminare confuzie
+$product = new Shop();
 $ingredients_contor = count($product->getIngredientsTypes());
 ?>
 

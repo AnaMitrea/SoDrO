@@ -1,0 +1,17 @@
+<?php
+namespace App\View;
+
+use App\Model\Shop;
+
+include "application/database/DatabaseHandler.php";
+include_once "application/class/models/Shop.php";
+
+$shop = new Shop();
+?>
+
+<div id="json_data_from_php" style="display: none;">
+    <?php
+    $shop_products_output = $shop->getProduct();
+    echo htmlspecialchars($shop_products_output);
+    ?>
+</div>

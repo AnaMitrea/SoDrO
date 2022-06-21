@@ -2,7 +2,7 @@
 
 namespace App;
 
-require 'handlers/Contact.php';
+require 'application/class/models/Contact.php';
 
 class Router
 {

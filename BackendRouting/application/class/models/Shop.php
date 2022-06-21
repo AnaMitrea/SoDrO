@@ -1,9 +1,11 @@
 <?php
 
-namespace model;
+namespace App\Model;
 
-use Handlers\DatabaseHandler;
+use App\Database\DatabaseHandler;
+
 #header('Content-Type: application/json; charset=utf-8');
+
 class Shop extends DatabaseHandler
 {
     private $pdo;
@@ -37,4 +39,11 @@ class Shop extends DatabaseHandler
         return json_encode($info, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
     }
 
+    /**
+     * @return string[]
+     */
+    public function getIngredientsTypes(): array
+    {
+        return $this->ingredients_types;
+    }
 }

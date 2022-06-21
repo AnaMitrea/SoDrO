@@ -1,8 +1,8 @@
 <?php
 
 use App\Router;
-use App\Handler\Contact;
-require 'backend/Router.php';
+use App\Model\Contact;
+require 'application/Router.php';
 
 const root = '/BackendRouting';
 
@@ -52,7 +52,7 @@ $router->get(root . '/signup', function (array $params = []) {
     }
 });
 $router->post(root . '/signup', function () {
-    require 'backend/includes/signup.inc.php';
+    require 'application/class/views/signup.phtml';
 });
 
 # Login
@@ -83,7 +83,7 @@ $router->get(root . '/login', function (array $params = []) {
     }
 });
 $router->post(root . '/login', function () {
-    require 'backend/includes/login.inc.php';
+    require 'application/class/views/login.phtml';
 });
 
 # Password recovery
@@ -139,18 +139,16 @@ $router->get(root . '/profile', function (array $params = []) {
 
 $router->post(root . '/profile', function (array $params = []) {
     if($params['method']== 'add'){
-        require 'backend/includes/adduser.inc.php';
-        echo "aasasa";
+        require 'application/class/views/admin.adduser.phtml';
     }
     else{
         if($params['method']=='remove'){
-            require 'backend/includes/removeUser.inc.php';
+            require 'application/class/views/removeUser.phtml';
         }
         else {
             header("location: " . root . "/error404");
         }
     }
-
 });
 
 # Trending
@@ -165,7 +163,7 @@ $router->get(root. '/products', function (array $params = []) {
         require 'frontend/pages/shop-page.php';
     } else {
         if (!empty($params['page'])) {
-
+            // TODO
         }
         require 'frontend/pages/shop-page.php';
     }
@@ -236,9 +234,8 @@ $router->post('/BackendRouting/contact', function ($params) {
 });
 
 # in case of page not found - error 404
-/*
 $router->addNotFoundHandler(function () {
     header("location: " . root . "/error404");
 });
-*/
+
 $router->run();

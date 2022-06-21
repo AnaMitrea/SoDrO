@@ -1,2 +1,2 @@
 .idea
-database.config.php
+application/database/database.config.php

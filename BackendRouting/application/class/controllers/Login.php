@@ -1,11 +1,13 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-use Handlers\DatabaseHandler;
+use App\Database\DatabaseHandler;
 use PDO;
 
-
+/**
+ * Login Database Controller class that handles the form information validation from database
+ */
 class Login extends DatabaseHandler {
     private $pdo;
 

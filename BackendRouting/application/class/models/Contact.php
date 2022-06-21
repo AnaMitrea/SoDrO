@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Handler;
+namespace App\Model;
 
 class Contact
 {

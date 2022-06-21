@@ -1,7 +1,10 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
+/**
+ * Login Controller class that handles the login form information validation
+ */
 class LoginController extends Login{
     private $email;
     private $password;

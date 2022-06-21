@@ -1,8 +1,6 @@
 <?php
 
-namespace App\Handler;
-
-use Handlers\DatabaseHandler;
+namespace App\Database;
 
 class DatabaseMigration extends DatabaseHandler
 {

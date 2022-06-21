@@ -1,10 +1,11 @@
 <?php
-namespace Controller;
+namespace App\Controller;
+
+const root = '/BackendRouting';
 
 /**
- * Signup Controller class that handles the form information validation
+ * Signup Controller class that handles the signup form information validation
  */
-const root = '/BackendRouting';
 class SignupController extends Signup {
 
     private $uid;

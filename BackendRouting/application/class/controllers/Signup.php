@@ -1,11 +1,15 @@
 <?php
+namespace App\Controller;
 
-namespace Controller;
+use App\Database\DatabaseHandler;
 
-use Handlers\DatabaseHandler;
 const root = '/BackendRouting';
-class AdminController extends DatabaseHandler
-{
+
+/**
+ * Signup Database Controller class that handles the form information validation from database
+ */
+class Signup extends DatabaseHandler {
+
     private $pdo;
 
     /**
@@ -25,8 +29,7 @@ class AdminController extends DatabaseHandler
 
         if(!$stmt->execute(array($uid, $email))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/profile?admin=true&error=stmtfailed");
-            //header("location: ../pages/admin.php");
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
 
@@ -51,8 +54,7 @@ class AdminController extends DatabaseHandler
 
         if(!$stmt->execute(array($email, $hashedPwd, $uid, $dob, 'f'))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/profile?admin=true&error=stmtfailed");
-            //header("location: ../pages/admin.php");
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
         $stmt = null;

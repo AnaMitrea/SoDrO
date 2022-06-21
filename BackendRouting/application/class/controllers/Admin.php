@@ -1,12 +1,21 @@
 <?php
-namespace Controller;
 
-use Handlers\DatabaseHandler;
+namespace App\Controller;
+
+use App\Database\DatabaseHandler;
 
 const root = '/BackendRouting';
-class Signup extends DatabaseHandler {
 
-    private $pdo;
+/**
+ *  Admin class that handles the database statements for adding/deleting users
+ */
+class Admin extends DatabaseHandler
+{
+    protected $pdo;
+    protected $uid;
+    protected $email;
+    protected $pwd;
+    protected $dob;
 
     /**
      * constructor that uses database handler
@@ -25,7 +34,7 @@ class Signup extends DatabaseHandler {
 
         if(!$stmt->execute(array($uid, $email))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/signup?error=stmtfailed");
+            header("location: " . root . "/profile?admin=true&error=stmtfailed");
             exit();
         }
 
@@ -50,7 +59,7 @@ class Signup extends DatabaseHandler {
 
         if(!$stmt->execute(array($email, $hashedPwd, $uid, $dob, 'f'))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/signup?error=stmtfailed");
+            header("location: " . root . "/profile?admin=true&error=stmtfailed");
             exit();
         }
         $stmt = null;

@@ -1,7 +1,7 @@
 <?php
-namespace Includes;
+namespace App\View;
 
-use Controller\AddUser;
+use App\Controller\AddUser;
 
 const root = '/BackendRouting';
 
@@ -12,13 +12,11 @@ if(isset($_POST["submit-add"])) {
     $pwd = $_POST["password"];
     $dob = $_POST["dateofbirth"];
 
-    include "backend/handlers/DatabaseHandler.php";
-    include "backend/controllers/AdminController.php";
-    include "backend/controllers/addUser.php";
-
+    include "application/database/DatabaseHandler.php";
+    include "application/class/controllers/Admin.php";
+    include "application/class/controllers/AddUser.php";
 
     $addUser = new AddUser($uid, $email, $pwd, $dob);
-
     $addUser->addUser();
 
     header("location: " . root . "/profile?admin=true&error=none");

@@ -1,14 +1,12 @@
 <?php
 
-namespace Controller;
+namespace App\Controller;
 
-class AddUser extends AdminController
+/**
+ * Add User class that handles the add user feature from admin dashboard
+ */
+class AddUser extends Admin
 {
-    private $uid;
-    private $email;
-    private $pwd;
-    private $dob;
-
     /**
      * @param $uid
      * @param $email
@@ -24,10 +22,12 @@ class AddUser extends AdminController
         $this->dob = $dob;
     }
 
+    /**
+     * @return void
+     */
     public function addUser() {
         if(!$this->emptyInput()) {
             echo "Empty input!";
-            //header("location: ../pages/login.php?error=emptyinput");
             header("location: " . root . "/profile?admin=true&error=emptyinput");
             exit();
         }
@@ -38,7 +38,6 @@ class AddUser extends AdminController
         }
         if(!$this->invalidEmail()) {
             echo "Empty email!";
-            //header("location: ../pages/login.php?error=email");
             header("location: " . root . "/profile?admin=true&error=emptyemail");
             exit();
         }
@@ -69,7 +68,7 @@ class AddUser extends AdminController
     private function invalidUid(): bool
     {
         $result = true;
-        if(!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) {
+        if(!preg_match("/^[a-zA-Z\d]*$/", $this->uid)) {
             $result = false;
         }
         return $result;
