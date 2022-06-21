@@ -1,7 +1,7 @@
 <?php
 namespace App\View;
 
-use App\Controller\SignupController;
+use App\Model\Signup;
 
 const root = '/BackendRouting';
 
@@ -20,9 +20,9 @@ if(isset($_POST["signup"])) {
     // instantiate Signup controller class
     include "application/database/DatabaseHandler.php";
     include "application/class/controllers/SignupController.php";
-    include "application/class/controllers/Signup.php";
+    include "application/class/controllers/SignupController.php";
 
-    $signup = new SignupController($uid, $email, $pwd, $pwdRepeat, $dob);
+    $signup = new Signup($uid, $email, $pwd, $pwdRepeat, $dob);
 
     // running error handlers and user signup
     $signup->signupUser();
