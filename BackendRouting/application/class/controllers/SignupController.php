@@ -1,120 +1,62 @@
 <?php
 namespace App\Controller;
 
+use App\Database\DatabaseHandler;
+
 const root = '/BackendRouting';
 
 /**
- * Signup Controller class that handles the signup form information validation
+ * Signup Database Controller class that handles the form information validation from database
  */
-class SignupController extends Signup {
+class SignupController extends DatabaseHandler {
 
-    private $uid;
-    private $email;
-    private $pwd;
-    private $pwdRepeat;
-    private $dob;
+    private $pdo;
+
+    /**
+     * constructor that uses database handler
+     */
+    public function __construct() {
+        $this->pdo = $this->getConn();
+    }
 
     /**
      * @param $uid
      * @param $email
+     * @return bool|void
+     */
+    protected function checkUser($uid, $email) {
+        $stmt = $this->pdo->prepare('SELECT username FROM users WHERE username = ? OR email = ?;');
+
+        if(!$stmt->execute(array($uid, $email))) { // statement couldn't be executed
+            $stmt = null;
+            header("location: " . root . "/signup?error=stmtfailed");
+            exit();
+        }
+
+        $resultCheck = true;
+        if($stmt->rowCount() > 0) {
+            $resultCheck = false;
+        }
+        return $resultCheck;
+    }
+
+    /**
+     * @param $uid
      * @param $pwd
-     * @param $pwdRepeat
+     * @param $email
      * @param $dob
+     * @return void
      */
-    public function __construct($uid, $email, $pwd, $pwdRepeat, $dob) {
-        parent::__construct();
+    protected function setUser($uid, $pwd, $email, $dob) {
+        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        $this->uid = $uid;
-        $this->email = $email;
-        $this->pwd = $pwd;
-        $this->pwdRepeat = $pwdRepeat;
-        $this->dob = $dob;
-    }
+        $stmt = $this->pdo->prepare('INSERT INTO users(email, password, username, birthdate, isadmin) VALUES (?, ?, ?, ?, ?);');
 
-    public function signupUser() {
-        if(!$this->emptyInput()) {
-            header("location: " . root . "/signup?error=emptyinput");
+        if(!$stmt->execute(array($email, $hashedPwd, $uid, $dob, 'f'))) { // statement couldn't be executed
+            $stmt = null;
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
-        if(!$this->invalidUid()) {
-            header("location: " . root . "/signup?error=invalidusername");
-            exit();
-        }
-        if(!$this->invalidEmail()) {
-            header("location: " . root . "/signup?error=invalidemail");
-            exit();
-        }
-        if(!$this->pwdMatch()) {
-            header("location: " . root . "/signup?error=passwordunmatch");
-            exit();
-        }
-        if(!$this->uidTakenCheck()) {
-            header("location: " . root . "/signup?error=uidtaken");
-            exit();
-        }
-
-        $this->setUser($this->uid, $this->pwd, $this->email, $this->dob);
-    }
-
-    /**
-     * @return bool
-     */
-    private function emptyInput(): bool
-    {
-        $result = true;
-        if(empty($this->uid) || empty($this->email) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->dob)) {
-            $result = false;
-        }
-        return $result;
-    }
-
-    /**
-     * @return bool
-     */
-    private function invalidUid(): bool
-    {
-        $result = true;
-        if(!preg_match("/^[a-zA-Z\d]*$/", $this->uid)) {
-            $result = false;
-        }
-        return $result;
-    }
-
-    /**
-     * checks for invalid email
-     * @return bool
-     */
-    private function invalidEmail(): bool
-    {
-        $result = true;
-        if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $result = false;
-        }
-        return $result;
-    }
-
-    /**
-     * checks if pwd and pwdRepeat are equal
-     * @return bool
-     */
-    private function pwdMatch(): bool
-    {
-        $result = true;
-        if($this->pwd !== $this->pwdRepeat) {
-            $result = false;
-        }
-        return $result;
-    }
-
-    /**
-     * @return bool
-     */
-    private function uidTakenCheck(): bool
-    {
-        $result = true;
-        if(!$this->checkUser($this->uid, $this->email)) {
-            $result = false;
-        }
-        return $result;
+        $stmt = null;
     }
 }

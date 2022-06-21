@@ -1,0 +1,17 @@
+<?php
+namespace App\View;
+
+use App\Model\Product;
+
+include "application/database/DatabaseHandler.php";
+include "application/class/models/Product.php";
+
+$product = new Product();
+?>
+
+<div id="json_single_product" style="display: block;">
+    <?php
+    $product_output = $product->getProduct(3033710076017);
+    echo htmlspecialchars($product_output);
+    ?>
+</div>

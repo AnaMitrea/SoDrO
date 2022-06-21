@@ -1,15 +1,15 @@
 <?php
 
-use App\Model\Shop;
+use App\Model\Product;
 $root = '/BackendRouting';
 include "application/database/DatabaseHandler.php";
-include "application/class/models/Shop.php";
+include "application/class/models/Product.php";
 
 session_start();
 
 $prod_id = $_GET['code'] ?? 1;
 // TODO de schimbat $product in $shop pentru eliminare confuzie
-$product = new Shop();
+$product = new Product();
 $ingredients_contor = count($product->getIngredientsTypes());
 ?>
 
@@ -70,12 +70,8 @@ $ingredients_contor = count($product->getIngredientsTypes());
 
     <div class="top-middle">
         <div class="swiper">
-            <h1>
-                <?php
-                $pieces = explode(" ",$product->getRow()['product_name']);
-                $first_part = implode(" ", array_splice($pieces, 0, 2));
-                echo $first_part
-                ?>
+            <h1 id="product-title-in-product-page">
+
             </h1>
             <div class="images">
                 <div class="main-photo">
@@ -201,47 +197,10 @@ $ingredients_contor = count($product->getIngredientsTypes());
 
     </div>
 
-    <!-- Product Recommandation -->
-    <div class="other-products-from-same-categories">
-        <h2>SIMILAR PRODUCTS</h2>
-        <div class="list-of">
-            <?php
-            $category = null;
-            $pieces = explode(", ",substr($product->getRow()['categories_tags'],1));
-            if(count($pieces)>1)
-                $category = substr($pieces[1],4,-1);
+    <!-- Product Recommandation
 
-            $stmt2 = $pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-            $stmt2->execute();
-            while($row2 = $stmt2->fetch()){
-            ?>
-                <div class="product-cell">
-                    <div onclick="window.location.href='product-page.php?code=<?php echo $row2['code']?>'">
-                        <img class="image-product" src="<?php echo $row2['image_url'] ?>" alt="img2"></div>
-                    <div class="product-cell-bottom">
-                        <div class="product-cell-bottom-name">
-                            <p class="product-name">
-                                <?php
-                                $pieces = explode(" ",$row2['product_name']);
-                                $first_part = implode(" ", array_splice($pieces, 0, 2));
-                                echo  $first_part;
-                                ?></p>
-                            <p><?php
-                                if(strlen($first_part)<15)
-                                    echo strtok($row2['brands'] , ",")
-                                ?>
-                            </p>
-                        </div>
-                        <div id="add-to-list-icon">
-                            <button>&#9734;</button>
-                        </div>
-                    </div>
-                </div>
-                <?php
-            }
-            ?>
-        </div>
-    </div>
+     -->
+
 </div>
 
 
@@ -258,5 +217,6 @@ $ingredients_contor = count($product->getIngredientsTypes());
         <a href="<?php echo $root ?>/privacy">Privacy</a>
     </div>
 </footer>
+<script src="frontend/scripts/Product.js"></script>
 </body>
 </html>

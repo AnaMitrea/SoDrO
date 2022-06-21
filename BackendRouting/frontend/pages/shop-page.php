@@ -251,11 +251,6 @@ $search_for = null;
             <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
-    <script>
-      /*  if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }*/
-    </script>
     <script src="frontend/scripts/Products.js"></script>
 </body>
 </html>
