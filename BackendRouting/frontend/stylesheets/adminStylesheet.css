@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css?family=Jolly Lodger');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+/*
+Title font: font-family: 'Jolly Lodger', serif;
+Text Font:  font-family:'Poppins',sans-serif;
+*/
+
+:root {
+    --ebony-clay: #232d36;
+    --pearl-bush: #ede4dc;
+    --burnt-sienna: #ef895d;
+    --matrix: #b45760;
+    --mongoose: #b49b83;
+    --aqua-forest: #5a9f7d;
+    --summer-green: #98b5ab;
+    --soft-amber: #cabcae;
+    --oriental-pink: #c59ea8;
+    /* dashboard */
+    --bizzare: #e9dcd1;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Profile Dashboard */
+.dashboard-structor {
+    font-family:'Poppins',sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+    height: auto;
+
+    min-height: 75vh;
+    margin: 0 auto;
+    background-color: rgba(180,155,131,0.1);
+    border-radius: 30px;
+}
+
+.dashboard-structor .user {
+    display: flex;
+    width: 10vw;
+    height: auto;
+    border-right: 1px solid #B49B83;
+    padding: 38px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*Profile image*/
+.dashboard-structor .user .profile-img img{
+    width: 8vw;
+    border-radius: 50%;
+    background: url("../images/user/profile.jpg");
+    object-fit: contain;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+}
+
+/* User description box */
+.dashboard-structor .user .user-description {
+    background-color: var(--soft-amber);
+    border-radius: 20px;
+    height: auto;
+    min-height: 40vh;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+
+.dashboard-structor .user .user-description p{
+    text-align: center;
+    text-decoration: none;
+    color:var(--ebony-clay);
+    padding: 5%;
+    margin-bottom: 5%;
+    font-size: 1em;
+    width: 80%;
+}
+
+/* Group Button */
+.dashboard-structor .user .user-description .group-button{
+    background: #39424A;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 5% 17%;
+    margin-bottom: 5%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.dashboard-structor .user .user-description .group-button:hover{
+    background: var(--ebony-clay);
+}
+
+/* Top Change email button */
+.dashboard-structor .user .user-description .change-email{
+    background: #39424A;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0 0;
+    padding: 5% 17%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.dashboard-structor .user .user-description .change-email:hover{
+    background: var(--ebony-clay);
+}
+
+/* Bottom Change password button */
+.dashboard-structor .user .user-description .change-password{
+    background: #39424A;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 20px 20px;
+    margin: 0 1vh;
+    padding: 3% 10%;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+.dashboard-structor .user .user-description .change-password:hover{
+    background: var(--ebony-clay);
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--aqua-forest);
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--aqua-forest);
+}
+
+/* Preferences and Shopping List*/
+.dashboard-structor .account-information {
+    font-family:'Poppins',sans-serif;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 38px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+/* Line under title */
+.account-information hr {
+    display: block;
+    border: 1px solid #B49B83;
+}
+
+/* Preferences */
+.dashboard-structor .account-information .account-preferences {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: #39424A;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    margin: 0.5em;
+    border-radius: 20px;
+    box-sizing: border-box;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dashboard-structor .account-information .account-preferences .adduser-form{
+    position: relative;
+    width:58%;
+    margin-bottom:2em;
+    margin-right: 1em;
+    border-radius: 20px;
+    align-content: center;
+    display: none;
+
+}
+
+/* Responsive slide from left profile div */
+.page-container .dashboard-structor #span-openUser-btn {
+    display: none;
+}
+
+.overlay .overlay-content .user {
+    display: none;
+}
+
+.overlay .closebtn {
+    display: none;
+}
+/* Options box */
+
+.options-box{
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom:2em;
+    border-radius: 20px;
+    position: relative;
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+}
+.options-box .top-options{
+    flex-direction: column;
+    margin-left: 3em;
+    margin-bottom:3em;
+    margin-top:2em;
+    width:100%;
+    position: relative;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    display: flex;
+    justify-content: space-between;
+    border-right: 2px solid #B49B83;
+
+
+}
+.options-frame {
+    background: #B45760;
+    height: 15em;
+    width: 12em;
+    margin: 15px;
+    color:var(--ebony-clay);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    text-align: center;
+    transition: color .3s ease-in-out,background-color .3s ease-in-out;
+    position: relative;
+
+
+
+}
+.options-frame .icon-frame{
+    padding-top: 1.5em;
+    padding-left: 0.7em;
+    height: 8em;
+    width: 8em;
+    opacity: 1;
+
+
+}
+.options-frame .options-text .functions-button{
+    color:white;
+    width: 60%;
+    text-align: center;
+    position: relative;
+    background:var(--ebony-clay);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    margin-top: 1.5em;
+}
+
+@media only screen and (max-width: 485px) {
+    /* Preferences */
+    .dashboard-structor .account-information .account-preferences {
+        display: flex;
+        flex-direction: column;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        background: #39424A;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        margin: 0.5em;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    /* The whole shopping list */
+    .dashboard-structor .account-information .account-shopping-list {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .dashboard-structor {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .dashboard-structor .account-information {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashboard-structor .account-information .account-preferences {
+        width: 100%;
+        padding: 30px;
+        margin: 0 0.5em 0.5em 0.5em;
+        box-sizing: border-box;
+    }
+
+    .dashboard-structor .account-information .account-shopping-list {
+        width: 100%;
+        padding: 30px;
+        margin: 0.5em;
+        box-sizing: border-box;
+    }
+
+    /* The whole user info Div */
+    .dashboard-structor .user {
+        display: none;
+    }
+
+    /* ------- Fullscreen overlay navbar ------- */
+    .page-container .dashboard-structor #span-openUser-btn {
+        display: block;
+        font-size: 1.5em;
+        font-family:'Poppins',sans-serif;
+        margin-top: 15px;
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .overlay .overlay-content .user {
+        display: block;
+    }
+
+    .overlay .user {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .overlay .user .profile-img img{
+        width: 50%;
+        border-radius: 50%;
+        background: url("../images/user/profile.jpg");
+        object-fit: contain;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 4px 4px rgba(0, 0, 0, 0.25);
+        margin-bottom: 50px;
+    }
+
+    .overlay .user .user-description .group-button{
+        background: white;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 5%;
+        margin-bottom: 5%;
+        cursor: pointer;
+        color: black;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    .overlay .user .user-description .group-button:hover{
+        background: var(--ebony-clay);
+    }
+
+    /* Top Change email button */
+    .overlay .user .user-description .change-email{
+        background: white;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 5%;
+        margin-bottom: 5%;
+        cursor: pointer;
+        color: black;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    .overlay .user .user-description .change-email:hover{
+        background: var(--ebony-clay);
+    }
+
+    /* Bottom Change password button */
+    .overlay .user .user-description .change-password{
+        background: white;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        margin: 0 1vh;
+        padding: 3% 10%;
+        cursor: pointer;
+        color: black;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    .overlay .user .user-description .change-password:hover{
+        background: var(--ebony-clay);
+    }
+
+    .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+        display: inline;
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        color: white;
+    }
+}
+
+/* Add user form */
+
+
+input[type=text], select, textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=password], select, textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=date], select, textarea {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: var(--soft-amber);
+    padding: 10px;
+    margin-top: 8em;
+    border:1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 750px wide, make the two columns stack on top of each other instead of next to each other */
+@media only screen and (max-width: 750px) {
+    .col-25, .col-75, input[type=submit], .title {
+        width: 95%;
+        margin-top: 0;
+    }
+}

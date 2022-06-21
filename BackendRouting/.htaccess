@@ -1,0 +1,20 @@
+<IfModule dir_module>
+    DirectoryIndex /BackendRouting/index.php
+</IfModule>
+
+<Files "database.config.php">
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+ErrorDocument 403 /BackendRouting/frontend/pages/forbidden.php
+
+Options FollowSymLinks
+
+RewriteEngine On
+RewriteBase /BackendRouting/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [QSA,L]

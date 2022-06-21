@@ -1,0 +1,47 @@
+<?php
+namespace App\View;
+
+use App\Controller\LoginController;
+use App\Model\CustomSession;
+
+const root = '/BackendRouting';
+
+if(isset($_POST["submit"])){
+
+    include "application/class/models/CustomSession.php";
+    include "application/database/DatabaseHandler.php";
+    include "application/class/controllers/Login.php";
+    include "application/class/controllers/LoginController.php";
+
+    // Getting data from login form
+    $email = $_POST["email"];
+    $userPwd = $_POST["password"];
+    $login = new LoginController($email, $userPwd);
+
+    if(($login->loginUser())){
+       // setcookie('email', $email, time()+60*60*7);
+       // setcookie('password', $password,time()+60*60*7);
+
+        $sessions_handler = new CustomSession();
+
+        if(!isset($_SESSION)) {
+            session_set_save_handler($sessions_handler, true);
+            session_name('MySessionName');
+            session_start();
+        }
+        session_regenerate_id(true);
+
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $userPwd;
+
+        $sessions_handler->write(1,session_id());
+
+        session_write_close();
+
+        // redirect to login page
+        header("location: " . root . "/login?error=none");
+    }else{
+        echo "Email or Password is invalid";
+    }
+
+}

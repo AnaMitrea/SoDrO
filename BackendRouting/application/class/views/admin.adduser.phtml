@@ -1,0 +1,23 @@
+<?php
+namespace App\View;
+
+use App\Controller\AddUser;
+
+const root = '/BackendRouting';
+
+if(isset($_POST["submit-add"])) {
+// grabbing the data
+    $uid = $_POST["username"];
+    $email = $_POST["email"];
+    $pwd = $_POST["password"];
+    $dob = $_POST["dateofbirth"];
+
+    include "application/database/DatabaseHandler.php";
+    include "application/class/controllers/Admin.php";
+    include "application/class/controllers/AddUser.php";
+
+    $addUser = new AddUser($uid, $email, $pwd, $dob);
+    $addUser->addUser();
+
+    header("location: " . root . "/profile?admin=true&error=none");
+}
