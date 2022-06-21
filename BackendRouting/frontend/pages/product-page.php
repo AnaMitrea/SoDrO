@@ -1,16 +1,15 @@
 <?php
+session_start();
 
 use App\Model\Product;
 $root = '/BackendRouting';
-include "application/database/DatabaseHandler.php";
-include "application/class/models/Product.php";
+include 'application/class/views/productPage.phtml';
 
-session_start();
-
-$prod_id = $_GET['code'] ?? 1;
+//include "application/class/models/Product.php";
 // TODO de schimbat $product in $shop pentru eliminare confuzie
-$product = new Product();
-$ingredients_contor = count($product->getIngredientsTypes());
+//$product = new Product();
+//$ingredients_contor = count($product->getIngredientsTypes());
+
 ?>
 
 <!DOCTYPE html>
@@ -70,12 +69,16 @@ $ingredients_contor = count($product->getIngredientsTypes());
 
     <div class="top-middle">
         <div class="swiper">
-            <h1 id="product-title-in-product-page">
 
-            </h1>
+            <!-- Products Container - contents added from javascript -->
+            <div id="product-title-in-product-page" >
+
+            </div>
+
+
             <div class="images">
                 <div class="main-photo">
-                    <img class="prod-img" src="<?php echo $product->getRow()['image_url']?>" alt="photo">
+                    <!--<img class="prod-img" src="<?php #echo $product->getRow()['image_url']?>" alt="photo"> -->
                 </div>
             </div>
         </div>
@@ -85,11 +88,13 @@ $ingredients_contor = count($product->getIngredientsTypes());
             <div class="ingredients-list">
                 <h2>NUTRITIONAL VALUES</h2>
                     <h4><?php
+                        /*
                     if($product->getRow()['nutrition_data_per'] != "serving"){
                             echo "Per  {$product->getRow()['nutrition_data_per']}";
                         }else{
                             echo "Per serving";
                         }
+                        */
                         ?>
                     </h4>
                 <table id="ingredients-val">
@@ -98,6 +103,7 @@ $ingredients_contor = count($product->getIngredientsTypes());
                         <th>Quantity/Value</th>
                     </tr>
                     <?php
+                    /*
                       $vector_poz=0;
                         for($i=19;$i<$ingredients_contor+36;$i=$i+2){
                             if($product->getRow()[$i]!=null){
@@ -114,6 +120,7 @@ $ingredients_contor = count($product->getIngredientsTypes());
                             }
                             $vector_poz=$vector_poz+1;
                         }
+                    */
                         ?>
                 </table>
             </div>
@@ -122,6 +129,7 @@ $ingredients_contor = count($product->getIngredientsTypes());
             <div class="additional-data">
                 <h2>DETAILS</h2>
                 <?php
+                /*
                     if($product->getRow()['brands']!=null){
                         echo"<p>Brand</p>";
                         echo "<p>{$product->getRow()['brands']}</p>";
@@ -149,21 +157,25 @@ $ingredients_contor = count($product->getIngredientsTypes());
                     if($product->getRow()['nutriscore_grade']!=null){
                         echo "<img class='grade-image' src='grades/nutriscore-{$product->getRow()['nutriscore_grade']}.png' alt='img'>";
                     }
+                */
                 ?>
             </div>
 
         </div>
     </div>
 
+    <?php
+    /*
     <div class="bottom-middle">
 
         <?php
-         if($product->getRow()['categories']!=null){
+
+         #if($product->getRow()['categories']!=null){
         ?>
         <div class="bottom-details other-categories">
             <h2>OTHER CATEGORIES TO WITCH IT BELONGS</h2>
             <?php
-            echo "<p>{$product->getRow()['categories']}</p>";
+            #echo "<p>{$product->getRow()['categories']}</p>";
             ?>
         </div>
         <?php
@@ -196,6 +208,7 @@ $ingredients_contor = count($product->getIngredientsTypes());
         ?>
 
     </div>
+    */?>
 
     <!-- Product Recommandation
 
@@ -204,19 +217,19 @@ $ingredients_contor = count($product->getIngredientsTypes());
 </div>
 
 
-<footer class="footer">
-    <div class="icon">
-        <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
-    </div>
-    <!-- Footer pages -->
-    <div class="list-items-bottom">
-        <a href="<?php echo $root ?>/terms">Terms</a>
-        <a href="<?php echo $root ?>/blogs">Blogs</a>
-        <a href="<?php echo $root ?>/about">About</a>
-        <a href="<?php echo $root ?>/contact">Contact</a>
-        <a href="<?php echo $root ?>/privacy">Privacy</a>
-    </div>
-</footer>
-<script src="frontend/scripts/Product.js"></script>
+    <footer class="footer">
+        <div class="icon">
+            <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
+        </div>
+        <!-- Footer pages -->
+        <div class="list-items-bottom">
+            <a href="<?php echo $root ?>/terms">Terms</a>
+            <a href="<?php echo $root ?>/blogs">Blogs</a>
+            <a href="<?php echo $root ?>/about">About</a>
+            <a href="<?php echo $root ?>/contact">Contact</a>
+            <a href="<?php echo $root ?>/privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="frontend/scripts/Product.js"></script>
 </body>
 </html>

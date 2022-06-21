@@ -7,14 +7,23 @@ const json_data = json_div.textContent;
 let data = JSON.parse(json_data);
 
 showProducts(data);
+console.log('afara');
 
 function showProducts(data) {
+    myTitle.innerHtml = '';
+
     console.log(data);
     console.log("asfasfas");
-    myTitle.innerHtml = "the new text";
+
+
+    myTitle.innerHtml = `<p>Salutare</p>`;
+
+    /*
     data.forEach(product => {
         const {product_name} = product;
         console.log(product_name);
         console.log("asfasfas");
     })
+
+     */
 }

@@ -32,9 +32,8 @@ class Product extends DatabaseHandler
         #$stmt = $this->pdo->prepare("SELECT * FROM products limit 24 offset 1", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
 
         $stmt->execute();
-        $rows = $stmt->fetchAll();
-        echo "sass";
-        echo $rows;
+        $rows = $stmt->fetch();
+
         $info = array();
         $info[] = $rows;
 

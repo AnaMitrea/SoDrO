@@ -8,13 +8,16 @@ const json_data = json_div.textContent;
 let data = JSON.parse(json_data);
 
 showProducts(data);
+console.log('afara');
 
 function showProducts(data) {
     shop_list_div.innerHtml = '';
-
+    console.log('inauntru');
     data[0].forEach(product => {
         const {product_name, image_url, code, brands} = product;
         // TODO prelucrare brands si product_name
+
+        console.log(product);
 
         const productEl = document.createElement('div');
         productEl.classList.add("product-cell");

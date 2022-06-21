@@ -29,7 +29,7 @@ else {
     $search_for = null;
 }
 
-
+/*
 if($search_for == null and $sort_by==null){
     $stmt = $pdo->prepare("SELECT * FROM products limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 }else if($search_for != null and $sort_by == null){
@@ -40,6 +40,7 @@ if($search_for == null and $sort_by==null){
     $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%') order by 3 $type_sort limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 }
 $stmt->execute();
+*/
 
 $stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt_count->execute();
