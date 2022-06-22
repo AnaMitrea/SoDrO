@@ -2,7 +2,9 @@
 
 namespace App;
 
+include 'application/database/DatabaseHandler.php';
 require 'application/class/models/Contact.php';
+require 'application/class/models/Shop.php';
 
 class Router
 {
@@ -65,7 +67,6 @@ class Router
             if (is_array($parts)) {
                 $className = array_shift($parts);
                 $handler = new $className;
-
                 $method = array_shift($parts);
                 $callback = [$handler, $method];
             }

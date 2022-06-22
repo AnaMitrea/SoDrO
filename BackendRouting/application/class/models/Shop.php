@@ -2,41 +2,62 @@
 
 namespace App\Model;
 
-use App\Database\DatabaseHandler;
-
 #header('Content-Type: application/json; charset=utf-8');
+
+use App\Database\DatabaseHandler;
 
 class Shop extends DatabaseHandler
 {
-    private $pdo;
+    protected $pdo;
+    /**
+     * @var mixed|string Current Page
+     */
+    public $page;
+    /**
+     * @var float|int Start from flag to indicate the first product of the current page
+     */
+    public $start_from;
+    /**
+     * @var mixed|null Sort by Most viewed, Name Asc, Name Desc
+     */
+    public $sort_by;
+    /**
+     * @var string Sort By Flag ->  Name ASC/DESC
+     */
+    public $type_sort;
+    public $num_per_page;
 
     private $ingredients_types = array(
         "Energy kj","Energy kcal","Fat",
         "Saturated fat","Carbohydrates","Sugar","Fiber","Proteins",
         "Salt","Sodium","Energy","Vitamin-C","Vitamin-B6",
-        "Vitamin-B12","Potassium","Calcium","Coffeine","Taurine");
+        "Vitamin-B12","Potassium","Calcium","Coffeine","Taurine"
+    );
 
     /**
      * constructor that uses database handler
      */
-    public function __construct() {
+    public function __construct(array $params = []) {
+        echo "in constructor!";
         $this->pdo = $this->getConn();
-    }
 
-    /**
-     * @return false|string
-     */
-    public function getProduct()
-    {
-        #$stmt = $this->pdo->prepare("SELECT * FROM products where code='$this->code'", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-        $stmt = $this->pdo->prepare("SELECT * FROM products limit 24 offset 1", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-        $stmt->execute();
-        $rows = $stmt->fetchAll();
+        $this->page = $params[0];
+        $this->sort_by = $params[1];
 
-        $info = array();
-        $info[] = $rows;
+        if(strcmp($this->sort_by,"name_asc") == 0){
+            $this->type_sort = "ASC";
+        } else {
+            if($this->sort_by != null)
+                $this->type_sort = "DESC";
+        }
 
-        return json_encode($info, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+        $this->num_per_page = 24;
+        $this->start_from = ($this->page - 1) * 24;
+
+        print_r("Sort by " . $this->sort_by . ", ");
+        print_r("Sort value " . $this->type_sort . ", ");
+        print_r("Page " . $this->page . ", ");
+        print_r("Start from " . $this->start_from . ", ");
     }
 
     /**
