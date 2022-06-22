@@ -59,7 +59,6 @@ if(!isset($_SESSION)) {
             </a>
         </div>
     </div>
-    <p><?php echo 'E admin? ' . $_SESSION['isAdmin']?></p>
     <div class="page-container" id="id-page-container">
         <div class="dashboard-structor" id="id-dashboard-structor">
             <div class="user">

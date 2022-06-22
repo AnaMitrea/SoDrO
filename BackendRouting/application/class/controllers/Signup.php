@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use App\Database\DatabaseHandler;
@@ -7,15 +6,11 @@ use App\Database\DatabaseHandler;
 const root = '/BackendRouting';
 
 /**
- *  Admin class that handles the database statements for adding/deleting users
+ * Signup Database Controller class that handles the form information validation from database
  */
-class Admin extends DatabaseHandler
-{
-    protected $pdo;
-    protected $uid;
-    protected $email;
-    protected $pwd;
-    protected $dob;
+class Signup extends DatabaseHandler {
+
+    private $pdo;
 
     /**
      * constructor that uses database handler
@@ -34,7 +29,7 @@ class Admin extends DatabaseHandler
 
         if(!$stmt->execute(array($uid, $email))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/profile?admin=true&error=stmtfailed");
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
 
@@ -59,18 +54,7 @@ class Admin extends DatabaseHandler
 
         if(!$stmt->execute(array($email, $hashedPwd, $uid, $dob, 'f'))) { // statement couldn't be executed
             $stmt = null;
-            header("location: " . root . "/profile?admin=true&error=stmtfailed");
-            exit();
-        }
-
-    }
-    protected function removeUser($email){
-        $stmt = $this->pdo->prepare('Delete from users where email =:email ');
-        $stmt->bindValue(':email', $email);
-
-        if(!$stmt->execute(array($email))){
-            $stmt = null;
-            header("location: " . root . "/profile?admin=true&error=stmtfailed");
+            header("location: " . root . "/signup?error=stmtfailed");
             exit();
         }
         $stmt = null;

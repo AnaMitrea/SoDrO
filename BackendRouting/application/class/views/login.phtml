@@ -46,6 +46,6 @@ if(isset($_POST["submit"])){
         // redirect to login page
         header("location: " . root . "/login?error=none");
     }else{
-        echo "Email or Password is invalid";
+        header("location: " . root . "/login?error=failed");
     }
 }

@@ -29,7 +29,7 @@ class UserController extends User
         $stmt = $this->pdo->prepare("SELECT isadmin FROM users WHERE email LIKE '$this->email'");
         $stmt->execute();
         $row2 = $stmt->fetch();
-        $this->isAdmin = $row2[0];
+        $this->isAdmin = $row2[0] ?? false;
         return $this->isAdmin;
     }
 }
