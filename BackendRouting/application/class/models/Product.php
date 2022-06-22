@@ -28,23 +28,35 @@ class Product extends DatabaseHandler
      */
     public function getProduct($code)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM products where code like '3033710076017'", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-        #$stmt = $this->pdo->prepare("SELECT * FROM products limit 24 offset 1", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
-
+        $stmt = $this->pdo->prepare("SELECT * FROM products where code like '$code'", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
         $stmt->execute();
         $rows = $stmt->fetch();
+        return json_encode($rows, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+    }
 
+    public function getSimilarProducts(){
+        $category = "car";
+        /*$pieces = explode(", ",substr($row['categories_tags'],1));
+        if(count($pieces)>1)
+            $category = substr($pieces[1],4,-1);
+        */
+
+
+        $stmt2 = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+        $stmt2->execute();
+        $rows = $stmt2->fetchAll();
         $info = array();
         $info[] = $rows;
-
         return json_encode($info, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
     }
+
 
     /**
      * @return string[]
      */
-    public function getIngredientsTypes(): array
+    public function getIngredientsTypes()
     {
-        return $this->ingredients_types;
+        return json_encode($this->ingredients_types);
     }
+
 }

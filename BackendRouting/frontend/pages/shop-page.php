@@ -5,9 +5,9 @@ use App\Database\DatabaseHandler;
 
 include 'application/class/views/shop.phtml';
 $root = '/BackendRouting';
-
+/*
 $db = new DatabaseHandler();
-$pdo = $db->getConn();
+$pdo = $db->getConn();*/
 
 $page = $_GET['page'] ?? 1;
 
@@ -41,14 +41,14 @@ if($search_for == null and $sort_by==null){
 }
 $stmt->execute();
 */
-
+/*
 $stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
 $stmt_count->execute();
 $entire_row = $stmt_count->fetch();
 $number_of_pages = $entire_row[0];
 $number_of_pages = ceil($number_of_pages / $num_per_page);
 $search_for = null;
-
+*/
 ?>
 
 <!DOCTYPE html>

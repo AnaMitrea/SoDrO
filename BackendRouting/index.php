@@ -198,7 +198,7 @@ $router->get(root . '/recipes', function (array $params = []){
 
 
 $router->get(root . '/favorites', function () {
-    require '';
+    require 'frontend/pages/favorites.php';
 });
 
 # Footer Endpoints

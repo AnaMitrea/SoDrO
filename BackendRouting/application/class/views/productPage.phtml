@@ -9,9 +9,25 @@ include "application/class/models/Product.php";
 $product = new Product();
 ?>
 
-<div id="json_single_product" style="display: block;">
+<div id="json_single_product" style="display: none;">
     <?php
-    $product_output = $product->getProduct(3033710076017);
+    if(isset($_GET['code'])){
+        $product_output = $product->getProduct($_GET['code']);
+    }else {
+        $product_output = $product->getProduct(3033710076017);
+    }
     echo htmlspecialchars($product_output);
+    ?>
+</div>
+
+<div id="json_ingredients_list" style="display: none;">
+    <?php
+    echo htmlspecialchars($product->getIngredientsTypes());
+    ?>
+</div>
+
+<div id="json_similar_products" style="display: none;">
+    <?php
+    echo htmlspecialchars($product->getSimilarProducts());
     ?>
 </div>
