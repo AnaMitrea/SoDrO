@@ -13,12 +13,7 @@ $root = '/BackendRouting';
 $db = new DatabaseHandler();
 $pdo = $db->getConn();
 
-$stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-$stmt_count->execute();
-$entire_row = $stmt_count->fetch();
 
-$number_of_pages = $entire_row[0];
-$number_of_pages = ceil($number_of_pages / 24);
 $search_for = null;
 ?>
 
@@ -33,34 +28,6 @@ $search_for = null;
     <link rel="stylesheet" href="frontend/stylesheets/style-shop.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <script type="text/javascript">
-        function inc(){
-            <?php
-            if(strlen($sort_by)>0){
-            ?>
-                document.getElementById("next-page").href="<?php echo $root?>/products?page=<?php echo $page+1 ?>&sort=<?php echo $sort_by ?>";
-            <?php
-            }else{
-            ?>
-                document.getElementById("next-page").href="<?php echo $root?>/products?page=<?php echo $page+1 ?>";
-            <?php
-            }
-            ?>
-        }
-        function dec(){
-            <?php
-            if(strlen($sort_by)>0){
-            ?>
-            document.getElementById("previous-page").href="<?php echo $root?>/products?page=<?php echo $page-1 ?>&sort=<?php echo $sort_by ?>";
-            <?php
-            }else{
-            ?>
-                document.getElementById("previous-page").href="<?php echo $root?>/products?page=<?php echo $page-1 ?>";
-            <?php
-            }
-            ?>
-        }
-    </script>
 </head>
 <body>
     <!-- Top Bar Row -->
@@ -195,20 +162,7 @@ $search_for = null;
 
                 <!-- Choose Page Buttons -->
                 <div id="choose_page_container" class="choose-page">
-                    <?php if($page>1 && $page < $number_of_pages){?>
-                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                        <?php
-                    }else if($page==1){
-                        ?>
-                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                        <?php
-                    }else if( $page == $number_of_pages){
-                        ?>
-                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                        <?php
-                    }
-                    ?>
+
                 </div>
             </div>
         </div>
@@ -231,7 +185,6 @@ $search_for = null;
             window.history.replaceState( null, null, window.location.href );
         }*/
     </script>
-   <script src="frontend/scripts/Shop.js"></script>
-
+    <script src="frontend/scripts/Shop.js"></script>
 </body>
 </html>

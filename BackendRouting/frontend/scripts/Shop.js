@@ -1,16 +1,29 @@
 const shop_list_div = document.getElementById('shop_list_container');
 const choose_page_container = document.getElementById('choose_page_container');
 
-// Get json data
-const json_div = document.getElementById('json_data_from_php');
-const json_data = json_div.textContent;
+// Get json data configuration - page and sort_by
+const json_config_div = document.getElementById('json_page_sort_by');
+const json_config = json_config_div.textContent;
 // Parse json into data variable
-let data = JSON.parse(json_data);
+let configuration = JSON.parse(json_config);
+let {page} = configuration;
+let {sort_by} = configuration;
+let {number_of_pages} = configuration;
+
+let page_decimal = page - '0';
+let number_of_pages_decimal = number_of_pages - '0';
+
+// Get json data with products
+const json_products_div = document.getElementById('json_products');
+const json_products = json_products_div.textContent;
+// Parse json into data variable
+let data = JSON.parse(json_products);
+
 
 showProducts(data);
 
 function showProducts(data) {
-    shop_list_div.innerHtml = '';
+    shop_list_div.innerHTML = ``;
 
     data[0].forEach(product => {
         const {product_name, image_url, code, brands} = product;
@@ -53,3 +66,48 @@ function configureNameAndBrand(product_name, brands) {
     }
     return [product_name_minimal, brands_minimal];
 }
+
+renderChoosePage();
+function renderChoosePage() {
+
+    console.log('Page ' + page);
+    console.log('Page decimal ' + page_decimal);
+    console.log('number_of_pages ' + number_of_pages);
+    console.log('number_of_pages decimal ' + number_of_pages_decimal);
+
+    if(page_decimal > 1 && page_decimal < number_of_pages_decimal) {
+        choose_page_container.innerHTML = `
+            <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
+            <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
+        `
+    } else if (page_decimal === 1) {
+        choose_page_container.innerHTML = `
+            <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
+        `
+    } else if (page_decimal === number_of_pages_decimal){
+        choose_page_container.innerHTML = `
+            <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
+        `
+    }
+}
+
+function inc() {
+
+    if(sort_by !== null) {
+        document.getElementById("next-page").href="/BackendRouting/products?page=" + (page_decimal + 1) + "&sort=" + sort_by;
+    } else {
+        document.getElementById("next-page").href="/BackendRouting/products?page=" + (page_decimal + 1);
+    }
+}
+
+function dec(){
+    if(sort_by !== null) {
+        document.getElementById("previous-page").href="/BackendRouting/products?page=" + (page_decimal - 1) + "&sort=" + sort_by;
+    }else{
+        document.getElementById("previous-page").href="/BackendRouting/products?page=" + (page_decimal - 1);
+    }
+}
+
+
+
+

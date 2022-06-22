@@ -34,11 +34,7 @@ class Shop extends DatabaseHandler
         "Vitamin-B12","Potassium","Calcium","Coffeine","Taurine"
     );
 
-    /**
-     * constructor that uses database handler
-     */
     public function __construct(array $params = []) {
-        echo "in constructor!";
         $this->pdo = $this->getConn();
 
         $this->page = $params[0];
@@ -53,11 +49,6 @@ class Shop extends DatabaseHandler
 
         $this->num_per_page = 24;
         $this->start_from = ($this->page - 1) * 24;
-
-        print_r("Sort by " . $this->sort_by . ", ");
-        print_r("Sort value " . $this->type_sort . ", ");
-        print_r("Page " . $this->page . ", ");
-        print_r("Start from " . $this->start_from . ", ");
     }
 
     /**

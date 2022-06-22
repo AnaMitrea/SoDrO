@@ -1,12 +1,19 @@
 <?php
 namespace App\View;
-
-/* @var string $json JSON Representation */
+/* @var string $json_config JSON Page $ sort_by information */
+/* @var string $json_data JSON Representation of Shop Products */
 
 ?>
 
 <div id="json_data_from_php" style="display: none;">
-    <?php
-    echo htmlspecialchars($json);
-    ?>
+    <div id="json_page_sort_by" style="color: red; display: none;">
+        <?php
+        echo htmlspecialchars($json_config);
+        ?>
+    </div>
+    <div id="json_products" style="color: blue; display: none;">
+        <?php
+        echo htmlspecialchars($json_data);
+        ?>
+    </div>
 </div>
