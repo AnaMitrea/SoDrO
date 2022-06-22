@@ -27,6 +27,7 @@ class Login extends LoginController{
      */
     public function loginUser(){
         if(!$this->emptyInput()){
+            header("location: " . root . "/login?error=emptyinput");
             exit();
         }
         return $this->verifyUser($this->email,$this->password);

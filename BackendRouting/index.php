@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+
 use App\Router;
 use App\Model\Contact;
 use App\Controller\ShopController;
@@ -64,34 +68,26 @@ $router->get(root . '/login', function (array $params = []) {
         require 'frontend/pages/login.php';
     else {
         switch ($params["error"]) {
+            case "emptyinput":
+            case "failed":
             case "none":
                 require 'frontend/pages/login.php';
                 break;
-            case "emptyinput":
-                echo "Empty Input";
-                require 'frontend/pages/404error.php';
-                break;
-            case "invalidemail":
-                echo "Invalid Email";
-                require 'frontend/pages/404error.php';
-                break;
-            case "stmtfailed":
-                echo "Database Statement failed";
-                require 'frontend/pages/404error.php';
-                break;
             default:
-                echo "Something unexpectedly happened";
                 require 'frontend/pages/404error.php';
         }
     }
 });
 $router->post(root . '/login', function () {
-
-
-    $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
-    $maxUserId = $userController->getMaxUserId();
-    $isAdmin = $userController->getAdminFlag();
-    require 'application/class/views/login.phtml';
+    if(!empty($_SESSION['email']) && !empty($_SESSION['username'])) {
+        $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
+        $maxUserId = $userController->getMaxUserId();
+        $isAdmin = $userController->getAdminFlag();
+        require 'application/class/views/login.phtml';
+    }
+    else {
+        require 'application/class/views/login.phtml';
+    }
 });
 
 # Password recovery
@@ -107,41 +103,37 @@ $router->get(root . '/home', function () {
 # User/Admin Profile
 /* TODO: Check user for admin=true in session/cookie */
 $router->get(root . '/profile', function (array $params = []) {
-    if(empty($params['admin']) || $params['admin'] == 'false') {
-        require 'frontend/pages/dashboard.php';
-    }else {
-        # Endpoint: /profile?admin=true
-        if($params['admin'] == 'true') {
-            if(!empty($params["error"])){
-                switch ($params["error"]) {
-                    case "none":
-                        require 'frontend/pages/admin.php';
-                        break;
-                    case "emptyinput":
-                        echo "Empty Input";
-                        // require 'frontend/pages/404error.php';
-                        break;
-                    case "username":
-                        echo "Invalid Username";
-                        // require 'frontend/pages/404error.php';
-                        break;
-                    case "emptyemail":
-                        echo "Empty Email";
-                        // require 'frontend/pages/404error.php';
-                        break;
-                    case "useremailtaken":
-                        echo "Username or email taken!";
-                        // require 'frontend/pages/404error.php';
-                        break;
-                    default:
-                        echo "Something unexpectedly happened";
-                    //  require 'frontend/pages/404error.php';
-                }
-            }
-            else{
+    $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
+    $isAdmin = $userController->getAdminFlag();
+
+    if($isAdmin) {
+        require 'frontend/pages/admin.php';
+        switch ($params["error"]) {
+            case "none":
                 require 'frontend/pages/admin.php';
-            }
+                break;
+            case "emptyinput":
+                echo "Empty Input";
+                // require 'frontend/pages/404error.php';
+                break;
+            case "username":
+                echo "Invalid Username";
+                // require 'frontend/pages/404error.php';
+                break;
+            case "emptyemail":
+                echo "Empty Email";
+                // require 'frontend/pages/404error.php';
+                break;
+            case "useremailtaken":
+                echo "Username or email taken!";
+                // require 'frontend/pages/404error.php';
+                break;
+            default:
+                echo "Something unexpectedly happened";
+            //  require 'frontend/pages/404error.php';
         }
+    } else {
+        require 'frontend/pages/dashboard.php';
     }
 });
 
