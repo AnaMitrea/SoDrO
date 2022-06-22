@@ -2,7 +2,7 @@
 
 namespace App;
 
-include_once 'application/database/DatabaseHandler.php';
+include 'application/database/DatabaseHandler.php';
 require 'application/class/models/Contact.php';
 require 'application/class/models/Shop.php';
 

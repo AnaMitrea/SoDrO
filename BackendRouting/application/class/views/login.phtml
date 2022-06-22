@@ -8,10 +8,10 @@ const root = '/BackendRouting';
 
 if(isset($_POST["submit"])){
 
-    include_once "application/class/models/CustomSession.php";
-    include_once "application/database/DatabaseHandler.php";
-    include_once "application/class/controllers/LoginController.php";
-    include_once "application/class/models/Login.php";
+    include "application/class/models/CustomSession.php";
+    include "application/database/DatabaseHandler.php";
+    include "application/class/controllers/LoginController.php";
+    include "application/class/controllers/LoginController.php";
 
     // Getting data from login form
     $email = $_POST["email"];

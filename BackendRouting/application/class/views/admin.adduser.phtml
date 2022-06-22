@@ -12,9 +12,9 @@ if(isset($_POST["submit-add"])) {
     $pwd = $_POST["password"];
     $dob = $_POST["dateofbirth"];
 
-    include_once "application/database/DatabaseHandler.php";
-    include_once "application/class/controllers/Admin.php";
-    include_once "application/class/controllers/AddUser.php";
+    include "application/database/DatabaseHandler.php";
+    include "application/class/controllers/Admin.php";
+    include "application/class/controllers/AddUser.php";
 
     $addUser = new AddUser($uid, $email, $pwd, $dob);
     $addUser->addUser();
