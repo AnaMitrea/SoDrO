@@ -1,0 +1,21 @@
+<?php
+namespace App\View;
+
+use App\Controller\RemoveUser;
+
+const root = '/BackendRouting';
+
+if(isset($_POST["submit-remove"])) {
+// grabbing the data
+
+    $email = $_POST["email"];
+
+    include_once "application/database/DatabaseHandler.php";
+    include_once "application/class/controllers/Admin.php";
+    include_once "application/class/controllers/RemoveUser.php";
+
+    $removeUser = new RemoveUser($email);
+    $removeUser->remove();
+
+    header("location: " . root . "/profile?admin=true&error=none");
+}

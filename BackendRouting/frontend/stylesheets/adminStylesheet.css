@@ -244,7 +244,7 @@ Text Font:  font-family:'Poppins',sans-serif;
     background: #B45760;
     height: 15em;
     width: 12em;
-    margin: 15px;
+    margin-bottom: 10px;
     color:var(--ebony-clay);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 20px;
@@ -253,22 +253,20 @@ Text Font:  font-family:'Poppins',sans-serif;
     position: relative;
 
 
-
 }
 .options-frame .icon-frame{
-    padding-top: 1.5em;
-    padding-left: 0.7em;
+    margin-top: 1.5em;
+   margin-left: 0.7em;
     height: 8em;
     width: 8em;
     opacity: 1;
-
-
 }
 .options-frame .options-text .functions-button{
+    margin-left:2.5em;
     color:white;
     width: 60%;
     text-align: center;
-    position: relative;
+    display: flex;
     background:var(--ebony-clay);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
@@ -521,5 +519,31 @@ input[type=submit]:hover {
     .col-25, .col-75, input[type=submit], .title {
         width: 95%;
         margin-top: 0;
+    }
+}
+@media only screen and (max-width: 1400px){
+    .options-box .top-options{
+       border-right: none;
+    }
+}
+@media only screen and (max-width: 400px){
+    .options-box .top-options {
+        margin:auto;
+    }
+    .options-frame, .options-frame .icon-frame, .options-frame .options-text .functions-button{
+        margin: auto;
+        margin-bottom: 4px;
+        width: 90%;
+        height: 90%;
+    }
+}
+@media only screen and (min-width:950px) and (max-width: 1170px){
+    .dashboard-structor .account-information .account-preferences{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 840px){
+    .dashboard-structor .account-information .account-preferences{
+        flex-direction: column;
     }
 }

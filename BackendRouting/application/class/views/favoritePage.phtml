@@ -3,9 +3,8 @@ namespace App\View;
 
 use App\Model\Favorite;
 
-// da eroare cu:
 include_once "application/database/DatabaseHandler.php";
-include_once "application/class/models/Favorite.php";
+include "application/class/models/Favorite.php";
 
 $favorite = new Favorite();
 ?>
@@ -16,8 +15,20 @@ $favorite = new Favorite();
     ?>
 </div>
 
-<div id="json_category_favorite" style="display: none;">
+<div id="json_category_favorite_1" style="display: none;">
     <?php
-    echo htmlspecialchars($favorite->getProductForCategory(3033710076017));
+    echo htmlspecialchars($favorite->getProductForCategory("car"));
+    ?>
+</div>
+
+<div id="json_category_favorite_2" style="display: none;">
+    <?php
+    echo htmlspecialchars($favorite->getProductForCategory("bev"));
+    ?>
+</div>
+
+<div id="json_category_favorite_3" style="display: none;">
+    <?php
+    echo htmlspecialchars($favorite->getProductForCategory("wat"));
     ?>
 </div>

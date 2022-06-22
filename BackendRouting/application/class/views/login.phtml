@@ -1,6 +1,9 @@
 <?php
 namespace App\View;
 
+/* @var string $maxUserId Next maximum User id */
+/* @var bool $isAdmin User Flag for admin */
+
 use App\Model\Login;
 use App\Model\CustomSession;
 
@@ -20,7 +23,6 @@ if(isset($_POST["submit"])){
 
     if(($login->loginUser())){
        // setcookie('email', $email, time()+60*60*7);
-       // setcookie('password', $password,time()+60*60*7);
 
         $sessions_handler = new CustomSession();
 
@@ -32,9 +34,12 @@ if(isset($_POST["submit"])){
         session_regenerate_id(true);
 
         $_SESSION['email'] = $email;
+        $_SESSION['userId'] = $maxUserId ?? null;
+        // de adaugat name
+        $_SESSION['isAdmin'] = $isAdmin ?? false;
         $_SESSION['password'] = $userPwd;
 
-        $sessions_handler->write(1,session_id());
+        $sessions_handler->write($maxUserId,session_id());
 
         session_write_close();
 
@@ -43,5 +48,4 @@ if(isset($_POST["submit"])){
     }else{
         echo "Email or Password is invalid";
     }
-
 }

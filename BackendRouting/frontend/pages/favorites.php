@@ -61,13 +61,9 @@ include 'application/class/views/favoritePage.phtml';
 
     <div class="your-favorites">
         <h2>Your favorite list:</h2>
-        <div class="your-favorites-products">
-
-            <p class='error-message'>There are no products in your favorite list.</p>
-        </div>
-
+        <div id="your-favorites-products-div" class="your-favorites-products"></div>
     </div>
-    <div class="recommended">
+    <div id="recommended-div" class="recommended">
 
     </div>
 </div>

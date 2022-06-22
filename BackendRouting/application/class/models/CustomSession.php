@@ -80,7 +80,7 @@ class CustomSession extends DatabaseHandler implements SessionHandlerInterface
             $expiry_time = $current_time + SESSION_DURATION;
 
             $statement = $this->pdo->prepare('INSERT into sessions("id","last_updated","expiry","data") VALUES (:id,:last_updated,:expiry,:data)
-ON CONFLICT(id) DO UPDATE SET "data"=:data,"last_updated"=:last_updated,"expiry"=:expiry WHERE "sessions"."id"=:id;');
+                        ON CONFLICT(id) DO UPDATE SET "data"=:data,"last_updated"=:last_updated,"expiry"=:expiry WHERE "sessions"."id"=:id;');
 
             $statement->bindParam(':data',$data, PDO::PARAM_STR);
             $statement->bindParam(':last_updated',$current_time, PDO::PARAM_INT);
