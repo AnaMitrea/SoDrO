@@ -1,7 +1,7 @@
 <?php
 session_start();
 $root = '/BackendRouting';
-include 'application/class/views/productPage.phtml';
+include 'application/class/views/favoritePage.phtml';
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +11,10 @@ include 'application/class/views/productPage.phtml';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
-    <link rel="stylesheet" href="frontend/stylesheets/style-product-page.css">
+    <link rel="stylesheet" href="frontend/stylesheets/style-favorites.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <title>Single Product</title>
+    <title>Product</title>
 </head>
 <body>
     <!-- Top Bar Row -->
@@ -59,53 +59,20 @@ include 'application/class/views/productPage.phtml';
 
 <div class="middle">
 
-    <div class="top-middle">
-        <div class="swiper">
+    <div class="your-favorites">
+        <h2>Your favorite list:</h2>
+        <div class="your-favorites-products">
 
-            <!-- Products Container - contents added from javascript -->
-            <h1 id="product-title-in-product-page" ></h1>
-
-            <div class="images">
-                <div class="main-photo">
-                    <img id="product-image-in-product-page" class="prod-img" src="" alt="photo">
-                </div>
-            </div>
+            <p class='error-message'>There are no products in your favorite list.</p>
         </div>
 
-        <div class="details">
-
-            <div class="ingredients-list">
-                <h2>NUTRITIONAL VALUES</h2>
-                    <h4 id="nutrition-data-per"></h4>
-                <table id="ingredients-val">
-                    <tr>
-                        <th>Nutrition value</th>
-                        <th>Quantity/Value</th>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="additional-data-div" class="additional-data">
-                <h2>DETAILS</h2>
-            </div>
-
-        </div>
     </div>
-
-    <div id="bottom-middle-div" class="bottom-middle"></div>
-
-    <!-- Product Recommandation-->
-
-    <div class="other-products-from-same-categories">
-        <h2>SIMILAR PRODUCTS</h2>
-        <div id="list-of-similar-products" class="list-of"></div>
+    <div class="recommended">
 
     </div>
-
 </div>
 
-
-    <footer class="footer">
+<footer class="footer">
         <div class="icon">
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
@@ -117,7 +84,7 @@ include 'application/class/views/productPage.phtml';
             <a href="<?php echo $root ?>/contact">Contact</a>
             <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
-    </footer>
-    <script src="frontend/scripts/Product.js"></script>
+</footer>
+<script src="frontend/scripts/Favorites.js"></script>
 </body>
 </html>

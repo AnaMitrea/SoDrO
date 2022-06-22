@@ -1,0 +1,23 @@
+<?php
+namespace App\View;
+
+use App\Model\Favorite;
+
+// da eroare cu:
+// include "application/database/DatabaseHandler.php";
+include "application/class/models/Favorite.php";
+
+$favorite = new Favorite();
+?>
+
+<div id="json_favorite_list" style="display: none;">
+    <?php
+    echo htmlspecialchars($favorite->getListOfFavorites());
+    ?>
+</div>
+
+<div id="json_category_favorite" style="display: none;">
+    <?php
+    echo htmlspecialchars($favorite->getProductForCategory(3033710076017));
+    ?>
+</div>

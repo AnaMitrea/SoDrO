@@ -159,20 +159,6 @@ $router->get(root . '/trending', function () {
 });
 
 # Multiple Products Page
-# /products?page=1&sort=name_asc sau name_desc
-/*
-$router->get(root. '/products', function (array $params = []) {
-    if (empty($params) || $params['page'] == 1) {
-        require 'frontend/pages/shop-page.php';
-    } else {
-        if (!empty($params['page'])) {
-
-        }
-        require 'frontend/pages/shop-page.php';
-    }
-});
-*/
-
 $router->get(root. '/products', function ($params = []) {
     $page = '1';
     $sort_by = null;
@@ -188,6 +174,8 @@ $router->get(root. '/products', function ($params = []) {
 });
 $router->post(root . '/products', function ($params = []) {
     var_dump($params);
+    // TODO post
+
     #require 'frontend/pages/shop-page-after-sort.php';
 });
 
@@ -219,7 +207,7 @@ $router->get(root . '/recipes', function (array $params = []){
 
 
 $router->get(root . '/favorites', function () {
-    require '';
+    require 'frontend/pages/favorites.php';
 });
 
 # Footer Endpoints
