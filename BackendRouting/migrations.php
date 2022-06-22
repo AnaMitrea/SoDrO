@@ -1,7 +1,7 @@
 <?php
 
 use App\Database\DatabaseMigration;
-include 'application/database/DatabaseHandler.php';
+include_once 'application/database/DatabaseHandler.php';
 include 'application/database/DatabaseMigration.php';
 
 echo "<h1>Creating the tables that are used in the application...</h1><br>";

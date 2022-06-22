@@ -79,5 +79,4 @@ class LoginController extends DatabaseHandler {
         $this->pdo = null;
         return true;
     }
-
 }

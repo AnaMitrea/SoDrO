@@ -4,8 +4,8 @@ namespace App\View;
 use App\Model\Favorite;
 
 // da eroare cu:
-// include "application/database/DatabaseHandler.php";
-include "application/class/models/Favorite.php";
+include_once "application/database/DatabaseHandler.php";
+include_once "application/class/models/Favorite.php";
 
 $favorite = new Favorite();
 ?>
