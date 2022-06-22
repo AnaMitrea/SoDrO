@@ -1,17 +1,19 @@
 <?php
 namespace App\View;
+/* @var string $json_config JSON Page $ sort_by information */
+/* @var string $json_data JSON Representation of Shop Products */
 
-use App\Model\Shop;
-
-include "application/database/DatabaseHandler.php";
-include_once "application/class/models/Shop.php";
-
-$shop = new Shop();
 ?>
 
 <div id="json_data_from_php" style="display: none;">
-    <?php
-    $shop_products_output = $shop->getProduct();
-    echo htmlspecialchars($shop_products_output);
-    ?>
+    <div id="json_page_sort_by" style="color: red; display: none;">
+        <?php
+        echo htmlspecialchars($json_config);
+        ?>
+    </div>
+    <div id="json_products" style="color: blue; display: none;">
+        <?php
+        echo htmlspecialchars($json_data);
+        ?>
+    </div>
 </div>

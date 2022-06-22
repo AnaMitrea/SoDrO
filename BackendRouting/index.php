@@ -2,7 +2,9 @@
 
 use App\Router;
 use App\Model\Contact;
+use App\Controller\ShopController;
 require 'application/Router.php';
+require 'application/class/controllers/ShopController.php';
 
 const root = '/BackendRouting';
 
@@ -157,22 +159,41 @@ $router->get(root . '/trending', function () {
 });
 
 # Multiple Products Page
-# /products?page=1
+# /products?page=1&sort=name_asc sau name_desc
+/*
 $router->get(root. '/products', function (array $params = []) {
     if (empty($params) || $params['page'] == 1) {
         require 'frontend/pages/shop-page.php';
     } else {
         if (!empty($params['page'])) {
-            // TODO
+
         }
         require 'frontend/pages/shop-page.php';
     }
 });
-$router->post(root . '/products', function () {
-    require 'frontend/pages/shop-page-after-sort.php';
+*/
+
+$router->get(root. '/products', function ($params = []) {
+    $page = '1';
+    $sort_by = null;
+
+    if (!empty($params['page'])) {
+        $page = $params['page'];
+    }
+    if (!empty($params['sort'])) {
+        $sort_by = $params['sort'];
+    }
+
+    $shopController = new ShopController([$page,$sort_by]);
+});
+$router->post(root . '/products', function ($params = []) {
+    var_dump($params);
+    #require 'frontend/pages/shop-page-after-sort.php';
 });
 
 
+
+// TODO
 $router->get(root. '/product', function (array $params = []) {
     if(!empty($params['code'])) {
         require 'frontend/pages/product-page.php';

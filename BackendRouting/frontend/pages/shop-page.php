@@ -1,53 +1,20 @@
 <?php
-/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
-session_start();
 use App\Database\DatabaseHandler;
-
 include 'application/class/views/shop.phtml';
+
+if (!headers_sent()) {
+    session_start();
+}
+
+/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
+
 $root = '/BackendRouting';
 
 $db = new DatabaseHandler();
 $pdo = $db->getConn();
 
-$page = $_GET['page'] ?? 1;
 
-$sort_by = $_GET['sort'] ?? null;
-
-if(strcmp($sort_by,"name_asc")){
-    $type_sort = "ASC";
-}else {
-    $type_sort = "DESC";
-}
-
-$num_per_page = 24;
-$start_from = ($page-1) * 24;
-
-if(isset($_POST["submit-from-search-bar"])){
-    $search_for = $_POST["search"];
-}
-else {
-    $search_for = null;
-}
-
-
-if($search_for == null and $sort_by==null){
-    $stmt = $pdo->prepare("SELECT * FROM products limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-}else if($search_for != null and $sort_by == null){
-    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%')", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-}else if($search_for == null and $sort_by != null){
-    $stmt = $pdo->prepare("SELECT * FROM products order by 3 $type_sort limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-}else if($search_for != null and $sort_by != null){
-    $stmt = $pdo->prepare("SELECT * FROM products where product_name like concat('%','$search_for','%') order by 3 $type_sort limit $num_per_page offset $start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-}
-$stmt->execute();
-
-$stmt_count = $pdo->prepare("SELECT count(1) FROM products", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-$stmt_count->execute();
-$entire_row = $stmt_count->fetch();
-$number_of_pages = $entire_row[0];
-$number_of_pages = ceil($number_of_pages / $num_per_page);
 $search_for = null;
-
 ?>
 
 <!DOCTYPE html>
@@ -56,39 +23,11 @@ $search_for = null;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link rel="stylesheet" href="frontend/stylesheets/style-shop.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <title>Products</title>
-    <script type="text/javascript">
-        function inc(){
-            <?php
-            if(strlen($sort_by)>0){
-            ?>
-                document.getElementById("next-page").href="<?php echo $root?>/products?page=<?php echo $page+1 ?>&sort=<?php echo $sort_by ?>";
-            <?php
-            }else{
-            ?>
-                document.getElementById("next-page").href="<?php echo $root?>/products?page=<?php echo $page+1 ?>";
-            <?php
-            }
-            ?>
-        }
-        function dec(){
-            <?php
-            if(strlen($sort_by)>0){
-            ?>
-            document.getElementById("previous-page").href="<?php echo $root?>/products?page=<?php echo $page-1 ?>&sort=<?php echo $sort_by ?>";
-            <?php
-            }else{
-            ?>
-                document.getElementById("previous-page").href="<?php echo $root?>/products?page=<?php echo $page-1 ?>";
-            <?php
-            }
-            ?>
-        }
-    </script>
 </head>
 <body>
     <!-- Top Bar Row -->
@@ -118,7 +57,7 @@ $search_for = null;
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
+            <form action="<?php echo $root ?>/products" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
@@ -135,7 +74,8 @@ $search_for = null;
     <div class="middle">
             <div class="sort-list">
                 <p id="sort-list-title">Sort list</p>
-                <form method="post" action="shop-page-after-sort.php">
+                <!-- Form -->
+                <form action="<?php echo $root?>/products" method="post">
                     <p class="tag">Categories:</p>
                     <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
                     <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
@@ -171,6 +111,7 @@ $search_for = null;
                 <div class="sorting-lists">
                     <div class="sort-by sort-by-first" id="categories">
                         <button class="sort-by-title">Sort list</button>
+                        <!-- Form -->
                         <form class="form-responsive" method="post" action="<?php echo $root?>/products">
                             <p class="tag">Categories:</p>
                             <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
@@ -203,6 +144,7 @@ $search_for = null;
                         </form>
                     </div>
 
+                    <!-- Sort By : Most Viewed, Name Asc, Name Desc -->
                     <div class="sort-by">
                         <button class="sort-by-title">Sort by</button>
                         <ul class="list-categories">
@@ -220,20 +162,7 @@ $search_for = null;
 
                 <!-- Choose Page Buttons -->
                 <div id="choose_page_container" class="choose-page">
-                    <?php if($page>1 && $page < $number_of_pages){?>
-                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                        <?php
-                    }else if($page==1){
-                        ?>
-                        <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-                        <?php
-                    }else if( $page == $number_of_pages){
-                        ?>
-                        <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-                        <?php
-                    }
-                    ?>
+
                 </div>
             </div>
         </div>
@@ -256,6 +185,6 @@ $search_for = null;
             window.history.replaceState( null, null, window.location.href );
         }*/
     </script>
-    <script src="frontend/scripts/Products.js"></script>
+    <script src="frontend/scripts/Shop.js"></script>
 </body>
 </html>
