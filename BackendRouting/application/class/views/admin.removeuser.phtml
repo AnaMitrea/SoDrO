@@ -1,23 +1,21 @@
 <?php
 namespace App\View;
 
-use App\Controller\AddUser;
+use App\Controller\RemoveUser;
 
 const root = '/BackendRouting';
 
-if(isset($_POST["submit-add"])) {
+if(isset($_POST["submit-remove"])) {
 // grabbing the data
-    $uid = $_POST["username"];
+
     $email = $_POST["email"];
-    $pwd = $_POST["password"];
-    $dob = $_POST["dateofbirth"];
 
     include_once "application/database/DatabaseHandler.php";
     include_once "application/class/controllers/Admin.php";
-    include_once "application/class/controllers/AddUser.php";
+    include_once "application/class/controllers/RemoveUser.php";
 
-    $addUser = new AddUser($uid, $email, $pwd, $dob);
-    $addUser->addUser();
+    $removeUser = new RemoveUser($email);
+    $removeUser->remove();
 
     header("location: " . root . "/profile?admin=true&error=none");
 }

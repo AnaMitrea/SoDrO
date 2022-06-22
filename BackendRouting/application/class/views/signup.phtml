@@ -18,9 +18,9 @@ if(isset($_POST["signup"])) {
     $dob = $_POST["dob"];
 
     // instantiate Signup controller class
-    include "application/database/DatabaseHandler.php";
-    include "application/class/controllers/SignupController.php";
-    include "application/class/controllers/SignupController.php";
+    include_once "application/database/DatabaseHandler.php";
+    include_once "application/class/controllers/SignupController.php";
+    include_once "application/class/models/Signup.php";
 
     $signup = new Signup($uid, $email, $pwd, $pwdRepeat, $dob);
 

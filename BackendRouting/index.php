@@ -1,10 +1,11 @@
 <?php
-
 use App\Router;
 use App\Model\Contact;
 use App\Controller\ShopController;
+use App\Controller\UserController;
 require 'application/Router.php';
 require 'application/class/controllers/ShopController.php';
+require 'application/class/controllers/UserController.php';
 
 const root = '/BackendRouting';
 
@@ -85,6 +86,11 @@ $router->get(root . '/login', function (array $params = []) {
     }
 });
 $router->post(root . '/login', function () {
+
+
+    $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
+    $maxUserId = $userController->getMaxUserId();
+    $isAdmin = $userController->getAdminFlag();
     require 'application/class/views/login.phtml';
 });
 
@@ -113,15 +119,15 @@ $router->get(root . '/profile', function (array $params = []) {
                         break;
                     case "emptyinput":
                         echo "Empty Input";
-                       // require 'frontend/pages/404error.php';
+                        // require 'frontend/pages/404error.php';
                         break;
                     case "username":
                         echo "Invalid Username";
-                       // require 'frontend/pages/404error.php';
+                        // require 'frontend/pages/404error.php';
                         break;
                     case "emptyemail":
                         echo "Empty Email";
-                       // require 'frontend/pages/404error.php';
+                        // require 'frontend/pages/404error.php';
                         break;
                     case "useremailtaken":
                         echo "Username or email taken!";
@@ -129,7 +135,7 @@ $router->get(root . '/profile', function (array $params = []) {
                         break;
                     default:
                         echo "Something unexpectedly happened";
-                      //  require 'frontend/pages/404error.php';
+                    //  require 'frontend/pages/404error.php';
                 }
             }
             else{
@@ -145,7 +151,7 @@ $router->post(root . '/profile', function (array $params = []) {
     }
     else{
         if($params['method']=='remove'){
-            require 'application/class/views/removeUser.phtml';
+            require 'application/class/views/admin.removeUser.phtml';
         }
         else {
             header("location: " . root . "/error404");
@@ -180,7 +186,6 @@ $router->post(root . '/products', function ($params = []) {
 });
 
 
-
 // TODO
 $router->get(root. '/product', function (array $params = []) {
     if(!empty($params['code'])) {
@@ -189,7 +194,6 @@ $router->get(root. '/product', function (array $params = []) {
     else
         require 'frontend/pages/product-page.php';
 });
-
 
 
 /* Recipes */

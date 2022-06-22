@@ -59,15 +59,15 @@ if(!isset($_SESSION)) {
             </a>
         </div>
     </div>
+    <p><?php echo 'E admin? ' . $_SESSION['isAdmin']?></p>
     <div class="page-container" id="id-page-container">
         <div class="dashboard-structor" id="id-dashboard-structor">
             <div class="user">
                 <div class="profile-img">
                     <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
-
                 <div class="user-description">
-                    <p>Your Name</p>
+                    <p><?php echo $_SESSION['email']?></p>
                     <p>Your Username</p>
                     <button id="email-btn" class="change-email">Change Email</button>
                     <button id="pwd-btn" class="change-password">Change Password</button>
@@ -145,21 +145,21 @@ if(!isset($_SESSION)) {
 
                     <div class="adduser-form" id="remove-user-form">
                         <div class="container">
-                            <form action="<?php echo $root?>/profile?admin=true&method=remove">
+                            <form action="<?php echo $root?>/profile?admin=true&method=remove" id="removeuser" method="post">
                                 <div class="title">
                                     <h2>Remove an user from the database.</h2>
                                 </div>
                                 <div class="row">
                                     <div class="col-25">
-                                        <label for="username">Username</label>
+                                        <label for="username">Email</label>
                                     </div>
                                     <div class="col-75">
-                                        <input type="text" id="user" name="username" placeholder="Enter the username..">
+                                        <input type="text" id="email" name="email" placeholder="Enter the email..">
                                     </div>
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <input type="submit" value="Remove user">
+                                    <input type="submit" name="submit-remove" value="Remove user">
                                 </div>
                             </form>
                         </div>

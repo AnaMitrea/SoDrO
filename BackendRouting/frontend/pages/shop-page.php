@@ -9,7 +9,6 @@ if (!headers_sent()) {
 /* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
 
 $root = '/BackendRouting';
-$search_for = null;
 ?>
 
 <!DOCTYPE html>

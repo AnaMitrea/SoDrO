@@ -62,6 +62,18 @@ class Admin extends DatabaseHandler
             header("location: " . root . "/profile?admin=true&error=stmtfailed");
             exit();
         }
-        $stmt = null;
+
     }
+    protected function removeUser($email){
+        $stmt = $this->pdo->prepare('Delete from users where email =:email ');
+        $stmt->bindValue(':email', $email);
+
+        if(!$stmt->execute(array($email))){
+            $stmt = null;
+            header("location: " . root . "/profile?admin=true&error=stmtfailed");
+            exit();
+        }
+        $stmt = null;
+
+}
 }
