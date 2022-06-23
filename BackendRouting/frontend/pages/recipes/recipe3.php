@@ -17,14 +17,14 @@ $root = '/BackendRouting';
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 <body>
+    <!-- Top Bar Row -->
     <div class="top-bar">
         <div class="icon">
             <span id="icon" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div id="page-title">
-            <p>SoftDrinks</p>
+            <a href="<?php echo $root ?>/home">SoftDrinks</a>
         </div>
-
         <!-- Responsive top bar  -->
         <div class="shop-list-icon">
             <span class="iconify" data-icon="bx:list-ul"></span>
@@ -35,18 +35,21 @@ $root = '/BackendRouting';
                 <a href="<?php echo $root ?>/favorites">Favorites</a>
             </div>
         </div>
+        <!-- Actual top bar buttons -->
         <div class="list-items">
             <a href="<?php echo $root ?>/trending">Trending</a>
             <a href="<?php echo $root ?>/products">Products</a>
             <a href="<?php echo $root ?>/recipes">Recipes</a>
             <a href="<?php echo $root ?>/favorites">Favorites</a>
         </div>
+        <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form>
-                <input type="search" placeholder="Search...">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
+                <input type="text" name="search" placeholder="Search...">
+                <input type="submit" name="submit-from-search-bar">
             </form>
         </div>
-        <!-- Profile Icon button -->
+        <!-- User Icon Button -->
         <div class="user-icon">
             <a href="<?php echo $root ?>/profile">
                 <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
@@ -55,7 +58,6 @@ $root = '/BackendRouting';
     </div>
 
     <!-- See recipe Modal  -->
-
     <div id="recipe-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>

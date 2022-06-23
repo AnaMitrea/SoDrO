@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION) && !headers_sent()) {
+    session_start();
+}
 $root = '/BackendRouting';
 ?>
 
@@ -8,7 +11,6 @@ $root = '/BackendRouting';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/style-trending.css">
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly%20Lodger' rel='stylesheet'>
@@ -43,7 +45,7 @@ $root = '/BackendRouting';
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
@@ -66,7 +68,7 @@ $root = '/BackendRouting';
     <div class="middle">
         <div class="carbonated">
             <div class="carbonated-text">
-                <a href="seeMore-Carbonated.html">Top Carbonated Drinks-see more..</a>
+                <a href="">Top Carbonated Drinks.</a>
 
             </div>
         <div class="carbonated-list">

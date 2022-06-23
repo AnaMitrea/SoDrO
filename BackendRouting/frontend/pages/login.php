@@ -7,7 +7,6 @@ $root = '/BackendRouting';
 <head>
 	<meta charset="UTF-8">
 	<title>Login/Sign in</title>
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
 	<link rel="stylesheet" href="frontend/stylesheets/style-login-signup.css">
 </head>
 <body>

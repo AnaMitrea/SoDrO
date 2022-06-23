@@ -1,8 +1,8 @@
 <?php
-    $root = '/BackendRouting';
-if(!isset($_SESSION)) {
+if (!isset($_SESSION) && !headers_sent()) {
     session_start();
 }
+$root = '/BackendRouting';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,6 @@ if(!isset($_SESSION)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Profile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/adminStylesheet.css">
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
@@ -47,7 +46,7 @@ if(!isset($_SESSION)) {
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
