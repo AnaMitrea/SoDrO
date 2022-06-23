@@ -137,7 +137,7 @@ $router->get(root . '/profile', function (array $params = []) {
     }
 });
 $router->post(root . '/profile', function (array $params = []) {
-    if($params['method']== 'add'){
+    if($params['method'] == 'add'){
         require 'application/class/views/admin.adduser.phtml';
     }
     else{

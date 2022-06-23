@@ -10,6 +10,12 @@
     --oriental-pink: #c59ea8;
 }
 
+.search-container{
+    margin-top: 1em;
+    margin-right: 2vw;
+    float:right;
+}
+
 body{
     background-color: var(--pearl-bush);
     font-family:'Poppins',sans-serif;
@@ -89,8 +95,6 @@ body{
     text-shadow: #589882 1px 0 10px;
 }
 
-
-
 .sort-list{
     width:15em;
     background-color:hsl(26, 42%, 83%);
@@ -148,7 +152,6 @@ body{
     display: none;
 }
 
-
 .product-cell{
     height: 16em;
     width: 200px;
@@ -196,7 +199,6 @@ body{
 
 .product-cell .product-cell-bottom #add-to-list-icon{
     width: 20%;
-
 }
 
 .product-cell .product-cell-bottom #add-to-list-icon button{

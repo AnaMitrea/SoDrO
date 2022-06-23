@@ -157,16 +157,22 @@ $root = '/BackendRouting';
                         <h1>Your preferences</h1>
                         <hr>
                         <div class="category-form">
+                            <!-- CATEGORIES FORM -->
                             <form>
                                 <div class="form-row">
                                     <div class="col-25">
                                         <label>First category</label>
                                     </div>
                                     <div class="col-75">
-                                        <select id="category-select1" name="category-select">
-                                            <option value="category1">Soda</option>
-                                            <option value="category2">Tea</option>
-                                            <option value="category3">Dairy</option>
+                                        <select id="category-select1" name="category-select1">
+                                            <option value="Carbonated Drinks">Carbonated Drinks</option>
+                                            <option value="Coffee Drinks">Coffee Drinks</option>
+                                            <option value="Dairy Drinks">Dairy Drinks</option>
+                                            <option value="Energy Drinks">Energy Drinks</option>
+                                            <option value="Hot Beverages">Hot Beverages</option>
+                                            <option value="Iced Beverages">Iced Beverages</option>
+                                            <option value="Non Alcoholic">Non Alcoholic</option>
+                                            <option value="Water">Water</option>
                                         </select>
                                     </div>
                                 </div>
@@ -175,10 +181,15 @@ $root = '/BackendRouting';
                                         <label >Second category</label>
                                     </div>
                                     <div class="col-75">
-                                        <select id="category-select2" name="category-select">
-                                            <option value="category1">Your choice</option>
-                                            <option value="category2">Your choice</option>
-                                            <option value="category3">Your choice</option>
+                                        <select id="category-select2" name="category-select2">
+                                            <option value="Carbonated Drinks">Carbonated Drinks</option>
+                                            <option value="Coffee Drinks">Coffee Drinks</option>
+                                            <option value="Dairy Drinks">Dairy Drinks</option>
+                                            <option value="Energy Drinks">Energy Drinks</option>
+                                            <option value="Hot Beverages">Hot Beverages</option>
+                                            <option value="Iced Beverages">Iced Beverages</option>
+                                            <option value="Non Alcoholic">Non Alcoholic</option>
+                                            <option value="Water">Water</option>
                                         </select>
                                     </div>
                                 </div>
@@ -187,12 +198,20 @@ $root = '/BackendRouting';
                                         <label>Third category</label>
                                     </div>
                                     <div class="col-75">
-                                        <select id="category-select3" name="category-select">
-                                            <option value="category1">Your choice</option>
-                                            <option value="category2">Your choice</option>
-                                            <option value="category3">Your choice</option>
+                                        <select id="category-select3" name="category-select3">
+                                            <option value="Carbonated Drinks">Carbonated Drinks</option>
+                                            <option value="Coffee Drinks">Coffee Drinks</option>
+                                            <option value="Dairy Drinks">Dairy Drinks</option>
+                                            <option value="Energy Drinks">Energy Drinks</option>
+                                            <option value="Hot Beverages">Hot Beverages</option>
+                                            <option value="Iced Beverages">Iced Beverages</option>
+                                            <option value="Non Alcoholic">Non Alcoholic</option>
+                                            <option value="Water">Water</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="form-row">
+                                    <button onclick="saveFile()" name="category-submit-btn" type="submit" id="id-categories-btn" class="save-bttn">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -206,7 +225,7 @@ $root = '/BackendRouting';
                         <div id="chart-wrap">
                             <img alt="future prototype" id="user-content" src="frontend/images/prototype1.png">
                             <img alt="future prototype" id="group-content" style="display: none" src="frontend/images/prototype2.png">
-                            <button class="save-bttn">Save your preferences</button>
+                            <button id="id-preferences-btn" class="save-bttn">Save your preferences</button>
                         </div>
                     </div>
                 </div>
@@ -288,7 +307,7 @@ $root = '/BackendRouting';
     </script>
     <!-- Shopping List script -->
     <script src="frontend/scripts/shoppinglistScript.js"></script>
-    <!-- Buttons Percentages script -->
+    <!-- Buttons Percentages script + Save categories into .txt -->
     <script src="frontend/scripts/percentagesScript.js"></script>
     <!-- Group & Change Email & Change Pwd Modals -->
     <script src="frontend/scripts/dashboardModal.js"></script>
