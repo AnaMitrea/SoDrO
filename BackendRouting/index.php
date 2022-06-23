@@ -136,7 +136,6 @@ $router->get(root . '/profile', function (array $params = []) {
         require 'frontend/pages/dashboard.php';
     }
 });
-
 $router->post(root . '/profile', function (array $params = []) {
     if($params['method']== 'add'){
         require 'application/class/views/admin.adduser.phtml';
@@ -168,13 +167,19 @@ $router->get(root. '/products', function ($params = []) {
         $sort_by = $params['sort'];
     }
 
-    $shopController = new ShopController([$page,$sort_by]);
+    $shopController = new ShopController( [$page,$sort_by] );
 });
+# /products?method=filter for left div sorting or /products?method=search for search bar
 $router->post(root . '/products', function ($params = []) {
-    var_dump($params);
-    // TODO post
 
-    #require 'frontend/pages/shop-page-after-sort.php';
+    if (!empty($params['method'])) {
+        // filtering products from left side div
+        if ($params['method'] == 'filter' || $params['method'] == 'search') {
+            require "frontend/pages/shop-page-after-sort.php";
+        } else {
+            header("location: " . root . "/error404");
+        }
+    }
 });
 
 
@@ -194,7 +199,7 @@ $router->get(root . '/recipes', function (array $params = []){
         if($params['id'] >= 1 && $params['id'] <= 5)
             require 'frontend/pages/recipes/recipe' . $params['id'] . '.php';
         else {
-            require 'frontend/pages/404error.php';
+            header("location: " . root . "/error404");
         }
     }
     else

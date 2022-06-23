@@ -1,10 +1,9 @@
 <?php
-use App\Database\DatabaseHandler;
-include 'application/class/views/shop.phtml';
-
-if (!headers_sent()) {
+if (!isset($_SESSION) && !headers_sent()) {
     session_start();
 }
+include 'application/class/views/shop.phtml';
+
 
 /* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
 
@@ -51,7 +50,7 @@ $root = '/BackendRouting';
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form action="<?php echo $root ?>/products" method="post">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
@@ -69,7 +68,7 @@ $root = '/BackendRouting';
             <div class="sort-list">
                 <p id="sort-list-title">Sort list</p>
                 <!-- Form -->
-                <form action="<?php echo $root?>/products" method="post">
+                <form action="<?php echo $root?>/products?method=filter" method="post">
                     <p class="tag">Categories:</p>
                     <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
                     <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
@@ -96,7 +95,7 @@ $root = '/BackendRouting';
                     <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
                     <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
                     <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                    <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
+                    <label><input type="checkbox" name="check-24" value="sodium_value">sodium</label><br>
                     <input type="submit" name="submit-from-left">
                 </form>
             </div>
@@ -105,8 +104,8 @@ $root = '/BackendRouting';
                 <div class="sorting-lists">
                     <div class="sort-by sort-by-first" id="categories">
                         <button class="sort-by-title">Sort list</button>
-                        <!-- Form -->
-                        <form class="form-responsive" method="post" action="<?php echo $root?>/products">
+                        <!-- Filter List Responsive -->
+                        <form class="form-responsive" method="post" action="<?php echo $root?>/products?method=filter">
                             <p class="tag">Categories:</p>
                             <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
                             <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
@@ -133,7 +132,7 @@ $root = '/BackendRouting';
                             <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
                             <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
                             <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                            <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
+                            <label><input type="checkbox" name="check-24" value="sodium_value">sodium</label><br>
                             <input type="submit" name="submit-from-left">
                         </form>
                     </div>
@@ -175,9 +174,6 @@ $root = '/BackendRouting';
         </div>
     </footer>
     <script>
-      /*  if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }*/
     </script>
     <script src="frontend/scripts/Shop.js"></script>
 </body>

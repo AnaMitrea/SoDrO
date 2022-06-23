@@ -15,7 +15,7 @@ class ShopController extends Shop
     /**
      * @return void
      */
-    private function getProduct()
+    private function getProduct() : void
     {
         if ($this->sort_by == null) {
             $stmt = $this->pdo->prepare("SELECT * FROM products limit $this->num_per_page offset $this->start_from", array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
