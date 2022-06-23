@@ -1,5 +1,8 @@
 <?php
-    $root = '/BackendRouting';
+if (!isset($_SESSION) && !headers_sent()) {
+    session_start();
+}
+$root = '/BackendRouting';
 ?>
 <!-- TODO RESPONSIVE  -->
 
@@ -10,7 +13,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link rel="stylesheet" href="frontend/stylesheets/style-homepage.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -43,7 +45,7 @@
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>

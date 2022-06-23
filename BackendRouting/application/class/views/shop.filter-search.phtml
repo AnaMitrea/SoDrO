@@ -1,0 +1,72 @@
+<?php
+namespace App\View;
+use App\Controller\ShopSortController;
+
+include_once "application/database/DatabaseHandler.php";
+include_once "application/class/models/ShopSort.php";
+include_once "application/class/controllers/ShopSortController.php";
+
+$command_for_categories = "";
+$command_for_values = "";
+if ( isset($_POST["submit-from-left"]) ) {
+
+    # Categories
+    for ($i = 1; $i <= 7; $i++) {
+        if ( isset($_POST["check-" . $i]) ) {
+            if (strlen($command_for_categories) > 0) {
+                $command_for_categories .= (" or ");
+            }
+            $command_for_categories .= ("categories_tags  like concat('%','");
+            $command_for_categories .= $_POST["check-" . $i];
+            $command_for_categories .= ("','%') ");
+        }
+    }
+
+    # With Vitamins
+    for ($i = 8; $i <= 14; $i++) {
+        if ( isset($_POST["check-" . $i]) ) {
+            if (strlen($command_for_values) > 0) {
+                $command_for_values .= (" and ");
+            }
+            $command_for_values .= $_POST["check-" . $i];
+            $command_for_values .= (" IS NOT NULL ");
+        }
+    }
+
+    # Without Vitamins
+    for ($i = 15; $i <= 24; $i++) {
+        if ( isset($_POST["check-" . $i]) ) {
+            if (strlen($command_for_values) > 0) {
+                $command_for_values .= (" and ");
+            }
+            $command_for_values .= $_POST["check-" . $i];
+            $command_for_values .= (" IS NULL ");
+        }
+    }
+
+    $formFlag = "submit-from-left";
+    $shopSortController = new ShopSortController( [
+        $formFlag,
+        [$command_for_categories, $command_for_values],
+        null
+    ]);
+}
+else if ( isset($_POST["submit-from-search-bar"]) ) {
+
+    $search_for = $_POST["search"];
+    $formFlag = "submit-from-search-bar";
+    $shopSortController = new ShopSortController( [
+        $formFlag,
+        [null, null],
+        $search_for
+    ]);
+}
+?>
+
+<div id="json_data_from_php" style="display: none; color:red">
+    <?php
+    echo htmlspecialchars($shopSortController->json_data);
+    ?>
+</div>
+
+

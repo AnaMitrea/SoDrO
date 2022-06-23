@@ -36,8 +36,8 @@ class Shop extends DatabaseHandler
     public function __construct(array $params = []) {
         $this->pdo = $this->getConn();
 
-        $this->page = $params[0];
-        $this->sort_by = $params[1];
+        $this->page = $params[0]; // page value
+        $this->sort_by = $params[1]; // sort by condition
 
         if(strcmp($this->sort_by,"name_asc") == 0){
             $this->type_sort = "ASC";

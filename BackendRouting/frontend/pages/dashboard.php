@@ -1,5 +1,8 @@
 <?php
-    $root = '/BackendRouting';
+if (!isset($_SESSION) && !headers_sent()) {
+    session_start();
+}
+$root = '/BackendRouting';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Profile</title>
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link rel="stylesheet" href="frontend/stylesheets/style-user-dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -17,6 +19,47 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
 <body>
+    <!-- Top Bar Row -->
+    <div class="top-bar">
+        <div class="icon">
+            <span id="icon" class="iconify" data-icon="ep:cold-drink"></span>
+        </div>
+        <div id="page-title">
+            <a href="<?php echo $root ?>/home">SoftDrinks</a>
+        </div>
+        <!-- Responsive top bar  -->
+        <div class="shop-list-icon">
+            <span class="iconify" data-icon="bx:list-ul"></span>
+            <div class="list-items-responsive">
+                <a href="<?php echo $root ?>/trending">Trending</a>
+                <a href="<?php echo $root ?>/products">Products</a>
+                <a href="<?php echo $root ?>/recipes">Recipes</a>
+                <a href="<?php echo $root ?>/favorites">Favorites</a>
+            </div>
+        </div>
+        <!-- Actual top bar buttons -->
+        <div class="list-items">
+            <a href="<?php echo $root ?>/trending">Trending</a>
+            <a href="<?php echo $root ?>/products">Products</a>
+            <a href="<?php echo $root ?>/recipes">Recipes</a>
+            <a href="<?php echo $root ?>/favorites">Favorites</a>
+        </div>
+        <!-- Top-bar - Search Bar -->
+        <div class="search-container">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
+                <input type="text" name="search" placeholder="Search...">
+                <input type="submit" name="submit-from-search-bar">
+            </form>
+        </div>
+        <!-- User Icon Button -->
+        <div class="user-icon">
+            <a href="<?php echo $root ?>/profile">
+                <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
+            </a>
+        </div>
+    </div>
+
+
     <!-- Group Modal -->
     <div id="group-modal" class="modal">
         <div class="modal-content">
@@ -87,46 +130,6 @@
     </div>
     <!-- TODO Change Email Modal -->
     <!-- TODO Change Password Modal -->
-
-    <!-- Top Bar Row -->
-    <div class="top-bar">
-        <div class="icon">
-            <span id="icon" class="iconify" data-icon="ep:cold-drink"></span>
-        </div>
-        <div id="page-title">
-            <a href="<?php echo $root ?>/home">SoftDrinks</a>
-        </div>
-        <!-- Responsive top bar  -->
-        <div class="shop-list-icon">
-            <span class="iconify" data-icon="bx:list-ul"></span>
-            <div class="list-items-responsive">
-                <a href="<?php echo $root ?>/trending">Trending</a>
-                <a href="<?php echo $root ?>/products">Products</a>
-                <a href="<?php echo $root ?>/recipes">Recipes</a>
-                <a href="<?php echo $root ?>/favorites">Favorites</a>
-            </div>
-        </div>
-        <!-- Actual top bar buttons -->
-        <div class="list-items">
-            <a href="<?php echo $root ?>/trending">Trending</a>
-            <a href="<?php echo $root ?>/products">Products</a>
-            <a href="<?php echo $root ?>/recipes">Recipes</a>
-            <a href="<?php echo $root ?>/favorites">Favorites</a>
-        </div>
-        <!-- Top-bar - Search Bar -->
-        <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
-                <input type="text" name="search" placeholder="Search...">
-                <input type="submit" name="submit-from-search-bar">
-            </form>
-        </div>
-        <!-- User Icon Button -->
-        <div class="user-icon">
-            <a href="<?php echo $root ?>/profile">
-                <span id="user-iconify" class="iconify" data-icon="iconoir:profile-circled"></span>
-            </a>
-        </div>
-    </div>
 
     <!-- Main Container -->
     <div class="page-container" id="id-page-container">

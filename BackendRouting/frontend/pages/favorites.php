@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION) && !headers_sent()) {
+    session_start();
+}
 $root = '/BackendRouting';
 include 'application/class/views/favoritePage.phtml';
 ?>
@@ -44,7 +46,7 @@ include 'application/class/views/favoritePage.phtml';
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form method="post" action="shop-page-after-sort.php">
+            <form action="<?php echo $root ?>/products?method=search" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
@@ -57,30 +59,30 @@ include 'application/class/views/favoritePage.phtml';
         </div>
     </div>
 
-<div class="middle">
+    <div class="middle">
 
-    <div class="your-favorites">
-        <h2>Your favorite list:</h2>
-        <div id="your-favorites-products-div" class="your-favorites-products"></div>
-    </div>
-    <div id="recommended-div" class="recommended">
-
-    </div>
-</div>
-
-<footer class="footer">
-        <div class="icon">
-            <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
+        <div class="your-favorites">
+            <h2>Your favorite list:</h2>
+            <div id="your-favorites-products-div" class="your-favorites-products"></div>
         </div>
-        <!-- Footer pages -->
-        <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
-            <a href="<?php echo $root ?>/about">About</a>
-            <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
+        <div id="recommended-div" class="recommended">
+
         </div>
-</footer>
-<script src="frontend/scripts/Favorites.js"></script>
+    </div>
+
+    <footer class="footer">
+            <div class="icon">
+                <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
+            </div>
+            <!-- Footer pages -->
+            <div class="list-items-bottom">
+                <a href="<?php echo $root ?>/terms">Terms</a>
+                <a href="<?php echo $root ?>/blogs">Blogs</a>
+                <a href="<?php echo $root ?>/about">About</a>
+                <a href="<?php echo $root ?>/contact">Contact</a>
+                <a href="<?php echo $root ?>/privacy">Privacy</a>
+            </div>
+    </footer>
+    <script src="frontend/scripts/Favorites.js"></script>
 </body>
 </html>
