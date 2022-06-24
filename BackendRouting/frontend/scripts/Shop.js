@@ -44,12 +44,19 @@ function showProducts(data) {
                     <p>${details[1]}</p>
                 </div>
                 <div id="add-to-list-icon">
-                    <button>&#9734;</button>
+                    <button id="favorite-button-${code}" onclick="addToFavorite(${code})">&#9734;</button>
                 </div>
             </div>
         `
         shop_list_div.appendChild(productEl);
     })
+}
+
+function addToFavorite(code) {
+    let favoriteButton = document.getElementById('favorite-button-'+code);
+    favoriteButton.style.color = '#232d36';
+    favoriteButton.style.fontSize = '25px';
+    favoriteButton.style.backgroundColor = '#f69676';
 }
 
 function configureNameAndBrand(product_name, brands) {
