@@ -9,8 +9,8 @@ const removeButton = document.getElementById("removebutton");
 removeButton.onclick=function (){
     removeUserForm.style.display="block";
     addUserForm.style.display="none";
-}
+};
 addButton.onclick=function (){
     removeUserForm.style.display="none";
     addUserForm.style.display="block";
-}
+};

@@ -78,13 +78,10 @@ if (!headers_sent()) {
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <!-- Footer pages -->
-        <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
-            <a href="<?php echo $root ?>/about">About</a>
-            <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
-        </div>
+    <div class="list-items-bottom">
+        <a href="<?php echo $root ?>/about">About</a>
+        <a href="<?php echo $root ?>/contact">Contact</a>
+    </div>
 </footer>
 <script src="frontend/scripts/Favorites.js"></script>
 </body>

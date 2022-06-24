@@ -268,13 +268,6 @@ $router->get(root . '/favorites', function () {
 });
 
 # Footer Endpoints
-$router->get(root . '/terms', function () {
-    require 'frontend/pages/footer/terms.php';
-});
-
-$router->get(root . '/blogs', function () {
-    require 'frontend/pages/footer/blogs.php';
-});
 
 $router->get(root . '/about', function () {
     require 'frontend/pages/footer/about.php';
@@ -284,15 +277,13 @@ $router->get(root . '/contact', function () {
     require 'frontend/pages/footer/contact.php';
 });
 
-$router->get(root . '/privacy', function () {
-    require 'frontend/pages/footer/privacy.php';
-});
 
 $router->get(root . '/error404', function () {
     require 'frontend/pages/404error.php';
 });
 
 # in case of page not found - error 404
+
 $router->addNotFoundHandler(function () {
     header("location: " . root . "/error404");
 });

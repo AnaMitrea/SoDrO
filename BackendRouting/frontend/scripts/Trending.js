@@ -37,9 +37,9 @@ function showProducts(json_div) {
                     <button>&#9734;</button>
                 </div>
             </div>
-        `
+        `;
         list_category.appendChild(productEl);
-    })
+    });
 }
 
 function configureNameAndBrand(product_name, brands) {

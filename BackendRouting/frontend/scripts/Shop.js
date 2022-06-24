@@ -47,9 +47,9 @@ function showProducts(data) {
                     <button>&#9734;</button>
                 </div>
             </div>
-        `
+        `;
         shop_list_div.appendChild(productEl);
-    })
+    });
 }
 
 function configureNameAndBrand(product_name, brands) {
@@ -79,15 +79,15 @@ function renderChoosePage() {
         choose_page_container.innerHTML = `
             <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
             <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-        `
+        `;
     } else if (page_decimal === 1) {
         choose_page_container.innerHTML = `
             <a id="next-page" href="" onclick="inc()" class='next'>Next &raquo;</a>
-        `
+        `;
     } else if (page_decimal === number_of_pages_decimal){
         choose_page_container.innerHTML = `
             <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
-        `
+        `;
     }
 }
 

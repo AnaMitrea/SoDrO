@@ -185,11 +185,8 @@ $root = '/BackendRouting';
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
             <a href="<?php echo $root ?>/about">About</a>
             <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
 

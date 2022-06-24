@@ -2,7 +2,6 @@
     $root = '/BackendRouting';
     include 'application/class/views/trending.phtml';
 ?>
-<!-- TODO RESPONSIVE  -->
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -114,11 +113,8 @@
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="frontend/footer-pages/terms.html">Terms</a>
-            <a href="frontend/footer-pages/blogs.html">Blogs</a>
-            <a href="frontend/footer-pages/about.html">About</a>
-            <a href="frontend/footer-pages/contact.html">Contact</a>
-            <a href="frontend/footer-pages/privacy.html">Privacy</a>
+            <a href="<?php echo $root ?>/about">About</a>
+            <a href="<?php echo $root ?>/contact">Contact</a>
         </div>
     </footer>
     <!-- Scripts  -->

@@ -38,9 +38,9 @@ function showFilteredProducts(data) {
                         <button>&#9734;</button>
                     </div>
                 </div>
-            `
+            `;
             shop_list_sorted_div.appendChild(productEl);
-        })
+        });
     }
 }
 

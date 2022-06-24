@@ -32,7 +32,7 @@ function showProducts(data) {
                     <button>&#9734;</button>
                 </div>
             </div>
-        `
+        `;
         shop_list_div.appendChild(productEl);
-    })
+    });
 }

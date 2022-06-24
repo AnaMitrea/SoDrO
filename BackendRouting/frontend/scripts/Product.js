@@ -21,7 +21,7 @@ function showProducts(data) {
     var name = product_name.split(" ")[0];
 
     if(product_name.split(" ").length>1){
-        var name = name + " " + product_name.split(" ")[1];
+        name = name + " " + product_name.split(" ")[1];
     }
     myTitle.innerHTML = name;
 
@@ -43,7 +43,7 @@ function setTable(data){
            tableLine.innerHTML = `
                     <td>${ingredients[pos_vector]}</td>
                     <td>${data[iter]}${data[iter+1]}</td>
-           `
+           `;
            myTable.appendChild(tableLine);
         }
         pos_vector++;
@@ -101,7 +101,7 @@ function setOtherDetails(data){
             <h2>OTHER CATEGORIES TO WITCH IT BELONGS</h2>
             <p>${categories}</p>
         </div>
-        `
+        `;
         div.insertAdjacentHTML('beforeend', newChild);
     }
 
@@ -111,7 +111,7 @@ function setOtherDetails(data){
             <h2>LABELS</h2>
             <p>${labels}</p>
         </div>
-        `
+        `;
         div.insertAdjacentHTML('beforeend', newChild);
     }
 
@@ -121,7 +121,7 @@ function setOtherDetails(data){
             <h2>DETAILED INGREDIENTS</h2>
             <p>${ingredients_text_en}</p>
         </div>
-        `
+        `;
         div.insertAdjacentHTML('beforeend', newChild);
     }
 }
@@ -148,9 +148,9 @@ function setSimilarProducts(similarProducts){
                     <button>&#9734;</button>
                 </div>
             </div>
-        `
+        `;
         div_with_list.appendChild(productEl);
-    })
+    });
 }
 
 function configureNameAndBrand(product_name, brands) {

@@ -77,7 +77,7 @@ function updateStatus(selectedTask) {
         taskName.classList.remove("checked");
         products[selectedTask.id].status = "pending";
     }
-    localStorage.setItem("products-list", JSON.stringify(products))
+    localStorage.setItem("products-list", JSON.stringify(products));
 }
 
 /* Edits name of product */
@@ -102,7 +102,7 @@ clearAll.addEventListener("click", () => {
     isEditItem = false;
     products.splice(0, products.length);
     localStorage.setItem("products-list", JSON.stringify(products));
-    showShoppingList()
+    showShoppingList();
 });
 
 /*

@@ -45,10 +45,10 @@ function showFavorites(list_of_favorites) {
                     <button>&#9734;</button>
                 </div>
             </div>
-        `
+        `;
                 div_with_fav.appendChild(productEl);
             }
-        )
+        );
     }
 }
 
@@ -84,7 +84,7 @@ function showRecommended(list_category_favorites) {
                 </div>
                 <div class="additional-info-in-large-div">
                   <p>${categories}</p>
-                </div>            `
+                </div>            `;
                 cover_div.appendChild(productEl);
                 div_for_a_category.appendChild(cover_div);
             }else{
@@ -106,7 +106,7 @@ function showRecommended(list_category_favorites) {
                         <button>&#9734;</button>
                     </div>
                 </div>
-            `
+            `;
                 cover_div.appendChild(productEl);
                 div_for_a_category.appendChild(cover_div);
 
@@ -114,7 +114,7 @@ function showRecommended(list_category_favorites) {
         contor++;
         }
 
-    )
+    );
     recommended_div.appendChild(div_for_a_category);
 
 
