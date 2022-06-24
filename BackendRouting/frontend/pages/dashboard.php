@@ -17,6 +17,8 @@ $root = '/BackendRouting';
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Icon Script  -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <!-- Chart.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Top Bar Row -->
@@ -58,7 +60,6 @@ $root = '/BackendRouting';
             </a>
         </div>
     </div>
-
 
     <!-- Group Modal -->
     <div id="group-modal" class="modal">
@@ -211,7 +212,7 @@ $root = '/BackendRouting';
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <button onclick="saveFile()" name="category-submit-btn" type="submit" id="id-categories-btn" class="save-bttn">Save</button>
+                                    <button onclick="saveFileTxt()" name="category-submit-btn" type="submit" id="id-categories-btn" class="save-bttn">Save</button>
                                 </div>
                             </form>
                         </div>
@@ -219,13 +220,15 @@ $root = '/BackendRouting';
                     <!-- Preferences div  -->
                     <div class="percentages-structor">
                         <div class="buttons">
-                            <button id="user-preferences-bttn" class="user-percentages-bttn" onclick="changePreferences()">Percentages</button>
-                            <button id="group-preferences-bttn" class="group-percentages-bttn" onclick="changePreferences()">Group Percentages</button>
+                            <button id="allergens-btn" class="allergens-percentages-btn" onclick="changeDisplayAllergens()">Allergens Products</button>
+                            <button id="nutriscore-btn" class="nutriscore-percentages-btn" onclick="changeDisplayNutriscore()">Nutriscore Products</button>
                         </div>
                         <div id="chart-wrap">
-                            <img alt="future prototype" id="user-content" src="frontend/images/prototype1.png">
-                            <img alt="future prototype" id="group-content" style="display: none" src="frontend/images/prototype2.png">
-                            <button id="id-preferences-btn" class="save-bttn">Save your preferences</button>
+                            <canvas id="chartAllergens"></canvas>
+                            <canvas id="chartNutriscore" style="display: none"></canvas>
+
+                            <button id="save-img" class="save-bttn" onclick="saveImg()">Save as Image</button>
+                            <button id="save-csv" class="save-bttn">Save as CSV</button>
                         </div>
                     </div>
                 </div>

@@ -359,7 +359,7 @@ Text Font:  font-family:'Poppins',sans-serif;
   text-align: left;
 }
 
-.percentages-structor .buttons .user-percentages-bttn{
+.percentages-structor .buttons .allergens-percentages-btn{
   background: #39424A;
   border: 1px solid #B49B83;
   border-radius: 20px 20px 0 0;
@@ -371,12 +371,16 @@ Text Font:  font-family:'Poppins',sans-serif;
   color:white;
 }
 
-.percentages-structor .buttons .user-percentages-bttn:hover {
+.percentages-structor .buttons .allergens-percentages-btn:hover {
   background: var(--ebony-clay);
   cursor: pointer;
 }
 
-.percentages-structor .buttons .group-percentages-bttn{
+.percentages-structor .buttons .allergens-percentages-btn:focus {
+  background: var(--ebony-clay);
+}
+
+.percentages-structor .buttons .nutriscore-percentages-btn{
   background: #39424A;
   border: 1px solid #B49B83;
   border-radius: 20px 20px 0 0;
@@ -388,9 +392,13 @@ Text Font:  font-family:'Poppins',sans-serif;
   color:white;
 }
 
-.percentages-structor .buttons .group-percentages-bttn:hover{
+.percentages-structor .buttons .nutriscore-percentages-btn:hover{
   background: var(--ebony-clay);
   cursor: pointer;
+}
+
+.percentages-structor .buttons .nutriscore-percentages-btn:focus{
+  background: var(--ebony-clay);
 }
 
 .dashboard-structor .account-information .account-preferences .percentages-structor #chart-wrap {
@@ -399,6 +407,7 @@ Text Font:  font-family:'Poppins',sans-serif;
   border-radius: 0 0 40px 40px;
   height: auto;
   width: 100%;
+  padding: 20px;
 }
 
 /* Pie chart */
@@ -416,7 +425,7 @@ Text Font:  font-family:'Poppins',sans-serif;
   background: var(--summer-green);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-  margin: 1vh 1vh;
+  margin-top: 2em;
   padding: 2% 4%;
   cursor: pointer;
   color: black;
