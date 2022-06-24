@@ -44,19 +44,12 @@ function showProducts(data) {
                     <p>${details[1]}</p>
                 </div>
                 <div id="add-to-list-icon">
-                    <button id="favorite-button-${code}" onclick="addToFavorite(${code})">&#9734;</button>
+                    <button>&#9734;</button>
                 </div>
             </div>
         `
         shop_list_div.appendChild(productEl);
     })
-}
-
-function addToFavorite(code) {
-    let favoriteButton = document.getElementById('favorite-button-'+code);
-    favoriteButton.style.color = '#232d36';
-    favoriteButton.style.fontSize = '25px';
-    favoriteButton.style.backgroundColor = '#f69676';
 }
 
 function configureNameAndBrand(product_name, brands) {
@@ -76,6 +69,12 @@ function configureNameAndBrand(product_name, brands) {
 
 renderChoosePage();
 function renderChoosePage() {
+
+    console.log('Page ' + page);
+    console.log('Page decimal ' + page_decimal);
+    console.log('number_of_pages ' + number_of_pages);
+    console.log('number_of_pages decimal ' + number_of_pages_decimal);
+
     if(page_decimal > 1 && page_decimal < number_of_pages_decimal) {
         choose_page_container.innerHTML = `
             <a id="previous-page" href="" onclick="dec()" class='previous'>&laquo; Previous</a>
@@ -93,6 +92,7 @@ function renderChoosePage() {
 }
 
 function inc() {
+
     if(sort_by !== null) {
         document.getElementById("next-page").href="/BackendRouting/products?page=" + (page_decimal + 1) + "&sort=" + sort_by;
     } else {

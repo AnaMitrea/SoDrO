@@ -47,9 +47,12 @@ Text Font:  font-family:'Poppins',sans-serif;
     flex-direction: column;
     align-content: center;
     justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 4%;
+    margin-right: 4%;
     font-family:'Poppins',sans-serif;
+    background-color: #E9DCD1;
+    border-radius: 20px;
+    margin-bottom: 1em;
 }
 
 .menu {
@@ -58,6 +61,7 @@ Text Font:  font-family:'Poppins',sans-serif;
 }
 
 .category-menu {
+    padding-top:3%;
     width: 20%;
     background-color: var(--bizzare);
     box-shadow: -6px 3px 15px 9px rgba(180,155,131,0.35);
@@ -85,7 +89,8 @@ li a:hover {
 }
 
 .photo-slider {
-    width: 80%;
+    margin: 2.5%;
+    width: 75%;
 }
 
 .photo-slider .mySlides {
@@ -97,6 +102,13 @@ li a:hover {
 .category {
     margin-top: 40px;
     font-family:'Poppins',sans-serif;
+}
+
+.category h2{
+    text-indent: 5px;
+    padding: .75em;
+    border-radius: 20px;
+    background-color: rgba(202, 188, 174, 0.7);
 }
 
 .category:last-of-type{
@@ -114,7 +126,7 @@ li a:hover {
 .shop-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .shop-list-icon{
@@ -190,4 +202,31 @@ li a:hover {
     background-color: #f69676;
     color: #232d36;
     font-size: 25px;
+}
+
+@media only screen and (max-width: 760px){
+    .menu {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .category-menu {
+        padding-top:0;
+        width: 95%;
+        margin: 0 auto;
+        background-color: var(--bizzare);
+        box-shadow: -6px 3px 15px 9px rgba(180,155,131,0.35);
+    }
+
+    .photo-slider {
+        width: 95%;
+        margin: .75em auto;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    .page-container{
+        margin:0;
+        width: 100%;
+    }
 }

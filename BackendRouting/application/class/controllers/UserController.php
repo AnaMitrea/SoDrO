@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\User;
-require_once 'application/class/models/User.php';
+require 'application/class/models/User.php';
 
 class UserController extends User
 {

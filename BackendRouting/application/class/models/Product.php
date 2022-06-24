@@ -35,14 +35,9 @@ class Product extends DatabaseHandler
     }
 
     public function getSimilarProducts(){
-        $category = "car";
-        /*$pieces = explode(", ",substr($row['categories_tags'],1));
-        if(count($pieces)>1)
-            $category = substr($pieces[1],4,-1);
-        */
+        $category = "beverage";
 
-
-        $stmt2 = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+        $stmt2 = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' order by random() limit 5 ", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
         $stmt2->execute();
         $rows = $stmt2->fetchAll();
         $info = array();
@@ -52,9 +47,9 @@ class Product extends DatabaseHandler
 
 
     /**
-     * @return string[]
+     * @return string
      */
-    public function getIngredientsTypes()
+    public function getIngredientsTypes(): string
     {
         return json_encode($this->ingredients_types);
     }

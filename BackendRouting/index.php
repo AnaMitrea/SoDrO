@@ -1,10 +1,9 @@
 <?php
 if(!isset($_SESSION)) {
     session_start();
+    $_SESSION['isLogged']=false;
 }
-
 use App\Router;
-use App\Model\Contact;
 use App\Controller\ShopController;
 use App\Controller\UserController;
 require 'application/Router.php';
@@ -70,8 +69,10 @@ $router->get(root . '/login', function (array $params = []) {
         switch ($params["error"]) {
             case "emptyinput":
             case "failed":
+                 require 'frontend/pages/404error.php';
+                 break;
             case "none":
-                require 'frontend/pages/login.php';
+                require 'frontend/pages/homepage.php';
                 break;
             default:
                 require 'frontend/pages/404error.php';
@@ -79,6 +80,8 @@ $router->get(root . '/login', function (array $params = []) {
     }
 });
 $router->post(root . '/login', function () {
+
+
     if(!empty($_SESSION['email']) && !empty($_SESSION['username'])) {
         $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
         $maxUserId = $userController->getMaxUserId();
@@ -90,14 +93,16 @@ $router->post(root . '/login', function () {
     }
 });
 
-# Password recovery
-$router->get(root . '/recover', function () {
-    require 'frontend/pages/recover-pwd.php';
-});
-
 # Homepage
 $router->get(root . '/home', function () {
-    require 'frontend/pages/homepage.php';
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        require 'frontend/pages/homepage.php';
+    }
+    else{
+        header("location: " . root . "/login");
+    }
+
 });
 
 # User/Admin Profile
@@ -105,39 +110,52 @@ $router->get(root . '/home', function () {
 $router->get(root . '/profile', function (array $params = []) {
     $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
     $isAdmin = $userController->getAdminFlag();
-
-    if($isAdmin) {
-        require 'frontend/pages/admin.php';
-        switch ($params["error"]) {
-            case "none":
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged) {
+        if ($isAdmin) {
+            if (!(empty($params["error"]))) {
+                switch ($params["error"]) {
+                    case "none":
+                        require 'frontend/pages/admin.php';
+                        break;
+                    case "emptyinput":
+                        echo "Empty Input";
+                        // require 'frontend/pages/404error.php';
+                        break;
+                    case "username":
+                        echo "Invalid Username";
+                        // require 'frontend/pages/404error.php';
+                        break;
+                    case "emptyemail":
+                        echo "Empty Email";
+                        // require 'frontend/pages/404error.php';
+                        break;
+                    case "useremailtaken":
+                        echo "Username or email taken!";
+                        // require 'frontend/pages/404error.php';
+                        break;
+                    default:
+                        echo "Something unexpectedly happened";
+                    //  require 'frontend/pages/404error.php';
+                }
+            } else {
                 require 'frontend/pages/admin.php';
-                break;
-            case "emptyinput":
-                echo "Empty Input";
-                // require 'frontend/pages/404error.php';
-                break;
-            case "username":
-                echo "Invalid Username";
-                // require 'frontend/pages/404error.php';
-                break;
-            case "emptyemail":
-                echo "Empty Email";
-                // require 'frontend/pages/404error.php';
-                break;
-            case "useremailtaken":
-                echo "Username or email taken!";
-                // require 'frontend/pages/404error.php';
-                break;
-            default:
-                echo "Something unexpectedly happened";
-            //  require 'frontend/pages/404error.php';
+            }
+        } else {
+            require 'frontend/pages/dashboard.php';
+
         }
-    } else {
-        require 'frontend/pages/dashboard.php';
+    }else{
+        header("location: " . root . "/login");
     }
 });
+$router->post(root . '/logout', function (){
+    require 'application/class/views/logout.php';
+
+});
+
 $router->post(root . '/profile', function (array $params = []) {
-    if($params['method'] == 'add'){
+    if($params['method']== 'add'){
         require 'application/class/views/admin.adduser.phtml';
     }
     else{
@@ -152,63 +170,101 @@ $router->post(root . '/profile', function (array $params = []) {
 
 # Trending
 $router->get(root . '/trending', function () {
-    require 'frontend/pages/trending.php';
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        require 'frontend/pages/trending.php';
+    }
+    else{
+        header("location: " . root . "/login");
+    }
 });
 
 # Multiple Products Page
 $router->get(root. '/products', function ($params = []) {
     $page = '1';
     $sort_by = null;
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        if (!empty($params['page'])) {
+            $page = $params['page'];
+        }
+        if (!empty($params['sort'])) {
+            $sort_by = $params['sort'];
+        }
 
-    if (!empty($params['page'])) {
-        $page = $params['page'];
+        $shopController = new ShopController([$page,$sort_by]);
     }
-    if (!empty($params['sort'])) {
-        $sort_by = $params['sort'];
+    else{
+        header("location: " . root . "/login");
     }
 
-    $shopController = new ShopController( [$page,$sort_by] );
 });
 # /products?method=filter for left div sorting or /products?method=search for search bar
 $router->post(root . '/products', function ($params = []) {
 
-    if (!empty($params['method'])) {
-        // filtering products from left side div
-        if ($params['method'] == 'filter' || $params['method'] == 'search') {
-            require "frontend/pages/shop-page-after-sort.php";
-        } else {
-            header("location: " . root . "/error404");
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        if (!empty($params['method'])) {
+            // filtering products from left side div
+            if ($params['method'] == 'filter' || $params['method'] == 'search') {
+                require "frontend/pages/shop-page-after-sort.php";
+            } else {
+                header("location: " . root . "/error404");
+            }
         }
+    }
+    else{
+        header("location: " . root . "/login");
     }
 });
 
 
 // TODO
 $router->get(root. '/product', function (array $params = []) {
-    if(!empty($params['code'])) {
-        require 'frontend/pages/product-page.php';
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        if(!empty($params['code'])) {
+            require 'frontend/pages/product-page.php';
+        }
+        else
+            require 'frontend/pages/product-page.php';
     }
-    else
-        require 'frontend/pages/product-page.php';
+    else{
+        header("location: " . root . "/login");
+    }
 });
 
 
 /* Recipes */
 $router->get(root . '/recipes', function (array $params = []){
-    if (!empty($params['id'])) {
-        if($params['id'] >= 1 && $params['id'] <= 5)
-            require 'frontend/pages/recipes/recipe' . $params['id'] . '.php';
-        else {
-            header("location: " . root . "/error404");
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        if (!empty($params['id'])) {
+            if($params['id'] >= 1 && $params['id'] <= 5)
+                require 'frontend/pages/recipes/recipe' . $params['id'] . '.php';
+            else {
+                require 'frontend/pages/404error.php';
+            }
         }
+        else
+            require 'frontend/pages/recipes/recipe1.php';
     }
-    else
-        require 'frontend/pages/recipes/recipe1.php';
+    else{
+        header("location: " . root . "/login");
+    }
 });
 
 
 $router->get(root . '/favorites', function () {
-    require 'frontend/pages/favorites.php';
+    $islogged=$_SESSION['isLogged']?? false;
+    if( $islogged){
+        require 'frontend/pages/favorites.php';
+    }
+    else{
+        header("location: " . root . "/login");
+    }
+
+
 });
 
 # Footer Endpoints
@@ -234,13 +290,6 @@ $router->get(root . '/privacy', function () {
 
 $router->get(root . '/error404', function () {
     require 'frontend/pages/404error.php';
-});
-
-
-# testing stuff
-$router->get('/BackendRouting/contact', Contact::class . '::execute');
-$router->post('/BackendRouting/contact', function ($params) {
-    var_dump($params);
 });
 
 # in case of page not found - error 404

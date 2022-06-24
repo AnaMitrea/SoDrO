@@ -11,10 +11,10 @@ const root = '/BackendRouting';
 
 if(isset($_POST["submit"])){
 
-    include_once "application/class/models/CustomSession.php";
+    include "application/class/models/CustomSession.php";
     include_once "application/database/DatabaseHandler.php";
-    include_once "application/class/controllers/LoginController.php";
-    include_once "application/class/models/Login.php";
+    include "application/class/controllers/LoginController.php";
+    include "application/class/models/Login.php";
 
     // Getting data from login form
     $email = $_POST["email"];
@@ -30,21 +30,19 @@ if(isset($_POST["submit"])){
             session_set_save_handler($sessions_handler, true);
             session_name('MySessionName');
             session_start();
-        }
-        session_regenerate_id(true);
 
+        }
+        $_SESSION['isLogged'] = true;
         $_SESSION['email'] = $email;
         $_SESSION['userId'] = $maxUserId ?? null;
-        // de adaugat name
         $_SESSION['isAdmin'] = $isAdmin ?? false;
         $_SESSION['password'] = $userPwd;
-
-        $sessions_handler->write($maxUserId,session_id());
+        $sessions_handler->write( $_SESSION['userId'],session_id());
 
         session_write_close();
 
         // redirect to login page
-        header("location: " . root . "/login?error=none");
+        header("location: " . root . "/home");
     }else{
         header("location: " . root . "/login?error=failed");
     }

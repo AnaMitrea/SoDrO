@@ -9,9 +9,10 @@ $root = '/BackendRouting/';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="frontend/stylesheets/footer/globalForPages.css">
+    <link rel="stylesheet" href="frontend/stylesheets/footer/contact.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <title>Contact</title>
+    <title>Terms</title>
 </head>
 <body>
 <div class="top-bar">
@@ -47,13 +48,19 @@ $root = '/BackendRouting/';
         </form>
     </div>
 
+
     <div class="user-icon">
         <span id="profile-picture" class="iconify" data-icon="healthicons:ui-user-profile-outline"></span>
     </div>
 </div>
 
 <div class="middle">
-
+    <div class="contacte">
+        <p><b>Contact us on:</b></p>
+        <p><b>M- Mitrea Ana-Maria</b> -anamitrea27@gmail.com</p>
+        <p><b>A- Arnautu Stefan</b> -stefanarnautu01@gmail.com</p>
+        <p><b>I- Iosub George</b> -iosubgeorge2002@gmail.com</p>
+    </div>
 </div>
 
 

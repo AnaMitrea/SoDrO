@@ -1,8 +1,8 @@
 <?php
-if (!isset($_SESSION) && !headers_sent()) {
+    $root = '/BackendRouting';
+if(!isset($_SESSION)) {
     session_start();
 }
-$root = '/BackendRouting';
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +13,7 @@ $root = '/BackendRouting';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Profile</title>
+    <link rel="shortcut icon" type="image/x-icon" href="frontend/images/favicon.svg" />
     <link rel="stylesheet" href="frontend/stylesheets/adminStylesheet.css">
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly Lodger' rel='stylesheet'>
@@ -65,11 +66,10 @@ $root = '/BackendRouting';
                     <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
                 <div class="user-description">
-                    <p><?php echo $_SESSION['email']?></p>
-                    <p>Your Username</p>
-                    <button id="email-btn" class="change-email">Change Email</button>
-                    <button id="pwd-btn" class="change-password">Change Password</button>
-                    <button id="logout" class="change-password">Logout</button>
+                    <p><b>Hi Admin!</b></p>
+                    <form method="post" action="<?php echo $root ?>/logout">
+                        <button class="group-button" name="change-password">Logout</button>
+                    </form>
                 </div>
             </div>
 
@@ -194,13 +194,11 @@ $root = '/BackendRouting';
         </div>
         <!-- Footer pages -->
         <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
             <a href="<?php echo $root ?>/about">About</a>
             <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
     <script src="frontend/scripts/adminModals.js"></script>
+    <script type="module" src="test/UnitTestFrontend/admin.test.js"></script>
 </body>
 </html>

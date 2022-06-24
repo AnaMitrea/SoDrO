@@ -1,11 +1,8 @@
 <?php
-if (!isset($_SESSION) && !headers_sent()) {
+if (!headers_sent() && !isset($_SESSION)) {
     session_start();
 }
 include 'application/class/views/shop.phtml';
-
-
-/* TODO de adaugat treaba cu cookie ca sa aiba acces sau nu */
 
 $root = '/BackendRouting';
 ?>
@@ -50,7 +47,7 @@ $root = '/BackendRouting';
         </div>
         <!-- Top-bar - Search Bar -->
         <div class="search-container">
-            <form action="<?php echo $root ?>/products?method=search" method="post">
+            <form action="<?php echo $root ?>/products" method="post">
                 <input type="text" name="search" placeholder="Search...">
                 <input type="submit" name="submit-from-search-bar">
             </form>
@@ -66,17 +63,17 @@ $root = '/BackendRouting';
     <!-- Main Content of page -->
     <div class="middle">
             <div class="sort-list">
-                <p id="sort-list-title">Sort list</p>
+                <p id="sort-list-title">Filters:</p>
                 <!-- Form -->
                 <form action="<?php echo $root?>/products?method=filter" method="post">
                     <p class="tag">Categories:</p>
                     <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
                     <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
-                    <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
+                    <label><input type="checkbox" name="check-3" value="artificially_sweetened">artificial sweetened</label><br>
                     <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
-                    <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
-                    <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
-                    <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
+                    <label><input type="checkbox" name="check-5" value="dairy">milk and dairy</label><br>
+                    <label><input type="checkbox" name="check-6" value="coffee">coffee</label><br>
+                    <label><input type="checkbox" name="check-7" value="water">water</label><br>
                     <p class="tag">Vitamin:</p>
                     <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
                     <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
@@ -95,7 +92,7 @@ $root = '/BackendRouting';
                     <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
                     <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
                     <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                    <label><input type="checkbox" name="check-24" value="sodium_value">sodium</label><br>
+                    <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
                     <input type="submit" name="submit-from-left">
                 </form>
             </div>
@@ -104,16 +101,16 @@ $root = '/BackendRouting';
                 <div class="sorting-lists">
                     <div class="sort-by sort-by-first" id="categories">
                         <button class="sort-by-title">Sort list</button>
-                        <!-- Filter List Responsive -->
+                        <!-- Form -->
                         <form class="form-responsive" method="post" action="<?php echo $root?>/products?method=filter">
                             <p class="tag">Categories:</p>
                             <label><input type="checkbox" name="check-1" value="sweetened">sweetened</label><br>
                             <label><input type="checkbox" name="check-2" value="unsweetened">unsweetened</label><br>
-                            <label><input type="checkbox" name="check-3" value="artificial sweetened">artificial sweetened</label><br>
+                            <label><input type="checkbox" name="check-3" value="artificially_sweetened">artificial sweetened</label><br>
                             <label><input type="checkbox" name="check-4" value="teas">teas</label><br>
-                            <label><input type="checkbox" name="check-5" value="milk and dairy">milk and dairy</label><br>
-                            <label><input type="checkbox" name="check-6" value="sugar-snacks">sugar-snacks</label><br>
-                            <label><input type="checkbox" name="check-7" value="cereals">cereals</label><br>
+                            <label><input type="checkbox" name="check-5" value="dairy">milk and dairy</label><br>
+                            <label><input type="checkbox" name="check-6" value="coffee">coffee</label><br>
+                            <label><input type="checkbox" name="check-7" value="water">water</label><br>
                             <p class="tag">Vitamin:</p>
                             <label><input type="checkbox" name="check-8" value="vitamin_c_value">vitamin-c</label><br>
                             <label><input type="checkbox" name="check-9" value="vitamin_b6_value">vitamin-b6</label><br>
@@ -132,7 +129,7 @@ $root = '/BackendRouting';
                             <label><input type="checkbox" name="check-21" value="fiber_value">fiber</label><br>
                             <label><input type="checkbox" name="check-22" value="proteins_value">protein</label><br>
                             <label><input type="checkbox" name="check-23" value="salt_value">salt</label><br>
-                            <label><input type="checkbox" name="check-24" value="sodium_value">sodium</label><br>
+                            <label><input type="checkbox" name="check-24" value="sodium_sodium">sodium</label><br>
                             <input type="submit" name="submit-from-left">
                         </form>
                     </div>
@@ -166,15 +163,10 @@ $root = '/BackendRouting';
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
             <a href="<?php echo $root ?>/about">About</a>
             <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
-    <script>
-    </script>
     <script src="frontend/scripts/Shop.js"></script>
 </body>
 </html>

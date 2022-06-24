@@ -15,8 +15,7 @@ class Favorite extends DatabaseHandler
     }
 
     public function getListOfFavorites(){
-        $category = "car";
-        $stmt = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+        $stmt = $this->pdo->prepare("SELECT * FROM products order by random() limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
         $stmt->execute();
         $rows = $stmt->fetchAll();
         $info = array();
@@ -29,7 +28,7 @@ class Favorite extends DatabaseHandler
      */
     public function getProductForCategory($category)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
+        $stmt = $this->pdo->prepare("SELECT * FROM products where categories_tags like '%$category%' order by random() limit 5", array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
         $stmt->execute();
         $rows = $stmt->fetchAll();
         $info = array();

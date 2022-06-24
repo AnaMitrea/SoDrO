@@ -22,7 +22,7 @@ showRecommended(list_category_favorites_3);
 
 function showFavorites(list_of_favorites) {
     const div_with_fav = document.getElementById('your-favorites-products-div');
-    if(list_of_favorites[0].length==0){
+    if(list_of_favorites[0].length===0){
         var newChild = `<p class='error-message'>There are no products in your favorite list.</p>`;
         div_with_fav.insertAdjacentHTML('beforeend', newChild);
     }else{
@@ -53,15 +53,18 @@ function showFavorites(list_of_favorites) {
 }
 
 function showRecommended(list_category_favorites) {
-    recommended_div.insertAdjacentHTML('beforeend',`<h2>Category ${list_category_favorites[0][0][11]}</h2>`);
+
+    let split_category = list_category_favorites[0][0][11].split(":").slice(2,3).join("");
+    split_category = split_category.substring(0, split_category.length - 6);
+    recommended_div.insertAdjacentHTML('beforeend',`<h2>Category ${split_category}</h2>`);
     const div_for_a_category = document.createElement('div');
     div_for_a_category.classList.add("favorite-category");
     var contor = 0;
     list_category_favorites[0].forEach(product =>{
-            const {product_name, image_url, code, brands} = product;
+            const {product_name, image_url, code, brands,categories} = product;
             // Get the Split Name And Brand to fit into div
             let details = configureNameAndBrand(product_name, brands);
-            if(contor == 0){
+            if(contor === 0){
                 const cover_div =document.createElement('div');
                 cover_div.classList.add("large-div");
                 const productEl = document.createElement('div');
@@ -79,7 +82,9 @@ function showRecommended(list_category_favorites) {
                         <button>&#9734;</button>
                     </div>
                 </div>
-            `
+                <div class="additional-info-in-large-div">
+                  <p>${categories}</p>
+                </div>            `
                 cover_div.appendChild(productEl);
                 div_for_a_category.appendChild(cover_div);
             }else{

@@ -1,8 +1,9 @@
 <?php
-if (!isset($_SESSION) && !headers_sent()) {
-    session_start();
-}
-$root = '/BackendRouting';
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $root = '/BackendRouting';
+    include 'application/class/views/trending.phtml';
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +12,8 @@ $root = '/BackendRouting';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/stylesheets/style-trending.css">
     <link rel="stylesheet" href="frontend/stylesheets/globalStyle.css">
+    <link rel="stylesheet" href="frontend/stylesheets/style-trending.css">
     <link href='https://fonts.googleapis.com/css?family=Jolly%20Lodger' rel='stylesheet'>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>Trending</title>
@@ -58,9 +59,9 @@ $root = '/BackendRouting';
         </div>
     </div>
 
-    <div class="body-trending">
-        <div class="trending_icon">
-            <a href="<?php echo $root ?>/trending">Trending Products</a>
+    <div class="body-title">
+        <div class="title-icon">
+            <h1>Trending Products</h1>
             <span class="iconify" data-icon="el:fire"></span>
         </div>
     </div>
@@ -68,331 +69,51 @@ $root = '/BackendRouting';
     <div class="middle">
         <div class="carbonated">
             <div class="carbonated-text">
-                <a href="">Top Carbonated Drinks.</a>
-
+                <h2>Top Unsweetened Drinks</h2>
             </div>
-        <div class="carbonated-list">
-
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-            <div class="product-cell">
-                <div class="cell-buttons">
-                    <button>Add To List</button>
-                    <button>Details</button>
-                </div>
-                <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                <p class="details">Sprite 0,33l-2.99&euro;</p>
-            </div>
-        </div>
-        </div>
-        <div class="carbonated">
-            <div class="carbonated-text">
-                <a href="#">Top Hot Drinks-see more..</a>
-
-            </div>
-            <div class="carbonated-list">
-
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
+            <div id="carbonated-list-1" class="carbonated-list">
             </div>
         </div>
         <div class="carbonated">
             <div class="carbonated-text">
-                <a href="#">Top Dairy Drinks-see more..</a>
-
+                <h2>Top Artificially Sweetened Drinks</h2>
             </div>
-            <div class="carbonated-list">
-
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
+            <div id="carbonated-list-2" class="carbonated-list">
             </div>
         </div>
         <div class="carbonated">
             <div class="carbonated-text">
-                <a href="#">Top Energy Drinks-see more..</a>
-
+                <h2>Top Milk and Dairy Drinks</h2>
             </div>
-            <div class="carbonated-list">
-
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
+            <div id="carbonated-list-3" class="carbonated-list">
             </div>
         </div>
         <div class="carbonated">
             <div class="carbonated-text">
-                <a href="#">Top Non-Alcoholic Drinks-see more..</a>
-
+                <h2>Top Teas Drinks</h2>
             </div>
-            <div class="carbonated-list">
-
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
-                <div class="product-cell">
-                    <div class="cell-buttons">
-                        <button>Add To List</button>
-                        <button>Details</button>
-                    </div>
-                    <div><img src="frontend/images/product/Sprite.png" alt="img" class="image-product"></div>
-
-                    <p class="details">Sprite 0,33l-2.99&euro;</p>
-                </div>
+            <div id="carbonated-list-4" class="carbonated-list">
             </div>
         </div>
+        <div class="carbonated">
+            <div class="carbonated-text">
+                <h2>Top Milk and Yogurt Drinks</h2>
+            </div>
+            <div id="carbonated-list-5" class="carbonated-list">
+            </div>
+        </div>
+
+
     </div>
     <footer class="footer">
         <div class="icon">
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
             <a href="<?php echo $root ?>/about">About</a>
             <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
+    <script src="frontend/scripts/Trending.js"></script>
 </body>
 </html>

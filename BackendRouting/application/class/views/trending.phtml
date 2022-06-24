@@ -1,0 +1,49 @@
+<?php
+namespace App\View;
+
+use App\Model\Trending;
+
+include_once "application/database/DatabaseHandler.php";
+include "application/class/models/Trending.php";
+
+$trending = new Trending();
+?>
+
+
+<div  id="json_trending_1"  style="display: none;">
+    <?php
+    echo htmlspecialchars($trending->getListOf("unsweetened-beverages"));
+    ?>
+</div>
+
+<div  id="json_trending_2"  style="display: none;">
+    <?php
+    echo htmlspecialchars($trending->getListOf("artificially-sweetened-beverages"));
+    ?>
+</div>
+
+<div id="json_trending_3" style="display: none;">
+    <?php
+    echo htmlspecialchars($trending->getListOf("milk-and-dairy-products"));
+    ?>
+</div>
+
+<div  id="json_trending_4"  style="display: none;">
+    <?php
+    echo htmlspecialchars($trending->getListOf("teas-and-herbal-teas-and-coffees"));
+    ?>
+</div>
+
+<div id="json_trending_5" style="display: none;">
+    <?php
+    echo htmlspecialchars($trending->getListOf("milk-and-yogurt"));
+    ?>
+</div>
+
+
+
+
+
+
+
+

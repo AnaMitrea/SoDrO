@@ -71,7 +71,6 @@ class LoginController extends DatabaseHandler {
             if(!isset($_SESSION)) {
                 session_start();
             }
-           echo session_id();
            $_SESSION["username"] = $user[0]["username"];
            $data = null;
         }

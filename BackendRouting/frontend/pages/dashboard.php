@@ -66,71 +66,14 @@ $root = '/BackendRouting';
         <div class="modal-content">
             <span class="close">&times;</span>
                 <div class="information-content">
-                    <h2>Group Title</h2>
+                    <h2>Your Group</h2>
                     <h3>Participants</h3>
                     <div class="user-list">
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 1</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 2</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 3</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 4</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 5</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 6</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-card">
-                            <img class="image-profile" src="frontend/images/user/profile.jpg" alt="Profile Picture">
-                            <div class="profile-bottom">
-                                <div class="profile-bottom-name">
-                                    <p class="profile-name">Group User 1</p>
-                                </div>
-                            </div>
-                        </div>
+                        <p>No participants here.</p>
                     </div>
                 </div>
         </div>
     </div>
-    <!-- TODO Change Email Modal -->
-    <!-- TODO Change Password Modal -->
 
     <!-- Main Container -->
     <div class="page-container" id="id-page-container">
@@ -139,13 +82,12 @@ $root = '/BackendRouting';
                 <div class="profile-img">
                     <img src="frontend/images/user/profile.jpg" alt="Avatar">
                 </div>
-
                 <div class="user-description">
-                    <p>Your Name</p>
-                    <p>Your Username</p>
+                    <p><b>Hi User!</b></p>
                     <button id="group-btn" class="group-button">Your Group</button>
-                    <button id="email-btn" class="change-email">Change Email</button>
-                    <button id="pwd-btn" class="change-password">Change Password</button>
+                    <form method="post" action="<?php echo $root ?>/logout">
+                        <button class="group-button" name="change-password">Logout</button>
+                    </form>
                 </div>
             </div>
 
@@ -290,11 +232,8 @@ $root = '/BackendRouting';
             <span id="icon-footer" class="iconify" data-icon="ep:cold-drink"></span>
         </div>
         <div class="list-items-bottom">
-            <a href="<?php echo $root ?>/terms">Terms</a>
-            <a href="<?php echo $root ?>/blogs">Blogs</a>
             <a href="<?php echo $root ?>/about">About</a>
             <a href="<?php echo $root ?>/contact">Contact</a>
-            <a href="<?php echo $root ?>/privacy">Privacy</a>
         </div>
     </footer>
 
