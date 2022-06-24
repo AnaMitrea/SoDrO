@@ -7,13 +7,14 @@
 4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 5) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
 6) [HTML Raport](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend_Project/footer-pages/about.html)
+7) Altele
 
 * Iosub George:
 1) [Admin Dashboard](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/admin.html)
 2) [Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/trending.html)
-3) ["See more..." Carbonated Trending Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/seeMore-Carbonated.html)
-4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
-5) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
+3) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
+4) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
+5) Altele
 
 * Mitrea Ana Maria :
 1) Design Login/SignUp Page / Change Password Page
@@ -22,7 +23,8 @@
 4) [Login/SignUp Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/login.html)
 5) [Change Password Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/change-psswd.html)
 6) [User Dashboard Page](https://github.com/AnaMitrea/SoDrO/blob/frontend/Frontend/pages/dashboard.html)
-7) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
+7) Altele
+8) [Content Raport](https://docs.google.com/document/d/1EpaB2dD9dGkpIuNEiEwlLKstR_VZaf8X6zi2vS0TJ8w/edit?usp=sharing) 
 
 Important
 -
