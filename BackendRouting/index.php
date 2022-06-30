@@ -15,7 +15,7 @@ const root = '/BackendRouting';
 $router = new Router();
 
 $router->get(root . '/', function () {
-    echo 'Index page';
+    header("location: " . root . "/login");
 });
 
 # Sign up
@@ -106,7 +106,6 @@ $router->get(root . '/home', function () {
 });
 
 # User/Admin Profile
-/* TODO: Check user for admin=true in session/cookie */
 $router->get(root . '/profile', function (array $params = []) {
     $userController = new UserController([$_SESSION['email'], $_SESSION['username']]);
     $isAdmin = $userController->getAdminFlag();
